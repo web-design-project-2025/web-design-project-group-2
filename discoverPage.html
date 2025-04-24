@@ -6,30 +6,32 @@
     <title>CRITIX | Discover</title>
     <link rel="stylesheet" href="css/discoverstyle.css" />
   </head>
+
   <body>
     <header>
-      <a href="index.html" class="logo">CRITIX</a>
+      <div class="nav-left">
+        <a href="index.html" class="logo">
+          <img src="images/Critix x1 White.png" alt="Logo" />
+        </a>
+      </div>
 
-      <nav id="nav-menu">
+      <nav id="nav-center">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="discoverPage.html">Discover</a></li>
-          <li><a href="reviewsPage.htm">Reviews</a></li>
+          <li><a href="reviewsPage.html">Reviews</a></li>
         </ul>
       </nav>
 
-      <div class="right-corner">
+      <div class="nav-right">
         <a href="#" class="search-icon">
-          <img src="images/" alt="Search" />
-        </a>
-        <a href="#" class="heart-icon">
-          <img src="images/" alt="Liked" />
+          <img src="images/icons/search.png" alt="Search" />
         </a>
         <a href="#" class="saved-icon">
-          <img src="images/" alt="Saved" />
+          <img src="images/icons/save.png" alt="Saved" />
         </a>
         <a href="#" class="user-icon">
-          <img src="images/" alt="User page/Login" />
+          <img src="images/icons/user.png" alt="User page/Login" />
         </a>
       </div>
     </header>
@@ -37,6 +39,14 @@
     <main>
       <div class="mainTitle">
         <h1>Discover</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <img
+            src="images/icons/search.png"
+            alt="Search icon"
+            class="searchbar-icon"
+          />
+        </div>
       </div>
 
       <section id="movie-container"></section>

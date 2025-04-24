@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Interstellar",
+    "genre": "Sci-Fi",
+    "rating": 9,
+    "poster": "images/Interstellar.jpg",
+    "description": "A team of explorer travel through a wormhole in space in an attempt to save humanity."
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "genre": "Action",
+    "rating": 9.9,
+    "poster": "images/dark_knight.jpg",
+    "description": "Batman faces the Joker, a criminal masterminf who wants to see the world burn."
+  }
+]
