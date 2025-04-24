@@ -83,35 +83,51 @@ nav a:active {
   background-color: rgba(68, 176, 228, 0.2);
   color: white;
   outline: none;
-  box-shadow: 0 0 10px black;
+  box-shadow: 10px 10px 10px black;
 }
 
-.searchbar-icon {
-  position: absolute;
-  left: 70%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
-  opacity: 0.8;
+.carousel1-section {
+  margin: 2rem 0;
 }
 
-#movie-container {
+.carousel1-section h2 {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.horizontal-scroll {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding-bottom: 4rem;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+  scroll-behavior: smooth;
+  max-width: 90%;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .movie-card {
-  background: #222;
+  flex: 0 0 auto;
+  width: 300px;
   border-radius: 20px;
-  width: 220px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease;
 }
 
 .movie-card img {
@@ -119,6 +135,28 @@ nav a:active {
   border-radius: 20px;
 }
 
-.movie-card:hover {
-  transform: scale(1.2);
+.carousel-arrow {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 2rem 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-arrow.left {
+  position: absolute;
+  left: 0.5rem;
+}
+
+.carousel-arrow.right {
+  position: absolute;
+  right: 0.5rem;
 }

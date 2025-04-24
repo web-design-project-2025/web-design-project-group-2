@@ -38,18 +38,51 @@
 
     <main>
       <div class="mainTitle">
-        <h1>Discover</h1>
+        <h1>DISCOVER</h1>
         <div class="search-bar">
           <input type="text" placeholder="Search..." />
-          <img
-            src="images/icons/search.png"
-            alt="Search icon"
-            class="searchbar-icon"
-          />
         </div>
       </div>
 
-      <section id="movie-container"></section>
+      <section class="carousel-section">
+        <h2>POPULAR MOVIES</h2>
+        <div class="carousel-wrapper">
+          <button
+            class="carousel-arrow left"
+            onclick="scrollCarousel('popular-movies', -1)"
+          >
+            &#10094;
+          </button>
+
+          <div class="carousel" id="popular-movies"></div>
+
+          <button
+            class="carousel-arrow right"
+            onclick="scrollCarousel('popular-movies', 1)"
+          >
+            &#10095;
+          </button>
+        </div>
+      </section>
+
+      <section class="carousel-section">
+        <h2>POPULAR SERIES</h2>
+        <div class="carousel-wrapper">
+          <button
+            class="carousel-arrow left"
+            onclick="scrollCarousel('popular-series', -1)"
+          >
+            &#10094;
+          </button>
+          <div class="carousel" id="popular-series"></div>
+          <button
+            class="carousel-arrow right"
+            onclick="scrollCarousel('popular-series', 1)"
+          >
+            &#10095;
+          </button>
+        </div>
+      </section>
     </main>
 
     <script src="js/apiLoader.js"></script>
