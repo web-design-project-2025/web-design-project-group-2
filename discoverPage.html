@@ -83,8 +83,39 @@
           </button>
         </div>
       </section>
+
+      <section class="carousel-section">
+        <h2>RECOMMENDED FOR YOU</h2>
+        <div class="carousel-wrapper">
+          <button
+            class="carousel-arrow left"
+            onclick="scrollCarousel('recommended-fy', -1)"
+          >
+            &#10094;
+          </button>
+          <div class="carousel" id="recommended-fy"></div>
+          <button
+            class="carousel-arrow right"
+            onclick="scrollCarousel('recommended-fy', 1)"
+          >
+            &#10095;
+          </button>
+        </div>
+      </section>
+
+      <section class="tinder-section">
+        <h2>PICK A MOVIE</h2>
+        <div class="tinder-container">
+          <div id="tinder-card-stack"></div>
+          <div class="tinder-buttons">
+            <button id="tinder-dislike">❌</button>
+            <button id="tinder-like">❤️</button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="js/apiLoader.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
