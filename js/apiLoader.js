@@ -21,9 +21,9 @@ function fetchAndDisplay(url, containerId, type = "movie", limit) {
     .then((res) => res.json()) //Convert the response to JSON
     .then((data) => {
       const items = data.results; //Array of movie/TV objects
-      const container = document.getElementById(containerId); //Target DOM element
+      const container = document.getElementById(containerId);
 
-      //Only displat the first 'limit' items
+      //Only display the first 'limit' items
       items.slice(0, limit).forEach((item) => {
         const card = document.createElement("div");
         card.classList.add("movie-card");
