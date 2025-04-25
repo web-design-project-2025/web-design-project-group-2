@@ -1,9 +1,9 @@
 //// My personal TMDb API key (from: https://developer.themoviedb.org)
 const apiKey = "ae0a4eba1c7e749c1ac3ccf61effa065";
 
-//Define endpoints for different types of data from TMDb
+//Defined endpoints for different types of data from TMDb
 // I used TMDb's API documentation to find the correct endpoints for movies, series, and top-rated.
-// Reference: https://developer.themoviedb.org/reference/intro
+// https://developer.themoviedb.org/reference/intro
 const endpoints = {
   popularMovies: `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`,
   popularSeries: `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`,
@@ -56,14 +56,13 @@ fetchAndDisplay(endpoints.popularSeries, "popular-series", "series", 10);
 fetchAndDisplay(endpoints.recommended, "recommended-fy", "recommended", 7);
 
 //Scrolls the carousel left or right by the width of one movie card
-//id: The ID of the carousel container (e.g., popular movies)
+//id: The ID of the carousel container ( popular movies)
 //direction: Set to 1 to scroll right, or -1 to scroll left
 
 function scrollCarousel(id, direction) {
   const container = document.getElementById(id);
   const card = container.querySelector(".movie-card");
 
-  //If no card found, exit early
   if (!card) return;
 
   const cardWidth = card.offsetWidth + 16; //16px gap between cards

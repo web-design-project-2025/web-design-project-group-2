@@ -91,7 +91,7 @@ nav a:active {
   text-align: center;
   font-weight: 300;
   font-size: 2rem;
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -170,7 +170,7 @@ nav a:active {
   font-size: 2rem;
   font-weight: 300;
   margin-bottom: 2rem;
-  margin-top: 10rem;
+  margin-top: 5hrem;
   text-align: center;
 }
 
@@ -228,4 +228,37 @@ nav a:active {
 
 .tinder-buttons button:hover {
   background: rgba(68, 176, 228, 0.4);
+}
+
+.popup-message {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #44b0e4;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+  z-index: 1000;
+  animation: fadeInOut 1.5s ease;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
