@@ -1,4 +1,4 @@
-//This function fetches 10 popular movies from TMDb and displays them in a Tinder-style card stack
+/*//This function fetches 10 popular movies from TMDb and displays them in a Tinder-style card stack
 //https://developer.themoviedb.org/reference/movie-popular-list
 function loadMovieTinder() {
   const stack = document.getElementById("tinder-card-stack"); //This is where cards will be inserted
@@ -61,3 +61,4 @@ function setupTinderSwipe() {
 document.addEventListener("DOMContentLoaded", () => {
   loadMovieTinder();
 });
+*/

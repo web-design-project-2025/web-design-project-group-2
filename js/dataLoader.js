@@ -1,3 +1,6 @@
+//JSON data loader
+//Working on it
+
 fetch("data/movies.json")
   .then((response) => response.json())
   .then((data) => {
