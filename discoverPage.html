@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRITIX | Discover</title>
+    <link rel="stylesheet" href="css/discoverstyle.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="nav-left">
+        <a href="index.html" class="logo">
+          <img src="images/Critix x1 White.png" alt="Logo" />
+        </a>
+      </div>
+
+      <nav id="nav-center">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discoverPage.html">Discover</a></li>
+          <li><a href="reviewsPage.html">Reviews</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+        <a href="#" class="search-icon">
+          <img src="images/icons/search.png" alt="Search" />
+        </a>
+        <a href="#" class="saved-icon">
+          <img src="images/icons/save.png" alt="Saved" />
+        </a>
+        <a href="#" class="user-icon">
+          <img src="images/icons/user.png" alt="User page/Login" />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="mainTitle">
+        <h1>DISCOVER</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+        </div>
+      </div>
+
+      <section class="carousel-section">
+        <h2>POPULAR MOVIES</h2>
+        <div class="carousel-wrapper">
+          <button
+            class="carousel-arrow left"
+            onclick="scrollCarousel('popular-movies', -1)"
+          >
+            &#10094;
+          </button>
+
+          <div class="carousel" id="popular-movies"></div>
+
+          <button
+            class="carousel-arrow right"
+            onclick="scrollCarousel('popular-movies', 1)"
+          >
+            &#10095;
+          </button>
+        </div>
+      </section>
+
+      <section class="carousel-section">
+        <h2>POPULAR SERIES</h2>
+        <div class="carousel-wrapper">
+          <button
+            class="carousel-arrow left"
+            onclick="scrollCarousel('popular-series', -1)"
+          >
+            &#10094;
+          </button>
+          <div class="carousel" id="popular-series"></div>
+          <button
+            class="carousel-arrow right"
+            onclick="scrollCarousel('popular-series', 1)"
+          >
+            &#10095;
+          </button>
+        </div>
+      </section>
+
+      <section class="carousel-section">
+        <h2>RECOMMENDED FOR YOU</h2>
+        <div class="carousel-wrapper">
+          <button
+            class="carousel-arrow left"
+            onclick="scrollCarousel('recommended-fy', -1)"
+          >
+            &#10094;
+          </button>
+          <div class="carousel" id="recommended-fy"></div>
+          <button
+            class="carousel-arrow right"
+            onclick="scrollCarousel('recommended-fy', 1)"
+          >
+            &#10095;
+          </button>
+        </div>
+      </section>
+
+      <section class="tinder-section">
+        <h2>PICK A MOVIE</h2>
+        <div class="tinder-container">
+          <div id="tinder-card-stack"></div>
+          <div class="tinder-buttons">
+            <button id="tinder-dislike">❌</button>
+            <button id="tinder-like">❤️</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/apiLoader.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
