@@ -7,7 +7,7 @@ let watchLater = [];
 fetch(endpoints.popularMovies)
   .then((res) => res.json())
   .then((data) => {
-    tinderMovies = data.results.slice(0, 10); // Pick first 10 movies
+    tinderMovies = data.results.slice(0, 20); // Pick first 10 movies
     showNextTinderCard();
   });
 
@@ -34,17 +34,33 @@ function showNextTinderCard() {
 
 //Liked button
 document.getElementById("tinder-like").addEventListener("click", () => {
-  const likedMovie = tinderMovies[currentTinderIndex];
-  watchLater.push(likedMovie);
-  showPopup("Added to watchlist!");
-  currentTinderIndex++;
-  showNextTinderCard();
+  const card = document.querySelector(".movie-card.tinder");
+  if (!card) return;
+
+  card.style.transform = "translateX(500px) rotate(20deg)";
+  card.style.opacity = "0";
+
+  setTimeout(() => {
+    const likedMovie = tinderMovies[currentTinderIndex];
+    watchLater.push(likedMovie);
+    showPopup("Added to watchlist!");
+    currentTinderIndex++;
+    showNextTinderCard();
+  }, 400);
 });
 
 //Dislike button
 document.getElementById("tinder-dislike").addEventListener("click", () => {
-  currentTinderIndex++;
-  showNextTinderCard();
+  const card = document.querySelector(".movie-card.tinder");
+  if (!card) return;
+
+  card.style.transform = "translateX(-500px) rotate(-20deg)";
+  card.style.opacity = "0";
+
+  setTimeout(() => {
+    currentTinderIndex++;
+    showNextTinderCard();
+  }, 400);
 });
 
 //Show pop up
