@@ -29,6 +29,10 @@ function showNextTinderCard() {
     <h3>${movie.title}</h3>
   `;
 
+  card.addEventListener("click", () => {
+    openModal(movie);
+  });
+
   tinderStack.appendChild(card);
 }
 
@@ -74,4 +78,42 @@ function showPopup(message) {
   setTimeout(() => {
     popup.remove();
   }, 1500);
+}
+
+//Function to open modal
+function openModal(movie) {
+  const modal = document.getElementById("movie-modal");
+  const title = document.getElementById("modal-title");
+  const description = document.getElementById("modal-description");
+  const rating = document.getElementById("modal-rating");
+  const trailerIframe = document.getElementById("trailer-iframe");
+
+  title.textContent = movie.title;
+  description.textContent = movie.overview || "No description available.";
+  rating.textContent = `⭐ ${movie.vote_average}`;
+
+  fetch(
+    `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${apiKey}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      const trailer = data.results.find(
+        (video) => video.type === "Trailer" && video.site === "YouTube"
+      );
+      if (trailer) {
+        trailerIframe.src = `https://www.youtube.com/embed/${trailer.key}`;
+      } else {
+        trailerIframe.src = "";
+      }
+    });
+
+  modal.classList.remove("hidden");
+
+  //CLose modal when clicking outside of it
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+      trailerIframe.src = "";
+    }
+  });
 }
