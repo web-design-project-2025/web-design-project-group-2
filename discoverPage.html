@@ -8,8 +8,21 @@
     <link rel="stylesheet" href="css/navbar.css" />
   </head>
 
+  <div id="movie-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-trailer">
+        <iframe id="trailer-iframe" src="" frameborder="0"></iframe>
+      </div>
+      <div class="modal-info">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <p id="modal-rating"></p>
+      </div>
+    </div>
+  </div>
+
   <body>
-    <!-- Dynamic menu, has a different html/css file connected to every page-->
+    
     <div id="navbar"></div>
 
     <main>
@@ -82,6 +95,10 @@
       <section class="tinder-section">
         <h2>PICK A MOVIE</h2>
         <div class="tinder-container">
+          <div class="tinder-background">
+            <div class="tinder-bg-card red"></div>
+            <div class="tinder-bg-card blue"></div>
+          </div>
           <div id="tinder-card-stack"></div>
           <div class="tinder-buttons">
             <button id="tinder-dislike">❌</button>
