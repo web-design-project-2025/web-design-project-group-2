@@ -126,7 +126,7 @@ body {
 }
 
 .genre-carousel {
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 
 .genre-carousel h2 {
@@ -149,6 +149,7 @@ body {
   width: 350px;
   height: 650px;
   margin: 2rem auto;
+  margin-bottom: 15rem;
 }
 
 #tinder-card-stack {
