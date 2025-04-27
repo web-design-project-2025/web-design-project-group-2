@@ -125,12 +125,22 @@ body {
   right: 0.5rem;
 }
 
+.genre-carousel {
+  margin-top: 10rem;
+}
+
+.genre-carousel h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+}
+
 /*Movie Tinder*/
 .tinder-section h2 {
   font-size: 2.5rem;
   font-weight: 300;
   margin-bottom: 2rem;
-  margin-top: 5hrem;
+  margin-top: 5rem;
   text-align: center;
 }
 

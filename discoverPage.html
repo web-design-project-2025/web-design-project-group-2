@@ -6,6 +6,7 @@
     <title>CRITIX | Discover</title>
     <link rel="stylesheet" href="css/discoverstyle.css" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
   </head>
 
   <div id="movie-modal" class="modal hidden">
@@ -22,7 +23,6 @@
   </div>
 
   <body>
-    
     <div id="navbar"></div>
 
     <main>
@@ -106,10 +106,44 @@
           </div>
         </div>
       </section>
+
+      <section class="corousel-section">
+        <div id="genre-carousels">
+          <div class="genre-carousel">
+            <h2>COMEDY</h2>
+            <div class="carousel-wrapper">
+              <button class="carousel-arrow left" onclick="scrollCarousel('comedy-movies', -1)">&#10094</button>
+              <div class="carousel" id="comedy-movies"></div>
+              <button class="carousel-arrow right" onclick="scrollCarousel('comedy-movies', 1)">&#10095</button>
+            </div>
+          </div>
+
+          <div class="genre-carousel">
+            <h2>HORROR</h2>
+            <div class="carousel-wrapper">
+              <button class="carousel-arrow left" onclick="scrollCarousel('horror-movies', -1)">&#10094</button>
+              <div class="carousel" id="horror-movies"></div>
+              <button class="carousel-arrow right" onclick="scrollCarousel('horror-movies', 1)">&#10095</button>
+            </div>
+          </div>
+
+          <div class="genre-carousel">
+            <h2>FANTASY</h2>
+            <div class="carousel-wrapper">
+              <button class="carousel-arrow left" onclick="scrollCarousel('fantasy-movies', -1)">&#10094</button>
+              <div class="carousel" id="fantasy-movies"></div>
+              <button class="carousel-arrow right" onclick="scrollCarousel('fantasy-movies', 1)">&#10095</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- Dynamic footer, has a different html/css file connected to every page-->
+    <div id="footer"></div>
 
     <script src="js/apiLoader.js"></script>
     <script src="js/navfooter.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/discoverMain.js"></script>
   </body>
 </html>
