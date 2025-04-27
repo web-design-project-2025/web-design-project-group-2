@@ -12,9 +12,12 @@
 
 .trailer-container iframe {
   width: 100%;
-  max-width: 800px;
-  height: 450px;
+  max-width: 1200px;
+  height: 600px;
   border-radius: 20px;
+  opacity: 0.6;
+
+  box-shadow: 8px 8px 8px black;
 }
 
 .movie-main-info {
@@ -35,7 +38,7 @@
 
 .movie-text h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 .rating {
@@ -55,29 +58,24 @@
 .cast-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .cast-card {
-  background: rgba(68, 176, 228, 0.1);
+  background: rgba(68, 176, 228, 0.2);
   padding: 1rem;
-  border-radius: 12px;
-  width: 120px;
+  border-radius: 20px;
+  width: 150px;
   text-align: center;
 }
 
 .cast-card img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
   margin-bottom: 0.5rem;
 }
 
 .cast-card p {
   font-size: 0.9rem;
   margin-bottom: 0.2rem;
-}
-
-.cast-card small {
-  font-size: 0.7rem;
-  color: #ccc;
 }
