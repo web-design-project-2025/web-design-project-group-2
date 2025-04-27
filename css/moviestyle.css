@@ -1,0 +1,83 @@
+.movie-detail {
+  color: white;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.trailer-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.trailer-container iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 20px;
+}
+
+.movie-main-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.movie-poster {
+  width: 250px;
+  border-radius: 20px;
+}
+
+.movie-text {
+  flex: 1;
+}
+
+.movie-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.rating {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.overview {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.cast-crew {
+  margin-top: 2rem;
+}
+
+.cast-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cast-card {
+  background: rgba(68, 176, 228, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  width: 120px;
+  text-align: center;
+}
+
+.cast-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.cast-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.cast-card small {
+  font-size: 0.7rem;
+  color: #ccc;
+}

@@ -34,13 +34,13 @@ function fetchAndDisplay(url, containerId, type = "movie", limit) {
         card.classList.add("movie-card");
 
         //Build HTML content for each card
-        card.innerHTML = `
+        card.innerHTML = `<a href="movieDetail.html?id=${item.id}">
           <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="${
           item.title || item.name
         }">
           <h3>${item.title || item.name}</h3>
           <p>⭐ ${item.vote_average}</p>
-        `;
+          </a>`;
 
         container.appendChild(card); //Add card to the page
       });
