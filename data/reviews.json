@@ -1,0 +1,33 @@
+[
+  {
+    "movieId": 950387,
+    "username": "BlockFan88",
+    "rating": "10/10",
+    "color": "red",
+    "text": "I've been paying Minecraft since beta, and this movie hits aöö the right notes for me."
+  },
+
+  {
+    "movieId": 950387,
+    "username": "CineSnob77",
+    "rating": "3/10",
+    "color": "blue",
+    "text": "It felt more like an extended YouTube videio than a proper film."
+  },
+
+  {
+    "movieId": 950387,
+    "username": "CasualCrafter",
+    "rating": "8/10",
+    "color": "blue",
+    "text": "The humor was light, and there were some genuinely sweet moments."
+  },
+
+  {
+    "movieId": 950387,
+    "username": "PixelMom",
+    "rating": "8/10",
+    "color": "red",
+    "text": "Took my 9-year-old and we both really enjoyed it!"
+  }
+]

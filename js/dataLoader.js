@@ -1,7 +1,7 @@
 //JSON data loader
 //Working on it
 
-fetch("data/movies.json")
+fetch("data/reviews.json")
   .then((response) => response.json())
   .then((data) => {
     const container = document.getElementById("movie-container");
