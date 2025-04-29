@@ -55,7 +55,7 @@ function renderMovieDetail(movie, trailer, credits) {
     </div>
 
     <div class="cast-crew">
-      <h2>Cast & Crew</h2>
+      <h2>Top Cast & Crew</h2>
       <div class="cast-list">
         ${credits.cast
           .slice(0, 6)
@@ -95,7 +95,6 @@ function generateReviewCard(review, movieTitle) {
     <div class="review-card ${review.color}">
       <div class="user-info">
         <div class="user-img"></div>
-        <img class="user-icon" src="images/user.png" alt="user icon" />
         <p class="username">@${review.username}</p>
       </div>
       <div class="review-content">
