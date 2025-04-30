@@ -90,6 +90,10 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.movie-card a {
+  color: white;
+}
+
 .movie-card img {
   width: 100%;
   border-radius: 20px;

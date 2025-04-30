@@ -57,8 +57,8 @@ nav a {
 
 nav a:hover,
 nav a:active {
-  color: beige;
-  border-color: white;
+  color: #44b0e4;
+  border-color: #44b0e4;
 }
 
 .nav-right img {

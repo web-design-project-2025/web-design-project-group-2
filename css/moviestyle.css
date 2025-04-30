@@ -1,0 +1,224 @@
+.movie-detail {
+  color: white;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.trailer-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.trailer-container iframe {
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  border-radius: 20px;
+  opacity: 0.6;
+
+  box-shadow: 8px 8px 8px black;
+}
+
+.movie-main-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.movie-poster {
+  width: 250px;
+  border-radius: 20px;
+}
+
+.movie-text {
+  flex: 1;
+}
+
+.movie-text h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.rating {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.overview {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.cast-crew {
+  margin-top: 2rem;
+}
+
+.cast-crew h2 {
+  font-weight: 400;
+}
+
+.cast-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.cast-card {
+  background: rgba(68, 176, 228, 0.2);
+  padding: 1rem;
+  border-radius: 20px;
+  width: 162px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+.cast-card:hover {
+  transform: scale(1.05);
+}
+
+.cast-card img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.cast-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/*Reviews style*/
+.reviews-section {
+  margin: 5rem auto;
+  background: rgba(68, 176, 228, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+  max-width: 1400px;
+  width: 100%;
+}
+
+.reviews-section h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.reviews-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.review-card {
+  display: flex;
+  padding: 1rem;
+  border-radius: 20px;
+  gap: 1rem;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.review-card.red {
+  background-color: rgba(180, 40, 50, 0.4);
+}
+
+.review-card.blue {
+  background-color: rgba(60, 176, 228, 0.5);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 80px;
+}
+
+.user-img {
+  background: #aaa;
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.username {
+  font-size: 0.9rem;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.review-content {
+  flex: 1;
+  color: white;
+  margin-left: 0.4rem;
+}
+
+.review-content h3 {
+  font-size: 1.3rem;
+}
+
+.review-rating {
+  font-size: 1.1rem;
+  color: white;
+}
+
+.review-text {
+  font-size: 1rem;
+  line-height: 1.4r;
+}
+
+/*Similar movies*/
+.similar-section {
+  margin: 5rem auto;
+  background: rgba(68, 176, 228, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+  max-width: 1400px;
+  width: 100%;
+}
+
+.similar-section h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.similar-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.similar-card {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  align-items: center;
+}
+
+.similar-card:hover {
+  transform: scale(1.2);
+}
+
+.similar-card img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.similar-card h3 {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.similar-card p {
+  color: white;
+  font-size: 0.9rem;
+}
