@@ -94,7 +94,7 @@ function loadSimilarMovies(movieId) {
     .then((res) => res.json())
     .then((data) => {
       const similarWrapper = document.getElementById("similar-wrapper");
-      const movies = data.results.slice(0, 7);
+      const movies = data.results.slice(0, 6);
 
       movies.forEach((movie) => {
         const card = document.createElement("div");

@@ -90,11 +90,13 @@
 
 /*Reviews style*/
 .reviews-section {
-  margin-top: 5rem;
+  margin: 5rem auto;
   background: rgba(68, 176, 228, 0.2);
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+  max-width: 1400px;
+  width: 100%;
 }
 
 .reviews-section h2 {
@@ -169,11 +171,13 @@
 
 /*Similar movies*/
 .similar-section {
-  margin-top: 5rem;
+  margin: 5rem auto;
   background: rgba(68, 176, 228, 0.2);
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+  max-width: 1400px;
+  width: 100%;
 }
 
 .similar-section h2 {
