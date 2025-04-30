@@ -79,16 +79,40 @@ function loadReviews(movieId, movieTitle) {
   fetch("data/reviews.json")
     .then((res) => res.json())
     .then((reviews) => {
-      const filtered = reviews.filter((r) => r.movieId == movieId);
-      if (!filtered.length) return;
-
-      filtered.slice(0, 4).forEach((review) => {
+      reviews.slice(0.4).forEach((review) => {
         reviewsWrapper.innerHTML += generateReviewCard(review, movieTitle);
       });
     })
     .catch((err) => console.error("Error loading reviews", err));
 }
 
+//Similar movies section
+function loadSimilarMovies(movieId) {
+  fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${apiKey}&language=en-US`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      const similarWrapper = document.getElementById("similar-wrapper");
+      const movies = data.results.slice(0, 7);
+
+      movies.forEach((movie) => {
+        const card = document.createElement("div");
+        card.classList.add("similar-card");
+
+        card.innerHTML = `
+          <a href="movieDetail.html?id=${movie.id}">
+            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+            <h3>${movie.title}</h3>
+            <p>⭐ ${movie.vote_average}</p>
+          </a>
+        `;
+
+        similarWrapper.appendChild(card);
+      });
+    })
+    .catch((err) => console.error("Error loading similar movies", err));
+}
 //Review cards
 function generateReviewCard(review, movieTitle) {
   return `
@@ -107,3 +131,4 @@ function generateReviewCard(review, movieTitle) {
 }
 
 fetchMovieDetails();
+loadSimilarMovies(movieId);

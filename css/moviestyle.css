@@ -70,7 +70,11 @@
   padding: 1rem;
   border-radius: 20px;
   width: 162px;
+  transition: transform 0.3s ease;
   text-align: center;
+}
+.cast-card:hover {
+  transform: scale(1.05);
 }
 
 .cast-card img {
@@ -161,4 +165,56 @@
 .review-text {
   font-size: 1rem;
   line-height: 1.4r;
+}
+
+/*Similar movies*/
+.similar-section {
+  margin-top: 5rem;
+  background: rgba(68, 176, 228, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.similar-section h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.similar-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.similar-card {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  align-items: center;
+}
+
+.similar-card:hover {
+  transform: scale(1.2);
+}
+
+.similar-card img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.similar-card h3 {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.similar-card p {
+  color: white;
+  font-size: 0.9rem;
 }

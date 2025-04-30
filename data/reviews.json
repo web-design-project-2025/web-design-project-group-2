@@ -1,6 +1,5 @@
 [
   {
-    "movieId": 950387,
     "username": "BlockFan",
     "rating": "10/10",
     "color": "red",
@@ -8,7 +7,6 @@
   },
 
   {
-    "movieId": 950387,
     "username": "CineSnob",
     "rating": "3/10",
     "color": "blue",
@@ -16,7 +14,6 @@
   },
 
   {
-    "movieId": 950387,
     "username": "CCrafter",
     "rating": "8/10",
     "color": "blue",
@@ -24,7 +21,6 @@
   },
 
   {
-    "movieId": 950387,
     "username": "PixelMom",
     "rating": "8/10",
     "color": "red",
