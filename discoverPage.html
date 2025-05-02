@@ -30,7 +30,19 @@
         <h1>DISCOVER</h1>
         <div class="search-bar">
           <input type="text" placeholder="Search..." />
+          <div class="filter-container">
+            <button id="hamburger-icon">☰</button>
+            <div id="filter-menu" class="hidden">
+              <button class="filter-genre" data-genre="comedy">Comedy</button>
+              <button class="filter-genre" data-genre="horror">Horror</button>
+              <button class="filter-genre" data-genre="fanatsy">Fantasy</button>
+              <button id="clear-filter">Clear Filter</button>
+            </div>
+          </div>
         </div>
+
+        <div id="filtered-movies" class="movie-grid"></div>
+
       </div>
 
       <section class="carousel-section">
@@ -145,5 +157,6 @@
     <script src="js/apiLoader.js"></script>
     <script src="js/navfooter.js"></script>
     <script src="js/movieTinder.js"></script>
+    <script src="js/discoverFilters.js"></script>
   </body>
 </html>
