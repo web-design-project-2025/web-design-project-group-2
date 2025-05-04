@@ -14,36 +14,306 @@
 
     <main>
       <!-- Featured movie with a review on the side -->
-      <div class="carousel-slide">
-        <div class="long-box"></div>
-        <div class="narrow-box"></div>
+      <div class="featured-movie-carousel">
+      
+        <div class="featured-carousel-wrapper">
+          
+          <button class="featured-carousel-arrow left">
+            <img src="images/icons/arrow_left.png" alt="Previous" />
+          </button>
+
+          <div class="featured-carousel-inner">
+            <!-- Pair 1 -->
+            <div class="featured-carousel-item">
+              <div class="featured-movie-box">
+                <div class="featured-trailer-container">
+                  <video src="trailer1.mp4" muted autoplay loop></video>
+                  <div class="featured-poster-overlay">
+                    <img
+                      src="poster1.jpg"
+                      alt="Poster for Movie Title 1"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="featured-title-overlay">
+                    <h2>Movie Title 1</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="featured-review-box">
+                <img
+                  src="reviewer1.jpg"
+                  alt="Reviewer John Doe"
+                  loading="lazy"
+                />
+                <h3>Review Title 1</h3>
+                <p>Short review snippet 1...</p>
+              </div>
+            </div>
+
+            <!-- Pair 2 -->
+            <div class="featured-carousel-item">
+              <div class="featured-movie-box">
+                <div class="featured-trailer-container">
+                  <video src="trailer2.mp4" muted autoplay loop></video>
+                  <div class="featured-poster-overlay">
+                    <img
+                      src="poster2.jpg"
+                      alt="Poster for Movie Title 2"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="featured-title-overlay">
+                    <h2>Movie Title 2</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="featured-review-box">
+                <img
+                  src="reviewer2.jpg"
+                  alt="Reviewer Jane Smith"
+                  loading="lazy"
+                />
+                <h3>Review Title 2</h3>
+                <p>Short review snippet 2...</p>
+              </div>
+            </div>
+
+            <!-- Pair 3 -->
+            <div class="featured-carousel-item">
+              <div class="featured-movie-box">
+                <div class="featured-trailer-container">
+                  <video src="trailer3.mp4" muted autoplay loop></video>
+                  <div class="featured-poster-overlay">
+                    <img
+                      src="poster3.jpg"
+                      alt="Poster for Movie Title 3"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="featured-title-overlay">
+                    <h2>Movie Title 3</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="featured-review-box">
+                <img
+                  src="reviewer3.jpg"
+                  alt="Reviewer Alex Lee"
+                  loading="lazy"
+                />
+                <h3>Review Title 3</h3>
+                <p>Short review snippet 3...</p>
+              </div>
+            </div>
+
+            <!-- Pair 4 -->
+            <div class="featured-carousel-item">
+              <div class="featured-movie-box">
+                <div class="featured-trailer-container">
+                  <video src="trailer4.mp4" muted autoplay loop></video>
+                  <div class="featured-poster-overlay">
+                    <img
+                      src="poster4.jpg"
+                      alt="Poster for Movie Title 4"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="featured-title-overlay">
+                    <h2>Movie Title 4</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="featured-review-box">
+                <img
+                  src="reviewer4.jpg"
+                  alt="Reviewer Sam Patel"
+                  loading="lazy"
+                />
+                <h3>Review Title 4</h3>
+                <p>Short review snippet 4...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right arrow outside movie boxes -->
+          <button class="featured-carousel-arrow right">
+            <img src="images/icons/arrow_right.png" alt="Next" />
+          </button>
+        </div>
+
+        <!-- Carousel dots centered below -->
+        <div class="featured-carousel-dots">
+          <span class="featured-carousel-dot active"></span>
+          <span class="featured-carousel-dot"></span>
+          <span class="featured-carousel-dot"></span>
+          <span class="featured-carousel-dot"></span>
+        </div>
       </div>
 
-      <!-- Our purpose, image with a text "discover" etc. -->
+      <!-- Our purpose, image with text "discover" etc. -->
       <div class="purpose-image-container">
-        <img src="" alt="Descriptive Alt Text" />
-        <div class="overlay-text">Review and discover movies</div>
+        <img src="images/purpose-image.png" alt="Discover movies" />
+        <div id="purpose-text">Review and discover movies</div>
       </div>
 
       <!-- Automated poster carousel -->
-      <section class="discover-section">
-        <h2>Discover Movies</h2>
-        <div class="discover-carousel-container">
-          <div class="posters-track">
-            <img src="" alt="Minecraft movie" />
-          </div>
+
+      <section class="carousel-section">
+        <h2>DISCOVER MOVIES</h2>
+        <div class="carousel-wrapper">
+          <button
+            class="carousel-arrow left"
+            onclick="scrollCarousel('popular-movies', -1)"
+          >
+            &#10094;
+          </button>
+
+          <div class="carousel" id="popular-movies"></div>
+
+          <button
+            class="carousel-arrow right"
+            onclick="scrollCarousel('popular-movies', 1)"
+          >
+            &#10095;
+          </button>
         </div>
       </section>
 
       <!-- Read reviews section with review boxes -->
       <section id="reviews-section">
-        <h2>Read reviews</h2>
+        <h2 id="reviews-text">READ REVIEWS</h2>
+       
         <div class="reviews-container">
-          <div class="review-box">Nice</div>
-          <div class="review-box">Good story</div>
-          <div class="review-box">*ss</div>
-          <div class="review-box">Awesomesauce</div>
+    <div class="review-box review-1">
+      <div class="review-header">
+        <div class="user-img">
+          <img src="images/icons/user.png" alt="User 1">
         </div>
+        <div class="user-info">
+          <div class="movie-title">Interstellar</div>
+          <div class="main-title">A Journey Beyond</div>
+          <div class="username">by Alice</div>
+        </div>
+      </div>
+      <div class="review-content">Stunning visuals and an emotional storyline that sticks with you long after the credits roll.</div>
+    </div>
+
+    <div class="review-box review-2">
+      <div class="review-header">
+        <div class="user-img">
+          <img src="images/icons/user.png" alt="User 1">
+        </div>
+        <div class="user-info">
+          <div class="movie-title">Inception</div>
+          <div class="main-title">Dream Within a Dream</div>
+          <div class="username">by Bob</div>
+        </div>
+      </div>
+      <div class="review-content">A mind-bending masterpiece that challenges your perception of reality.</div>
+    </div>
+
+    <div class="review-box review-3">
+      <div class="review-header">
+        <div class="user-img">
+          <img src="images/icons/user.png" alt="User 1">
+        </div>
+        <div class="user-info">
+          <div class="movie-title">The Godfather</div>
+          <div class="main-title">Classic Mafia Tale</div>
+          <div class="username">by Carol</div>
+        </div>
+      </div>
+      <div class="review-content">An epic portrayal of family, loyalty, and power that redefined the gangster genre.</div>
+    </div>
+
+    <div class="review-box review-4">
+      <div class="review-header">
+        <div class="user-img">
+          <img src="images/icons/user.png" alt="User 1">
+        </div>
+        <div class="user-info">
+          <div class="movie-title">Parasite</div>
+          <div class="main-title">Thrilling Social Commentary</div>
+          <div class="username">by Dan</div>
+        </div>
+      </div>
+      <div class="review-content">A brilliant mix of dark humor and suspense that exposes class divisions.</div>
+    </div>
+
+    <div class="review-box review-5">
+      <div class="review-header">
+        <div class="user-img">
+          <img src="images/icons/user.png" alt="User 1">
+        </div>
+        <div class="user-info">
+          <div class="movie-title">La La Land</div>
+          <div class="main-title">A Dreamer's Love Story</div>
+          <div class="username">by Emma</div>
+        </div>
+      </div>
+      <div class="review-content">A visually dazzling musical that captures the beauty and heartbreak of chasing dreams.</div>
+    </div>
+
+    <div class="review-box review-6">
+      <div class="review-header">
+        <div class="user-img">
+          <img src="images/icons/user.png" alt="User 1">
+        </div>
+        <div class="user-info">
+          <div class="movie-title">The Dark Knight</div>
+          <div class="main-title">Hero vs Villain</div>
+          <div class="username">by Frank</div>
+        </div>
+      </div>
+      <div class="review-content">A gritty and gripping superhero film elevated by an unforgettable Joker performance.</div>
+    </div>
+
+    <div class="review-box review-7">
+      <div class="review-header">
+        <div class="user-img">
+          <img src="images/icons/user.png" alt="User 1">
+        </div>
+        <div class="user-info">
+          <div class="movie-title">Spirited Away</div>
+          <div class="main-title">A Magical Journey</div>
+          <div class="username">by Grace</div>
+        </div>
+      </div>
+      <div class="review-content">A breathtaking animated adventure filled with wonder, imagination, and emotion.</div>
+    </div>
+
+    <div class="review-box review-8">
+      <div class="review-header">
+        <div class="user-img">
+          <img src="images/icons/user.png" alt="User 1">
+        </div>
+        <div class="user-info">
+          <div class="movie-title">Spirited Away</div>
+          <div class="main-title">A Magical Journey</div>
+          <div class="username">by Grace</div>
+        </div>
+      </div>
+      <div class="review-content">A breathtaking animated adventure filled with wonder, imagination, and emotion.</div>
+    </div>
+  </div>
+
+  <div class="review-box review-9">
+    <div class="review-header">
+      <div class="user-img">
+        <img src="images/icons/user.png" alt="User 1">
+      </div>
+      <div class="user-info">
+        <div class="movie-title">Spirited Away</div>
+        <div class="main-title">A Magical Journey</div>
+        <div class="username">by Grace</div>
+      </div>
+    </div>
+    <div class="review-content">A breathtaking animated adventure filled with wonder, imagination, and emotion.</div>
+  </div>
+</body>
+</html>
+
       </section>
 
       <!-- Hero section with a big image (background) and buttons (log in/sign in)-->
@@ -64,6 +334,8 @@
     <div id="footer"></div>
 
     <!-- Scripts-->
+    <script src="js/apiLoader.js"></script>
     <script src="js/navfooter.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

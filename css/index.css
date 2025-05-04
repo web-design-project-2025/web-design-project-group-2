@@ -19,10 +19,404 @@ body {
   color: white;
 }
 
-h2 {
+/*/////////////////////////////////////////////////////////*/
+/* Carousel outer container */
+.featured-movie-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  overflow: hidden;
+}
+
+/* Carousel wrapper (holds arrows + inner track) */
+.featured-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Carousel track (slides horizontally) */
+.featured-carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Each carousel frame (movie + review) */
+.featured-carousel-item {
+  min-width: 100%;
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* Movie box  */
+.featured-movie-box {
+  flex: 3;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+.featured-trailer-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Poster image over video */
+.featured-poster-overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 60px;
+  height: 90px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+}
+
+.featured-poster-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Movie title overlay */
+.featured-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: #fff;
+}
+
+.featured-title-overlay h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Review box beside movie */
+.featured-review-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.featured-review-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.featured-review-box h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.featured-review-box p {
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Carousel arrows */
+.featured-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.featured-carousel-arrow img {
+  width: 40px;
+  height: 40px;
+}
+
+.featured-carousel-arrow:hover {
+  opacity: 0.8;
+}
+
+.featured-carousel-arrow.left {
+  left: 10px;
+}
+
+.featured-carousel-arrow.right {
+  right: 10px;
+}
+
+/* Dots below carousel */
+.featured-carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.featured-carousel-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  background: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.featured-carousel-dot.active {
+  background: #fff;
+}
+
+/* Purpose image section */
+.purpose-image-container {
+  width: 100%;
+  position: relative;
+  max-width: 1481px; /*needs to be changed, make it more responsive to the screen size*/
+  margin-top: 100px auto;
+}
+
+.purpose-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#purpose-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-110%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .featured-carousel-item {
+    flex-direction: column;
+  }
+
+  .featured-movie-box,
+  .featured-review-box {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .featured-review-box {
+    margin-top: 12px;
+  }
+
+  .featured-carousel-arrow img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .overlay-text {
+    font-size: 1rem;
+  }
+}
+
+/*/////////////////////////////////////////////////////////*/
+.carousel-section {
+  margin: 50px auto;
+}
+
+.carousel-section h2 {
   text-align: center;
   font-weight: 300;
   font-size: 2rem;
-  margin-top: 10rem;
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: hidden;
+  padding: 2rem 0;
+  scroll-behavior: smooth;
+  max-width: 90%;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-card {
+  flex: 0 0 auto;
+  width: 200px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+}
+
+.carousel-arrow {
+  background: rgba(68, 176, 228, 0.2);
+  border-radius: 20px;
+  color: #44b0e4;
+  border: none;
+  font-size: 2rem;
+  padding: 2rem 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(68, 176, 228, 0.3);
+}
+
+.carousel-arrow.left {
+  position: absolute;
+  left: 0.5rem;
+}
+
+.carousel-arrow.right {
+  position: absolute;
+  right: 0.5rem;
+}
+
+/*/ ////////////////////////////////////////////////////////*/
+
+#reviews-text {
+  text-align: center;
+  font-weight: 300;
+  font-size: 2rem;
+  margin-top: 2em auto;
+}
+
+.reviews-container {
+  position: relative;
+  width: 100%;
+  height: 1200px;
+}
+
+.review-box {
+  position: absolute;
+  width: 320px;
+  min-height: 220px;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.review-1 {
+  background-color: #44b0e4;
+  top: 50px;
+  left: 5%;
+  width: 400px;
+  height: auto;
+  opacity: 0.6;
+}
+
+.review-2 {
+  background-color: #d2232a;
+  top: 100px;
+  left: 40%;
+  opacity: 1;
+}
+
+.review-3 {
+  background-color: #44b0e4;
+  top: 200px;
+  left: 70%;
+  opacity: 0.8;
+}
+
+.review-4 {
+  background-color: #d2232a;
+  top: 300px;
+  left: 20%;
+  opacity: 0.7;
+}
+
+.review-5 {
+  background-color: #44b0e4;
+  top: 400px;
+  left: 60%;
+  opacity: 0.85;
+}
+
+.review-6 {
+  background-color: #d2232a;
+  top: 500px;
+  left: 10%;
+  opacity: 0.75;
+}
+
+.review-7 {
+  background-color: #44b0e4;
+  top: 600px;
+  left: 50%;
+  opacity: 0.9;
+}
+
+.review-8 {
+  background-color: #d2232a;
+  top: 600px;
+  left: 50%;
+  opacity: 0.9;
+}
+
+.review-9 {
+  background-color: #44b0e4;
+  top: 600px;
+  left: 50%;
+  opacity: 0.9;
 }
