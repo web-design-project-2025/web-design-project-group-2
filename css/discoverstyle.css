@@ -19,6 +19,7 @@ body {
   color: white;
 }
 
+/*Title odf the page*/
 .mainTitle h1 {
   text-align: center;
   font-weight: 300;
@@ -26,6 +27,7 @@ body {
   font-size: 4rem;
 }
 
+/*Search bar and filter section*/
 .search-bar {
   position: relative;
   margin-top: 1rem;
@@ -92,6 +94,7 @@ body {
   cursor: pointer;
 }
 
+/*Movie/Series section*/
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

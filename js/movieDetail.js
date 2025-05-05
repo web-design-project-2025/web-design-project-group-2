@@ -1,27 +1,33 @@
+//Get Id for movies
 const urlParam = new URLSearchParams(window.location.search);
 const movieId = urlParam.get("id");
 
+//Html containers for the details
 const detailContainer = document.getElementById("movie-section");
 const reviewsWrapper = document.getElementById("reviews-wrapper");
 
-//Fetch the movie details
+//Get movie data
 async function fetchMovieDetails() {
   try {
+    //Info
     const movieRes = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`
     );
     const movieData = await movieRes.json();
 
+    //Trailer
     const trailerRes = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}&language=en-US`
     );
     const trailerData = await trailerRes.json();
 
+    //Cast and crew
     const creditsRes = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`
     );
     const creditsData = await creditsRes.json();
 
+    //Trailer on youtube
     const trailer = trailerData.results.find(
       (video) => video.type === "Trailer" && video.site === "YouTube"
     );
@@ -33,6 +39,7 @@ async function fetchMovieDetails() {
   }
 }
 
+//Function to show the details, trailer, poster, titler, overview and cast
 function renderMovieDetail(movie, trailer, credits) {
   detailContainer.innerHTML = `
     <div class="trailer-container">
@@ -74,19 +81,19 @@ function renderMovieDetail(movie, trailer, credits) {
   `;
 }
 
-//Reviews from JSON file
+//Reviews from a JSON file
 function loadReviews(movieId, movieTitle) {
   fetch("data/reviews.json")
     .then((res) => res.json())
     .then((reviews) => {
-      reviews.slice(0.4).forEach((review) => {
+      reviews.slice(0, 4).forEach((review) => {
         reviewsWrapper.innerHTML += generateReviewCard(review, movieTitle);
       });
     })
     .catch((err) => console.error("Error loading reviews", err));
 }
 
-//Similar movies section
+//Function to show similar movies
 function loadSimilarMovies(movieId) {
   fetch(
     `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${apiKey}&language=en-US`
@@ -113,7 +120,8 @@ function loadSimilarMovies(movieId) {
     })
     .catch((err) => console.error("Error loading similar movies", err));
 }
-//Review cards
+
+//Function to generate review cards
 function generateReviewCard(review, movieTitle) {
   return `
     <div class="review-card ${review.color}">
