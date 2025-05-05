@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRITIX</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="form-container">
+      <h2>Log In</h2>
+      <input type="text" id="login-username" placeholder="Username or Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="register.html">Create account</a></p>
+      <p id="logun-error" class="error-msg"></p>
+    </div>
+
+    <!-- Dynamic footer, has a different html/css file connected to every page-->
+    <div id="footer"></div>
+
+    <script src="js/navfooter.js"></script>
+    <script src="js/login-register.js"></script>
+  </body>
+</html>
