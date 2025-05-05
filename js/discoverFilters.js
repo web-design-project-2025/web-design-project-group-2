@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const genreEndpoints = {
     comedy: `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=35&language=en-US`,
     horror: `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=27&language=en-US`,
+    action: `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=28&language=en-US`,
     fantasy: `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=14&language=en-US`,
+    drama: `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=18&language=en-US`,
+    romance: `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=10749&language=en-US`,
   };
 
   const hamburger = document.getElementById("hamburger-icon");
