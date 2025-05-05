@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterMenu = document.getElementById("filter-menu");
   const filteredContainer = document.getElementById("filtered-movies");
 
-  //toggle the hamburger menu
+  //toggle the hamburger menu when clicked
   hamburger.addEventListener("click", () => {
     filterMenu.classList.toggle("visible");
   });
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const genre = btn.getAttribute("data-genre");
 
+      //Hide the sections and show the filtered section
       document
         .querySelectorAll(
           ".carousel-section, .tinder-section, #genre-carousels"
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     filteredContainer.style.display = "grid";
     filteredContainer.innerHTML = "";
 
+    //Search url for TMDB API
     const searchUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${encodeURIComponent(
       query
     )}&page=1`;
