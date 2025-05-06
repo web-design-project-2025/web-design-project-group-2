@@ -21,8 +21,8 @@ function register() {
   localStorage.setItem("critix-user", JSON.stringify(user));
 
   //Redirect or show the success
-  alert("Account created! Please log in.");
-  window.location.href = "login.html";
+  alert("Account created!");
+  window.location.href = "account.html";
 }
 
 //Function for the log in validation

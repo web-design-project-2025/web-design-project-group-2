@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background: url("../images/Background.png") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+main.account-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.profile-picture img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: rgba(68, 176, 228, 0.5);
+}
+
+.profile-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.profile-info a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #44b0e4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.profile-info a:hover {
+  text-decoration: underline;
+}
+
+.carousel-section {
+  margin-bottom: 40px;
+}
+
+.carousel-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.carousel {
+  background-color: rgba(68, 176, 228, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 250px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.review-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+#review-container {
+  background-color: rgba(68, 176, 228, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 400px;
+}

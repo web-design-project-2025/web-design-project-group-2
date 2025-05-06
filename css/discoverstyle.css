@@ -1,5 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: url("../images/Background.png") no-repeat center center fixed;
+  background-size: cover;
+  line-height: 1.6;
+  padding: 0 1rem;
+  color: white;
+}
+
 /*Title odf the page*/
 .mainTitle h1 {
   text-align: center;
