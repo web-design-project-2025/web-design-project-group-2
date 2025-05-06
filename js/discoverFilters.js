@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const hamburger = document.getElementById("hamburger-icon");
   const filterMenu = document.getElementById("filter-menu");
-  const filteredContainer = document.getElementById("filtered-movies");
+  const filterContainer = document.getElementById("filtered-movies");
 
   //toggle the hamburger menu when clicked
   hamburger.addEventListener("click", () => {
@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
         )
         .forEach((section) => (section.style.display = "none"));
 
-      filteredContainer.style.display = "grid";
-      filteredContainer.innerHTML = "";
+      filterContainer.style.display = "grid";
+      filterContainer.innerHTML = "";
 
       fetchAndDisplay(genreEndpoints[genre], "filtered-movies", genre, 20);
     });
@@ -43,18 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelectorAll(".carousel-section, .tinder-section, #genre-carousels")
       .forEach((section) => (section.style.display = "block"));
 
-    filteredContainer.style.display = "none";
-    filteredContainer.innerHTML = "";
+    filterContainer.style.display = "none";
+    filterContainer.innerHTML = "";
 
     filterMenu.classList.remove("visible");
   });
 
   //Search function
-  const searchInput = document.getElementById("search-input");
+  const searchBar = document.getElementById("search-bar");
   const searchButton = document.getElementById("search-button");
 
   searchButton.addEventListener("click", () => {
-    const query = searchInput.value.trim();
+    const query = searchBar.value.trim();
 
     if (query === "") return;
 
@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelectorAll(".carousel-section, .tinder-section, #genre-carousels")
       .forEach((section) => (section.style.display = "none"));
 
-    filteredContainer.style.display = "grid";
-    filteredContainer.innerHTML = "";
+    filterContainer.style.display = "grid";
+    filterContainer.innerHTML = "";
 
     //Search url for TMDB API
     const searchUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${encodeURIComponent(
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         if (results.length === 0) {
-          filteredContainer.innerHTML = "<p>No results found. </p>";
+          filterContainer.innerHTML = "<p>No results found. </p>";
           return;
         }
 
@@ -93,18 +93,18 @@ document.addEventListener("DOMContentLoaded", () => {
               <h3>${item.title || item.name}</h3>
               <p>⭐ ${item.vote_average || "N/A"}</p>
             </a>`;
-          filteredContainer.appendChild(card);
+          filterContainer.appendChild(card);
         });
       })
 
       .catch((err) => {
         console.error("Search failed:", err);
-        filteredContainer.innerHTML = "<p>Search failed. Try again.</p>";
+        filterContainer.innerHTML = "<p>Search failed. Try again.</p>";
       });
   });
 
   //Search with 'enter'
-  searchInput.addEventListener("keypress", (e) => {
+  searchBar.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
       searchButton.click();
     }

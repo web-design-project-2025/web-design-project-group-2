@@ -50,19 +50,35 @@ main.account-page {
 }
 
 /*Movies and series section*/
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.more-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.more-link:hover {
+  text-decoration: underline;
+  color: #44b0e4;
+}
+
 .carousel-section {
   margin-bottom: 40px;
 }
 
-.carousel-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  font-weight: 300;
-}
-
-.carousel-section a {
-  color: white;
-}
 .carousel {
   background-color: rgba(68, 176, 228, 0.3);
   border-radius: 20px;
