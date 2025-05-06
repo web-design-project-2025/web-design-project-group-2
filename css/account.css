@@ -60,6 +60,9 @@ main.account-page {
   font-weight: 300;
 }
 
+.carousel-section a {
+  color: white;
+}
 .carousel {
   background-color: rgba(68, 176, 228, 0.3);
   border-radius: 20px;
