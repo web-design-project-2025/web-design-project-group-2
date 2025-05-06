@@ -11,14 +11,21 @@
   <body>
     <div id="navbar"></div>
 
-    <div class="form-container">
-      <h2>Log In</h2>
-      <input type="text" id="login-username" placeholder="Username or Email" />
-      <input type="password" id="login-password" placeholder="Password" />
-      <button onclick="login()">Login</button>
-      <p>Don't have an account? <a href="register.html">Create account</a></p>
-      <p id="logun-error" class="error-msg"></p>
-    </div>
+    <main>
+      <div class="form-container">
+        <h2>Log In</h2>
+        <input
+          type="text"
+          id="login-username"
+          placeholder="Username or Email"
+        />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button onclick="login()">Login</button>
+        <p>Don't have an account?</p>
+        <a href="register.html" class="button-link">Create Account</a>
+        <p id="login-error" class="error-msg"></p>
+      </div>
+    </main>
 
     <!-- Dynamic footer, has a different html/css file connected to every page-->
     <div id="footer"></div>
