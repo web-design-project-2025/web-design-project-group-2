@@ -13,6 +13,7 @@
     <div id="navbar"></div>
 
     <main class="account-page">
+      <!--Profile info-->
       <section class="profile-section">
         <div class="profile-picture">
           <img src="images/icons/user.png" alt="User Icon" />
@@ -21,17 +22,29 @@
           <p>
             <strong>Name: </strong> <span id="profile-name">User Name</span>
           </p>
-          <p><strong>Reviews: </strong> <span id="profile-reviews">0</span></p>
+          <p><strong>Reviews: </strong> <span id="profile-reviews">3</span></p>
           <p>
             <strong>Favorite Movie: </strong>
             <span id="profile-favorite">-</span>
           </p>
           <p><strong>Level: </strong> <span id="profile-level">1</span></p>
-          <p><strong>Friends: </strong> <span id="profile-friends">0</span></p>
+          <p><strong>Friends: </strong> <span id="profile-friends">3</span></p>
+
+          <!--Edit profile info-->
           <a href="#" id="edit-profile">Edit Profile</a>
+          <div id="edit-form" class="edit-form hid">
+            <input type="text" id="edit-name" placeholder="Enter new name" />
+            <input
+              type="text"
+              id="edit-favorite"
+              placeholder="Enter favorite movie"
+            />
+            <button id="save-profile">Save</button>
+          </div>
         </div>
       </section>
 
+      <!--Movie and serie section-->
       <section class="carousel-section">
         <div class="section-header">
           <h3>Movies Reviewed</h3>
@@ -48,6 +61,7 @@
         <div class="carousel" id="series-carousel"></div>
       </section>
 
+      <!--Review section-->
       <section class="review-section">
         <div class="section-header">
           <h3>Reviews</h3>

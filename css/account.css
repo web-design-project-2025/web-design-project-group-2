@@ -25,9 +25,9 @@ main.account-page {
 }
 
 .profile-picture img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
   background-color: rgba(68, 176, 228, 0.5);
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.8);
 }
@@ -49,8 +49,34 @@ main.account-page {
   text-decoration: underline;
 }
 
-/*Movies and series section*/
+.edit-form {
+  margin-top: 1em;
+}
 
+.edit-form input {
+  border-radius: 20px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.8);
+  width: 200px;
+  padding: 5px;
+}
+
+.edit-form button {
+  border-radius: 20px;
+  width: 50px;
+  background-color: rgba(68, 176, 228, 0.5);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.8);
+}
+
+.edit-form button:hover {
+  background-color: #44b0e4;
+  cursor: pointer;
+}
+
+.hid {
+  display: none;
+}
+
+/*Movies and series section*/
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -95,6 +121,9 @@ main.account-page {
   text-align: center;
 }
 
+.movie-card:hover {
+  scale: 1.05;
+}
 .movie-card img {
   width: 100%;
   border-radius: 12px;
@@ -113,6 +142,7 @@ main.account-page {
   font-size: 0.9rem;
   color: white;
 }
+
 /*Reviews section*/
 .review-section h3 {
   font-size: 1.5rem;

@@ -1,4 +1,4 @@
-//Function to show specific movies with their IDs
+//Functions to show specific movies and series with their IDs
 
 const movieId = [986056, 950387, 348, 603, 157336];
 const seriesId = [1399, 66732, 100088, 1402, 82856];
@@ -59,19 +59,45 @@ function getSpecificSerie(serieIds, containerId) {
   });
 }
 
+//Load and show the user profile info from localStorage
+function loadUserProfile() {
+  const user = JSON.parse(localStorage.getItem("critix-user"));
+  if (user) {
+    document.getElementById("profile-name").textContent =
+      user.name || "Jane Doe";
+    document.getElementById("profile-favorite").textContent =
+      user.favoriteMovie || "-";
+  } else {
+    document.getElementById("profile-name").textContent = "Jane Doe";
+    document.getElementById("profile-favorite").textContent = "-";
+  }
+}
+
+//Be able to edit profile
+const editForm = document.getElementById("edit-form");
+const editName = document.getElementById("edit-name");
+const editFavorite = document.getElementById("edit-favorite");
+
+document.getElementById("edit-profile").onclick = (e) => {
+  e.preventDefault();
+  editForm.classList.toggle("hid");
+};
+
+document.getElementById("save-profile").onclick = () => {
+  const user = JSON.parse(localStorage.getItem("critix-user")) || {};
+  if (editName.value) user.name = editName.value.trim();
+  if (editFavorite.value) user.favoriteMovie = editFavorite.value.trim();
+
+  localStorage.setItem("critix-user", JSON.stringify(user));
+  loadUserProfile();
+
+  //Reset the form
+  editName.value = "";
+  editFavorite.value = "";
+  editForm.classList.add("hid");
+};
+
+//Initialize
 getSpecificMovie(movieId, "movie-carousel");
 getSpecificSerie(seriesId, "series-carousel");
-
-/*fetchAndDisplay(
-  "https://api.themoviedb.org/3/movie/popular?api_key=ae0a4eba1c7e749c1ac3ccf61effa065&language=en-US&page=1",
-  "movie-carousel",
-  "movie",
-  5
-);
-
-fetchAndDisplay(
-  "https://api.themoviedb.org/3/tv/popular?api_key=ae0a4eba1c7e749c1ac3ccf61effa065&language=en-US&page=1",
-  "series-carousel",
-  "series",
-  5
-);*/
+loadUserProfile();

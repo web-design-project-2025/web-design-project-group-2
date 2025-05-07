@@ -38,7 +38,7 @@ function login() {
   }
 
   if (
-    (enteredUser === savedUser.username || eneteredUser === savedUser.email) &&
+    (enteredUser === savedUser.username || enteredUser === savedUser.email) &&
     eneteredPass === savedUser.password
   ) {
     alert("Logged in successfully!");
