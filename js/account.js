@@ -113,33 +113,82 @@ function showReview(index) {
     const card = document.createElement("div");
     card.classList.add("review-card");
 
-    card.innerHTML = `<div class="review-user">
-            <img src="images/icons/user.png" alt="User picture" />
-            <span>@${username}</span>
-            </div>
-            <div class="review-content">
-            <h3>${review.movieTitle} (${review.year})</h3>
-            <p><span class="star">⭐</span>${review.rating}/10</p>
-            <p>${review.review}</p>
-            <div class="review-likes">👍 ${review.likes}</div>
-            </div>`;
+    card.innerHTML = `<button class="delete-btn" title="Delete Review">🗑️</button>
+    <div class="review-user">
+    <img src="images/icons/user.png" alt="User picture" />
+    <span>@${username}</span>
+    </div>
+    <div class="review-content">
+    <h3>${review.movieTitle} (${review.year})</h3>
+    <p><span class="star">⭐</span><span class="rating">${review.rating}</span>/10</p>
+    <p class="text">${review.review}</p>
+    <div class="review-likes">👍 ${review.likes}</div>
+    <button class="edit-btn">Edit</button>
+    <div class="review-edit-form hid">
+    <input type="number" min="1" max="10" class="edit-rating" value="${review.rating}" />
+    <input type="text" class="edit-text" value="${review.review}" />
+    <button class="save-review-btn">Save</button>
+    </div>
+    </div>`;
 
     container.appendChild(card);
+
+    //Edit
+    const editButton = card.querySelector(".edit-btn");
+    const editForm = card.querySelector(".review-edit-form");
+    const saveButton = card.querySelector(".save-review-btn");
+
+    editButton.addEventListener("click", () => {
+      editForm.classList.toggle("hid");
+    });
+
+    saveButton.addEventListener("click", () => {
+      const newText = card.querySelector(".edit-text").value.trim();
+      const newRating = parseInt(card.querySelector(".edit-rating").value);
+
+      if (newText && !isNaN(newRating)) {
+        review.review = newText;
+        review.rating = newRating;
+
+        localStorage.setItem("critix-reviews", JSON.stringify(allReviews));
+        showReview(index);
+      }
+    });
+
+    //Delete
+    const deleteButton = card.querySelector(".delete-btn");
+    deleteButton.addEventListener("click", () => {
+      if (confirm("Are you sure you want to delete this?")) {
+        allReviews.splice(index, 1);
+        localStorage.setItem("critix-reviews", JSON.stringify(allReviews));
+        if (currentReview >= allReviews.length)
+          currentReview = allReviews.length - 1;
+        showReview(currentReview);
+      }
+    });
   }
 }
 
 //Function to load the reviews
 function loadUserReviews() {
-  fetch("data/userReviews.json")
-    .then((response) => response.json())
-    .then((reviews) => {
-      allReviews = reviews;
-      currentReview = 0;
-      showReview(currentReview);
-    })
-    .catch((error) => {
-      console.error("Error loading user reviews:", error);
-    });
+  const saved = localStorage.getItem("critix-reviews");
+  if (saved) {
+    allReviews = JSON.parse(saved);
+    currentReview = 0;
+    showReview(currentReview);
+  } else {
+    fetch("data/userReviews.json")
+      .then((response) => response.json())
+      .then((reviews) => {
+        allReviews = reviews;
+        localStorage.setItem("critix-reviews", JSON.stringify(reviews));
+        currentReview = 0;
+        showReview(currentReview);
+      })
+      .catch((error) => {
+        console.error("Error loading user reviews:", error);
+      });
+  }
 }
 
 //Arrows
@@ -157,8 +206,30 @@ document.getElementById("next-rev").addEventListener("click", () => {
   }
 });
 
+//Function to load and show friends from json file
+function loadFriends() {
+  const container = document.getElementById("friends-list");
+  container.innerHTML = "";
+
+  fetch("data/friends.json")
+    .then((res) => res.json())
+    .then((friends) => {
+      friends.forEach((friend) => {
+        const card = document.createElement("div");
+        card.classList.add("friends-card");
+        card.innerHTML = `<img src="${friend.picture}" alt="Friend picture" />
+            <span>@${friend.username}</span>`;
+        container.appendChild(card);
+      });
+    })
+    .catch((error) => {
+      console.error("failed to load friends:", error);
+    });
+}
+
 //Initialize
 getSpecificMovie(movieId, "movie-carousel");
 getSpecificSerie(seriesId, "series-carousel");
 loadUserProfile();
 loadUserReviews();
+loadFriends();

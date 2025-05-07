@@ -22,5 +22,13 @@
     "rating": 9,
     "review": "The Martix is a great example of a movie that will live for ever or a very log time. The story and concept are out of this world.",
     "likes": 86
+  },
+  {
+    "username": "janedoe",
+    "movieTitle": "Interstellar",
+    "year": 2014,
+    "rating": 10,
+    "review": "I can safely say that it has been a long LONG time since a movie had this much effect on me after watching it.",
+    "likes": 86
   }
 ]
