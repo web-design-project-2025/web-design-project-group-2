@@ -65,18 +65,19 @@ main.account-page {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.8);
   width: 200px;
   padding: 5px;
+  margin-right: 10px;
 }
 
 .edit-form button {
   border-radius: 20px;
-  width: 50px;
+  width: 60px;
   background-color: rgba(68, 176, 228, 0.5);
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 
 .edit-form button:hover {
   background-color: #44b0e4;
-  cursor: pointer;
 }
 
 .hid {
@@ -124,6 +125,7 @@ main.account-page {
 
 .movie-card {
   width: 208px;
+  min-height: 350px;
   flex: 0 0 auto;
   text-align: center;
 }
@@ -131,6 +133,7 @@ main.account-page {
 .movie-card:hover {
   scale: 1.05;
 }
+
 .movie-card img {
   width: 100%;
   border-radius: 12px;
@@ -151,7 +154,6 @@ main.account-page {
 }
 
 /*Reviews section*/
-
 .review-section {
   margin-top: 40px;
   padding: 20px;
@@ -163,16 +165,36 @@ main.account-page {
   font-weight: 300;
 }
 
+.review-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.review-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+}
+
 .review-card {
   background-color: rgba(68, 176, 228, 0.4);
   border-radius: 20px;
   padding: 20px;
   color: white;
-  max-width: 700px;
+  min-width: 300px;
+  height: 250px;
   margin: 20px auto;
   display: flex;
   gap: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 
 .review-user {
@@ -196,6 +218,8 @@ main.account-page {
 
 .review-content {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .review-content h3 {
@@ -209,32 +233,15 @@ main.account-page {
 }
 
 .review-likes {
-  margin-top: 20px;
   font-weight: bold;
-}
-
-.review-carousel {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 10px;
-  scroll-snap-type: x mandatory;
-}
-
-.review-card {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-}
-
-.review-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
 }
 
 #previous-rev,
 #next-rev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
   background-color: rgba(68, 176, 228, 0.5);
   color: white;
   font-size: 1.5rem;
@@ -243,6 +250,14 @@ main.account-page {
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#previous-rev {
+  left: 0;
+}
+
+#next-rev {
+  right: 0;
 }
 
 #previous-rev:hover,
