@@ -1,8 +1,31 @@
-//Functions to show specific movies and series with their IDs
-
 const movieId = [986056, 950387, 348, 603, 157336];
 const seriesId = [1399, 66732, 100088, 1402, 82856];
 
+const editForm = document.getElementById("edit-form");
+const editName = document.getElementById("edit-name");
+const editFavorite = document.getElementById("edit-favorite");
+
+//Be able to edit profile
+document.getElementById("edit-profile").onclick = (e) => {
+  e.preventDefault();
+  editForm.classList.toggle("hid");
+};
+
+document.getElementById("save-profile").onclick = () => {
+  const user = JSON.parse(localStorage.getItem("critix-user")) || {};
+  if (editName.value) user.name = editName.value.trim();
+  if (editFavorite.value) user.favoriteMovie = editFavorite.value.trim();
+
+  localStorage.setItem("critix-user", JSON.stringify(user));
+  loadUserProfile();
+
+  //Reset the form
+  editName.value = "";
+  editFavorite.value = "";
+  editForm.classList.add("hid");
+};
+
+//Functions to show specific movies and series with their IDs
 function getSpecificMovie(movieIds, containerId) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
@@ -76,30 +99,7 @@ function loadUserProfile() {
   }
 }
 
-//Be able to edit profile
-const editForm = document.getElementById("edit-form");
-const editName = document.getElementById("edit-name");
-const editFavorite = document.getElementById("edit-favorite");
-
-document.getElementById("edit-profile").onclick = (e) => {
-  e.preventDefault();
-  editForm.classList.toggle("hid");
-};
-
-document.getElementById("save-profile").onclick = () => {
-  const user = JSON.parse(localStorage.getItem("critix-user")) || {};
-  if (editName.value) user.name = editName.value.trim();
-  if (editFavorite.value) user.favoriteMovie = editFavorite.value.trim();
-
-  localStorage.setItem("critix-user", JSON.stringify(user));
-  loadUserProfile();
-
-  //Reset the form
-  editName.value = "";
-  editFavorite.value = "";
-  editForm.classList.add("hid");
-};
-
+//
 //Initialize
 getSpecificMovie(movieId, "movie-carousel");
 getSpecificSerie(seriesId, "series-carousel");

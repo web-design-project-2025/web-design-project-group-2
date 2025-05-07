@@ -151,15 +151,64 @@ main.account-page {
 }
 
 /*Reviews section*/
-.review-section h3 {
+
+.review-section {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.reviews-section h2 {
   font-size: 1.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-weight: 300;
 }
 
-#review-container {
-  background-color: rgba(68, 176, 228, 0.3);
+.review-card {
+  background-color: rgba(68, 176, 228, 0.4);
   border-radius: 20px;
   padding: 20px;
-  min-height: 400px;
+  color: white;
+  max-width: 700px;
+  margin: 20px auto;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.review-user {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.review-user img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  background: #cccccc6c;
+}
+
+.review-user span {
+  display: block;
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.review-content {
+  flex-grow: 1;
+}
+
+.review-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.review-content p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.review-likes {
+  margin-top: 10px;
+  font-weight: bold;
 }
