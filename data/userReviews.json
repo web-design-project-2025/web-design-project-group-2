@@ -1,0 +1,20 @@
+[
+  {
+    "username": "janedoe",
+    "movieTitle": "The Social Network",
+    "movieId": 37799,
+    "year": 2010,
+    "rating": 9,
+    "review": "I wasn't expecting a movie about Facebook to be this intense, but The Social Network really surprised me...",
+    "likes": 50
+  },
+  {
+    "username": "janedoe",
+    "movieTitle": "Inception",
+    "movieId": 27205,
+    "year": 2010,
+    "rating": 10,
+    "review": "Mind blowing visuals and a story that bends your brain. Nolan is a genius!",
+    "likes": 80
+  }
+]

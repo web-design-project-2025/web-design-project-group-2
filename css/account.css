@@ -204,11 +204,24 @@ main.account-page {
 }
 
 .review-content p {
-  margin: 5px 0;
+  margin: 10px 0;
   font-size: 0.95rem;
 }
 
 .review-likes {
-  margin-top: 10px;
+  margin-top: 20px;
   font-weight: bold;
+}
+
+.review-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.review-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }

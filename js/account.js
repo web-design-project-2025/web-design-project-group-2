@@ -25,6 +25,23 @@ document.getElementById("save-profile").onclick = () => {
   editForm.classList.add("hid");
 };
 
+//Load and show the user profile info from localStorage
+function loadUserProfile() {
+  const user = JSON.parse(localStorage.getItem("critix-user"));
+  if (user) {
+    document.getElementById("profile-name").textContent =
+      user.name || "Jane Doe";
+    document.getElementById("profile-favorite").textContent =
+      user.favoriteMovie || "-";
+    document.getElementById("username-dis").textContent =
+      user.username || "Jane Doe";
+  } else {
+    document.getElementById("profile-name").textContent = "Jane Doe";
+    document.getElementById("profile-favorite").textContent = "-";
+    document.getElementById("username-dis").textContent = "Jane Doe";
+  }
+}
+
 //Functions to show specific movies and series with their IDs
 function getSpecificMovie(movieIds, containerId) {
   const container = document.getElementById(containerId);
@@ -39,13 +56,11 @@ function getSpecificMovie(movieIds, containerId) {
         const card = document.createElement("div");
         card.classList.add("movie-card");
 
-        card.innerHTML = `
-          <a href="movieDetail.html?id=${movie.id}">
+        card.innerHTML = `<a href="movieDetail.html?id=${movie.id}">
             <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
             <h3>${movie.title}</h3>
             <p>⭐ ${movie.vote_average}</p>
-          </a>
-        `;
+          </a>`;
         container.appendChild(card);
       })
       .catch((err) => {
@@ -67,13 +82,11 @@ function getSpecificSerie(serieIds, containerId) {
         const card = document.createElement("div");
         card.classList.add("movie-card");
 
-        card.innerHTML = `
-          <a href="seriesDetail.html?id=${series.id}">
+        card.innerHTML = `<a href="seriesDetail.html?id=${series.id}">
             <img src="https://image.tmdb.org/t/p/w500${series.poster_path}" alt="${series.name}">
             <h3>${series.name}</h3>
             <p>⭐ ${series.vote_average}</p>
-          </a>
-        `;
+          </a>`;
         container.appendChild(card);
       })
       .catch((err) => {
@@ -82,25 +95,39 @@ function getSpecificSerie(serieIds, containerId) {
   });
 }
 
-//Load and show the user profile info from localStorage
-function loadUserProfile() {
-  const user = JSON.parse(localStorage.getItem("critix-user"));
-  if (user) {
-    document.getElementById("profile-name").textContent =
-      user.name || "Jane Doe";
-    document.getElementById("profile-favorite").textContent =
-      user.favoriteMovie || "-";
-    document.getElementById("username-dis").textContent =
-      user.username || "Jane Doe";
-  } else {
-    document.getElementById("profile-name").textContent = "Jane Doe";
-    document.getElementById("profile-favorite").textContent = "-";
-    document.getElementById("username-dis").textContent = "Jane Doe";
-  }
+//Loading and showing reviews from a json file
+function loadUserReviews() {
+  fetch("data/userReviews.json")
+    .then((response) => response.json())
+    .then((reviews) => {
+      const container = document.getElementById("user-reviews");
+      container.innerHTML = "";
+
+      reviews.forEach((review) => {
+        const card = document.createElement("div");
+        card.classList.add("review-card");
+
+        card.innerHTML = `<div class="review-user">
+            <img src="images/icons/user.png" alt="User picture" />
+            <span>@${review.username}</span>
+            </div>
+            <div class="review-content">
+            <h3>${review.movieTitle} (${review.year})</h3>
+            <p><span class="star">⭐</span>${review.rating}/10</p>
+            <p>${review.review}</p>
+            <div class="review-likes">👍 ${review.likes}</div>
+            </div>`;
+
+        container.appendChild(card);
+      });
+    })
+    .catch((error) => {
+      console.error("Error loading user reviews:", error);
+    });
 }
 
-//
 //Initialize
 getSpecificMovie(movieId, "movie-carousel");
 getSpecificSerie(seriesId, "series-carousel");
 loadUserProfile();
+loadUserReviews();
