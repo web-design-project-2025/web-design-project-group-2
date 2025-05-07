@@ -67,9 +67,12 @@ function loadUserProfile() {
       user.name || "Jane Doe";
     document.getElementById("profile-favorite").textContent =
       user.favoriteMovie || "-";
+    document.getElementById("username-dis").textContent =
+      user.username || "Jane Doe";
   } else {
     document.getElementById("profile-name").textContent = "Jane Doe";
     document.getElementById("profile-favorite").textContent = "-";
+    document.getElementById("username-dis").textContent = "Jane Doe";
   }
 }
 
