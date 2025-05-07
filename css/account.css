@@ -225,3 +225,27 @@ main.account-page {
   flex: 0 0 auto;
   scroll-snap-align: start;
 }
+
+.review-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#previous-rev,
+#next-rev {
+  background-color: rgba(68, 176, 228, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#previous-rev:hover,
+#next-rev:hover {
+  background-color: #44b0e4;
+}

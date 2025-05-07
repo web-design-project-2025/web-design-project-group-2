@@ -95,19 +95,20 @@ function getSpecificSerie(serieIds, containerId) {
   });
 }
 
-//Loading and showing reviews from a json file
-function loadUserReviews() {
-  fetch("data/userReviews.json")
-    .then((response) => response.json())
-    .then((reviews) => {
-      const container = document.getElementById("user-reviews");
-      container.innerHTML = "";
+//Loading and showing reviews from a json file once at a time
+let currentReview = 0;
+let allReviews = [];
 
-      reviews.forEach((review) => {
-        const card = document.createElement("div");
-        card.classList.add("review-card");
+function showReview(index) {
+  const container = document.getElementById("user-reviews");
+  container.innerHTML = "";
 
-        card.innerHTML = `<div class="review-user">
+  if (allReviews.length > 0) {
+    const review = allReviews[index];
+    const card = document.createElement("div");
+    card.classList.add("review-card");
+
+    card.innerHTML = `<div class="review-user">
             <img src="images/icons/user.png" alt="User picture" />
             <span>@${review.username}</span>
             </div>
@@ -118,13 +119,37 @@ function loadUserReviews() {
             <div class="review-likes">👍 ${review.likes}</div>
             </div>`;
 
-        container.appendChild(card);
-      });
+    container.appendChild(card);
+  }
+}
+
+function loadUserReviews() {
+  fetch("data/userReviews.json")
+    .then((response) => response.json())
+    .then((reviews) => {
+      allReviews = reviews;
+      currentReview = 0;
+      showReview(currentReview);
     })
     .catch((error) => {
       console.error("Error loading user reviews:", error);
     });
 }
+
+//Arrows
+document.getElementById("previous-rev").addEventListener("click", () => {
+  if (currentReview > 0) {
+    currentReview--;
+    showReview(currentReview);
+  }
+});
+
+document.getElementById("next-rev").addEventListener("click", () => {
+  if (currentReview < allReviews.length - 1) {
+    currentReview++;
+    showReview(currentReview);
+  }
+});
 
 //Initialize
 getSpecificMovie(movieId, "movie-carousel");
