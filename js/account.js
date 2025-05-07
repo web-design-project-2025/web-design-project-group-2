@@ -95,7 +95,7 @@ function getSpecificSerie(serieIds, containerId) {
   });
 }
 
-//Loading and showing reviews from a json file once at a time
+//Function to show reviews from a json file once at a time
 let currentReview = 0;
 let allReviews = [];
 
@@ -105,12 +105,17 @@ function showReview(index) {
 
   if (allReviews.length > 0) {
     const review = allReviews[index];
+
+    //Get username
+    const user = JSON.parse(localStorage.getItem("critix-user"));
+    const username = user?.username || "Jane Doe";
+
     const card = document.createElement("div");
     card.classList.add("review-card");
 
     card.innerHTML = `<div class="review-user">
             <img src="images/icons/user.png" alt="User picture" />
-            <span>@${review.username}</span>
+            <span>@${username}</span>
             </div>
             <div class="review-content">
             <h3>${review.movieTitle} (${review.year})</h3>
@@ -123,6 +128,7 @@ function showReview(index) {
   }
 }
 
+//Function to load the reviews
 function loadUserReviews() {
   fetch("data/userReviews.json")
     .then((response) => response.json())
