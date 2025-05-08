@@ -1,0 +1,344 @@
+#reviews-text {
+  text-align: center;
+  font-weight: 300;
+  font-size: 2rem;
+  margin-top: 2em auto;
+}
+
+.reviews-container {
+  position: relative;
+  width: 100%;
+  height: 2000px;
+}
+
+.review-box {
+  position: absolute;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.review-header {
+  display: flex;
+}
+
+.user-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.username {
+  text-align: center;
+}
+
+.review-1 {
+  top: 150px;
+  left: 80px;
+  width: 320px;
+  height: 180px;
+  background-color: #d2232a;
+  opacity: 70%;
+}
+
+.review-1 .user-img img {
+  width: 90px;
+  height: 100px;
+}
+
+.review-1 .username {
+  font-size: 10px;
+}
+
+.review-1 .movie-title,
+.review-1 .rating {
+  font-size: 12px;
+}
+
+.review-1 .review-title {
+  font-size: 11px;
+}
+
+.review-1 .review-content {
+  font-size: 10px;
+}
+
+.review-2 {
+  top: 550px;
+  left: 200px;
+  width: 240px;
+  height: 135px;
+  background-color: #44b0e4;
+  opacity: 60%;
+}
+
+.review-2 .user-img img {
+  width: 36px;
+  height: 45px;
+}
+
+.review-2 .username {
+  font-size: 9px;
+}
+
+.review-2 .movie-title,
+.review-2 .rating {
+  font-size: 11px;
+}
+
+.review-2 .review-title {
+  font-size: 10px;
+}
+
+.review-2 .review-content {
+  font-size: 9px;
+}
+
+.review-3 {
+  top: 400px;
+  left: 500px;
+  width: 400px;
+  height: 225px;
+  background-color: #44b0e4;
+  opacity: 100%;
+}
+.review-3 .user-img img {
+  width: 32px;
+  height: 40px;
+}
+
+.review-3 .username {
+  font-size: 8px;
+}
+
+.review-3 .movie-title,
+.review-3 .rating {
+  font-size: 10px;
+}
+
+.review-3 .review-title {
+  font-size: 9px;
+}
+
+.review-3 .review-content {
+  font-size: 8px;
+}
+
+.review-4 {
+  top: 850px;
+  left: 80px;
+  width: 280px;
+  height: 157.5px;
+  background-color: #d2232a;
+  opacity: 70%;
+}
+
+.review-4 .user-img img {
+  width: 28px;
+  height: 35px;
+}
+
+.review-4 .username {
+  font-size: 7px;
+}
+
+.review-4 .movie-title,
+.review-4 .rating {
+  font-size: 9px;
+}
+
+.review-4 .review-title {
+  font-size: 8px;
+}
+
+.review-4 .review-content {
+  font-size: 7px;
+}
+
+.review-5 {
+  top: 100px;
+  left: 650px;
+  width: 360px;
+  height: 202.5px;
+  background-color: #44b0e4;
+  opacity: 90%;
+}
+.review-5 .user-img img {
+  width: 45px;
+  height: 55px;
+}
+
+.review-5 .username {
+  font-size: 11px;
+}
+
+.review-5 .movie-title,
+.review-5 .rating {
+  font-size: 13px;
+}
+
+.review-5 .review-title {
+  font-size: 12px;
+}
+
+.review-5 .review-content {
+  font-size: 11px;
+}
+.review-6 {
+  top: 1000px;
+  left: 600px;
+  width: 300px;
+  height: 168.75px;
+  background-color: #44b0e4;
+  opacity: 60%;
+}
+
+.review-6 .user-img img {
+  width: 40px;
+  height: 50px;
+}
+
+.review-6 .username {
+  font-size: 10px;
+}
+
+.review-6 .movie-title,
+.review-6 .rating {
+  font-size: 12px;
+}
+
+.review-6 .review-title {
+  font-size: 11px;
+}
+
+.review-6 .review-content {
+  font-size: 10px;
+}
+
+.review-7 {
+  top: 300px;
+  left: 1140px;
+  width: 200px;
+  height: 112.5px;
+  background-color: #d2232a;
+  opacity: 40%;
+}
+
+.review-7 .user-img img {
+  width: 35px;
+  height: 45px;
+}
+
+.review-7 .username {
+  font-size: 9px;
+}
+
+.review-7 .movie-title,
+.review-7 .rating {
+  font-size: 11px;
+}
+
+.review-7 .review-title {
+  font-size: 10px;
+}
+
+.review-7 .review-content {
+  font-size: 9px;
+}
+
+.review-8 {
+  top: 700px;
+  left: 900px;
+  width: 340px;
+  height: 191.25px;
+  background-color: #d2232a;
+  opacity: 90%;
+}
+
+.review-8 .user-img img {
+  width: 30px;
+  height: 38px;
+}
+
+.review-8 .username {
+  font-size: 8px;
+}
+
+.review-8 .movie-title,
+.review-8 .rating {
+  font-size: 10px;
+}
+
+.review-8 .review-title {
+  font-size: 9px;
+}
+
+.review-8 .review-content {
+  font-size: 8px;
+}
+.review-9 {
+  top: 500px;
+  left: 1150px;
+  width: 260px;
+  height: 146.25px;
+  background-color: #44b0e4;
+  opacity: 70%;
+}
+.review-9 .user-img img {
+  width: 25px;
+  height: 30px;
+}
+
+.review-9 .username {
+  font-size: 7px;
+}
+
+.review-9 .movie-title,
+.review-9 .rating {
+  font-size: 9px;
+}
+
+.review-9 .review-title {
+  font-size: 8px;
+}
+
+.review-9 .review-content {
+  font-size: 7px;
+}
+
+.review-10 {
+  top: 800px;
+  left: 500px;
+  width: 200px;
+  height: 112.5px;
+  background-color: #d2232a;
+  opacity: 40%;
+}
+
+.review-10 .user-img img {
+  width: 30px;
+  height: 38px;
+}
+
+.review-10 .username {
+  font-size: 8px;
+}
+
+.review-10 .movie-title,
+.review-10 .rating {
+  font-size: 10px;
+}
+
+.review-10 .review-title {
+  font-size: 9px;
+}
+
+.review-10 .review-content {
+  font-size: 8px;
+}
