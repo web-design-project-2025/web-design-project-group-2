@@ -88,7 +88,7 @@ main.account-page {
   display: block;
   margin-top: 20px;
   padding: 8px 16px;
-  background-color: rgba(255, 0, 0, 0.3);
+  background-color: rgba(210, 35, 42, 0.3);
   color: white;
   border: none;
   border-radius: 20px;
@@ -98,7 +98,7 @@ main.account-page {
 }
 
 .logout-btn:hover {
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(210, 35, 42, 0.5);
 }
 
 /*Movies and series section*/
@@ -254,6 +254,11 @@ main.account-page {
   font-weight: bold;
 }
 
+.review-likes img {
+  margin-top: 20px;
+  width: 25px;
+}
+
 #previous-rev,
 #next-rev {
   position: absolute;
@@ -327,6 +332,10 @@ main.account-page {
   border: none;
   font-size: 20px;
   cursor: pointer;
+}
+
+.delete-btn img {
+  width: 30px;
 }
 
 /*Friends section*/

@@ -135,7 +135,7 @@ function showReview(index) {
     const card = document.createElement("div");
     card.classList.add("review-card");
 
-    card.innerHTML = `<button class="delete-btn" title="Delete Review">🗑️</button>
+    card.innerHTML = `<button class="delete-btn"><img src="images/icons/delete.png" alt="Delete icon"></button>
     <div class="review-user">
     <img src="images/icons/user.png" alt="User picture" />
     <span>@${username}</span>
@@ -144,7 +144,7 @@ function showReview(index) {
     <h3>${review.movieTitle} (${review.year})</h3>
     <p><span class="star">⭐</span><span class="rating">${review.rating}</span>/10</p>
     <p class="text">${review.review}</p>
-    <div class="review-likes">👍 ${review.likes}</div>
+    <div class="review-likes"><img src="images/icons/thumbsup.png" alt="Thumbs up icon"> ${review.likes}</div>
     <button class="edit-btn">Edit</button>
     <div class="review-edit-form hid">
     <input type="number" min="1" max="10" class="edit-rating" value="${review.rating}" />
