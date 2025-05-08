@@ -57,37 +57,141 @@ startAutoScroll("popular-movies", 0.8);
   if (!carousel) return; // safely exit if not present
 
   const inner = carousel.querySelector(".featured-carousel-inner");
-  const items = carousel.querySelectorAll(".featured-carousel-item");
   const dots = carousel.querySelectorAll(".featured-carousel-dot");
-  const rightArrow = carousel.querySelector(".featured-carousel-arrow.right");
-  const leftArrow = carousel.querySelector(".featured-carousel-arrow.left");
 
-  let featuredCurrentIndex = 0;
+  // Fetch popular movies for the carousel
+  fetch(endpoints.popularMovies)
+    .then((res) => res.json())
+    .then((data) => {
+      const popularMovies = data.results.slice(0, 4); // Get 4 popular movies
 
-  function showFeaturedSlide(index) {
-    const offset = -index * 100;
-    inner.style.transform = `translateX(${offset}%)`;
-    dots.forEach((dot) => dot.classList.remove("active"));
-    if (dots[index]) dots[index].classList.add("active");
-  }
+      // Clear existing placeholder
+      inner.innerHTML = "";
 
-  if (rightArrow) {
-    rightArrow.addEventListener("click", () => {
+      // Array to track when all the items are loaded
+      const loadPromises = [];
+
+      // Create a carousel item for each movie
+      popularMovies.forEach((movie, index) => {
+        const item = document.createElement("div");
+        item.className = "featured-carousel-item";
+
+        // Create a promise for each movie that's loading
+        const moviePromise = new Promise((resolve) => {
+          fetch(
+            `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${apiKey}&language=en-US`
+          )
+            .then((res) => res.json())
+            .then((videoData) => {
+              const trailer = videoData.results.find(
+                (video) => video.type === "Trailer" && video.site === "YouTube"
+              );
+
+              //HTML structure for the movie item
+              item.innerHTML = `
+            <div class="featured-movie-box">
+              <div class="featured-trailer-container">
+                ${
+                  trailer
+                    ? `<iframe src="https://www.youtube.com/embed/${trailer.key}?autoplay=1&mute=1&loop=1&playlist=${trailer.key}&controls=0" frameborder="0" allowfullscreen></iframe>`
+                    : `<div class="no-trailer-placeholder"></div>`
+                }
+              </div>
+              <div class="featured-poster-overlay">
+                <img src="https://image.tmdb.org/t/p/w500${
+                  movie.poster_path
+                }" alt="Poster for ${movie.title}" loading="lazy" />
+              </div>
+              <div class="featured-title-overlay">
+                <h2>${movie.title}</h2>
+                <p>⭐ ${movie.vote_average.toFixed(1)}</p>
+              </div>
+            </div>
+
+            <div class="featured-review-box">
+              <!-- Header with user image, movie title, and rating -->
+              <div class="featured-review-header">
+                <img src="images/icons/user.png" alt="Reviewer" loading="lazy" />
+                <div>
+                  <div class="featured-movie-title">${movie.title}</div>
+                  <div class="featured-movie-rating">⭐ ${movie.vote_average.toFixed(
+                    1
+                  )}</div>
+                  <div class="featured-review-username">Username</div> <!-- Replace with dynamic username -->
+                </div>
+              </div>
+
+              <!-- Movie review text -->
+              <div class="featured-review-text">
+                ${movie.overview.substring(0, 100)}...
+              </div>
+
+            
+            </div>
+            `;
+
+              inner.appendChild(item);
+
+              resolve();
+            })
+            .catch((err) => {
+              console.error("Error fetching video data:", err);
+              resolve(); // Resolve even if there's an error
+            });
+        });
+
+        loadPromises.push(moviePromise);
+      });
+
+      // Initialize carousel when all items are loaded
+      Promise.all(loadPromises).then(() => {
+        initCarousel();
+      });
+    })
+    .catch((err) => {
+      console.error("Error loading popular movies:", err);
+    });
+
+  // Initialize the carousel after items are loaded
+  function initCarousel() {
+    const items = document.querySelectorAll(".featured-carousel-item");
+    const rightArrow = document.querySelector(".featured-carousel-arrow.right");
+    const leftArrow = document.querySelector(".featured-carousel-arrow.left");
+
+    if (items.length === 0) return; // Safety
+
+    let featuredCurrentIndex = 0;
+
+    function showFeaturedSlide(index) {
+      const offset = -index * 100;
+      inner.style.transform = `translateX(${offset}%)`;
+      dots.forEach((dot) => dot.classList.remove("active"));
+      if (dots[index]) dots[index].classList.add("active");
+    }
+
+    // Initialize first slide
+    showFeaturedSlide(0);
+
+    // Arrow functionality
+    if (rightArrow) {
+      rightArrow.addEventListener("click", () => {
+        featuredCurrentIndex = (featuredCurrentIndex + 1) % items.length;
+        showFeaturedSlide(featuredCurrentIndex);
+      });
+    }
+
+    if (leftArrow) {
+      leftArrow.addEventListener("click", () => {
+        featuredCurrentIndex =
+          (featuredCurrentIndex - 1 + items.length) % items.length;
+        showFeaturedSlide(featuredCurrentIndex);
+      });
+    }
+
+    // Auto-slide functionality
+    const featuredInterval = setInterval(() => {
       featuredCurrentIndex = (featuredCurrentIndex + 1) % items.length;
       showFeaturedSlide(featuredCurrentIndex);
-    });
+    }, 15000);
   }
-
-  if (leftArrow) {
-    leftArrow.addEventListener("click", () => {
-      featuredCurrentIndex =
-        (featuredCurrentIndex - 1 + items.length) % items.length;
-      showFeaturedSlide(featuredCurrentIndex);
-    });
-  }
-
-  const featuredInterval = setInterval(() => {
-    featuredCurrentIndex = (featuredCurrentIndex + 1) % items.length;
-    showFeaturedSlide(featuredCurrentIndex);
-  }, 15000);
 })();

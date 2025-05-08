@@ -52,7 +52,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Movie box  */
+/* Movie box */
 .featured-movie-box {
   flex: 3;
   position: relative;
@@ -60,9 +60,24 @@ body {
   overflow: hidden;
   border-radius: 10px;
   background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
-.featured-trailer-container video {
+/* Trailer container */
+.featured-trailer-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure iframe takes up full space in the container */
+.featured-trailer-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -73,10 +88,11 @@ body {
   position: absolute;
   bottom: 12px;
   left: 12px;
-  width: 60px;
-  height: 90px;
+  width: 120px;
+  height: 180px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   border-radius: 6px;
+  z-index: 1;
 }
 
 .featured-poster-overlay img {
@@ -86,20 +102,30 @@ body {
   border-radius: 6px;
 }
 
-/* Movie title overlay */
+/* Movie title and rating next to the poster */
 .featured-title-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 8px 12px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  top: 430px;
+  left: 160px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: #fff;
+  max-width: calc(100% - 140px);
 }
 
+/* Title */
 .featured-title-overlay h2 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Rating */
+.featured-title-overlay p {
+  margin-left: 8px;
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 /* Review box beside movie */
@@ -108,30 +134,52 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f8f8f8;
+  background: rgba(210, 35, 42, 0.7);
   padding: 12px;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
-.featured-review-box img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 8px;
+/* Review header (user image, movie title, and rating) */
+.featured-review-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 16px;
 }
 
-.featured-review-box h3 {
-  margin: 0 0 6px;
+.featured-review-header img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 12px;
+  border-radius: 0;
+  margin-left: 0;
+}
+
+.featured-review-header .featured-movie-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.featured-review-header .featured-movie-rating {
   font-size: 1rem;
-  text-align: center;
+  color: white;
 }
 
-.featured-review-box p {
+.featured-review-header .featured-review-username {
   font-size: 0.9rem;
-  color: #333;
-  text-align: center;
+  color: white;
+}
+
+/* Review text */
+.featured-review-text {
+  font-size: 0.9rem;
+  color: white;
   line-height: 1.4;
+  text-align: center;
 }
 
 /* Carousel arrows */
