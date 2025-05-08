@@ -348,8 +348,6 @@ body {
 
 .review-box {
   position: absolute;
-  width: 320px;
-  min-height: 220px;
   border-radius: 15px;
   padding: 15px;
   color: white;
@@ -359,12 +357,11 @@ body {
 .review-1 {
   background-color: #44b0e4;
   top: 50px;
-  left: 5%;
-  width: 400px;
-  height: auto;
-  opacity: 0.6;
+  left: 30px;
+  width: 300px;
+  height: 168.75px;
+  opacity: 0.9;
 }
-
 .review-2 {
   background-color: #d2232a;
   top: 100px;
@@ -416,7 +413,59 @@ body {
 
 .review-9 {
   background-color: #44b0e4;
-  top: 600px;
+  top: 1800px;
   left: 50%;
   opacity: 0.9;
+}
+
+.hero-section {
+  display: flex;
+  margin: 100px auto;
+  width: 100%;
+  height: 400px;
+}
+
+.hero-image {
+  width: 75%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.overlay-content {
+  width: 25%;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  aspect-ratio: 1 / 1;
+  min-height: 400px;
+  box-sizing: border-box;
+}
+
+.prompt-text {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.button-group .btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #555;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.button-group .btn.join {
+  background-color: #007bff;
+}
+
+.button-group .btn.login {
+  background-color: #28a745;
 }
