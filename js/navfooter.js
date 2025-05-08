@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.text())
     .then((data) => {
       document.getElementById("navbar").innerHTML = data;
+
+      //Load auth.js after navbar
+      const authScript = document.createElement("script");
+      authScript.src = "js/sessionCheck.js";
+      document.body.appendChild(authScript);
     })
     .catch((err) => console.error("Navbar load error:", err));
 

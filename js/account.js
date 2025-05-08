@@ -5,6 +5,11 @@ const editForm = document.getElementById("edit-form");
 const editName = document.getElementById("edit-name");
 const editFavorite = document.getElementById("edit-favorite");
 
+const user = JSON.parse(localStorage.getItem("critix-user"));
+if (!user || user.isLoggedIn !== true) {
+  window.location.href = "login.html";
+}
+
 //Be able to edit profile
 document.getElementById("edit-profile").onclick = (e) => {
   e.preventDefault();
@@ -24,6 +29,23 @@ document.getElementById("save-profile").onclick = () => {
   editFavorite.value = "";
   editForm.classList.add("hid");
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const user = JSON.parse(localStorage.getItem("critix-user"));
+
+  //Go to login if not logged in
+  if (!user || !user.isLoggedIn) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  //Logout buttton
+  document.getElementById("logout-btn").addEventListener("click", () => {
+    user.isLoggedIn = false;
+    localStorage.setItem("critix-user", JSON.stringify(user));
+    window.location.href = "index.html";
+  });
+});
 
 //Load and show the user profile info from localStorage
 function loadUserProfile() {

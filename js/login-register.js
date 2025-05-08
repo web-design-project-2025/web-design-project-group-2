@@ -16,19 +16,39 @@ function register() {
     return;
   }
 
-  //Save info to localStorage
-  const user = { name, username, email, password };
+  //Check if username or email exist
+  const existingUser = JSON.parse(localStorage.getItem("critix-user"));
+  if (
+    existingUser &&
+    (existingUser.username === username || existingUser.email === email)
+  ) {
+    showError("signup-error", "Username or email already exist");
+    return;
+  }
+
+  //Create a new user object with the login
+  const user = {
+    name,
+    username,
+    email,
+    password,
+    isLoggedIn: true,
+    editFavorite: "",
+    joinDate: new Date().toISOString(),
+  };
+
+  //Save to localStorage
   localStorage.setItem("critix-user", JSON.stringify(user));
 
-  //Redirect or show the success
-  alert("Account created!");
+  //Go to account
+  alert("Account created successfully");
   window.location.href = "account.html";
 }
 
 //Function for the log in validation
 function login() {
   const enteredUser = document.getElementById("login-username").value.trim();
-  const eneteredPass = document.getElementById("login-password").value;
+  const enteredPass = document.getElementById("login-password").value;
 
   const savedUser = JSON.parse(localStorage.getItem("critix-user"));
 
@@ -37,18 +57,52 @@ function login() {
     return;
   }
 
-  if (
-    (enteredUser === savedUser.username || enteredUser === savedUser.email) &&
-    eneteredPass === savedUser.password
-  ) {
-    alert("Logged in successfully!");
+  //Validate
+  const usernameMatch = enteredUser === savedUser.username;
+  const emailMatch = enteredUser === savedUser.email;
+  const passwordMatch = enteredPass === savedUser.password;
+
+  //Update login and save
+  if ((usernameMatch || emailMatch) && passwordMatch) {
+    savedUser.isLoggedIn = true;
+    localStorage.setItem("critix-user", JSON.stringify(savedUser));
+
+    //Go to login page
+    alert("Logged in");
     window.location.href = "account.html";
   } else {
-    showError("login-error", "Invalid info.");
+    showError("login-error", "Wrong username/email or password");
   }
 }
 
-//Function to show error
-function showError(id, message) {
-  document.getElementById(id).textContent = message;
+function checkLogin() {
+  const user = JSON.parse(localStorage.getItem("critix-user"));
+  return user && user.isLoggedIn;
 }
+
+//Function to show error
+function showError(elementId, message) {
+  const errorEl = document.getElementById(elementId);
+  if (errorEl) {
+    errorEl.textContent = message;
+    errorEl.style.display = "block";
+
+    //Hide error msg after 5 seconds
+    setTimeout(() => {
+      errorEl.style.display = "none";
+    }, 5000);
+  }
+}
+
+//Initialize login status checker
+document.addEventListener("DOMContentLoaded", function () {
+  //If the login page and already logged in, go to account
+  if (
+    window.location.pathname.includes("login.html") ||
+    window.location.pathname.includes("register.html")
+  ) {
+    if (checkLogin()) {
+      window.location.href = "account.html";
+    }
+  }
+});
