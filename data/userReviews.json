@@ -1,0 +1,34 @@
+[
+  {
+    "username": "janedoe",
+    "movieTitle": "The Social Network",
+    "year": 2010,
+    "rating": 9,
+    "review": "I wasn't expecting a movie about Facebook to be this intense, but The Social Network really surprised me...",
+    "likes": 50
+  },
+  {
+    "username": "janedoe",
+    "movieTitle": "Inception",
+    "year": 2010,
+    "rating": 10,
+    "review": "Mind blowing visuals and a story that bends your brain. Nolan is a genius!",
+    "likes": 80
+  },
+  {
+    "username": "janedoe",
+    "movieTitle": "The Matrix",
+    "year": 1999,
+    "rating": 9,
+    "review": "The Martix is a great example of a movie that will live for ever or a very log time. The story and concept are out of this world.",
+    "likes": 86
+  },
+  {
+    "username": "janedoe",
+    "movieTitle": "Interstellar",
+    "year": 2014,
+    "rating": 10,
+    "review": "I can safely say that it has been a long LONG time since a movie had this much effect on me after watching it.",
+    "likes": 86
+  }
+]
