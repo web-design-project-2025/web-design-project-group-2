@@ -65,8 +65,8 @@
 }
 
 .review-1 .review-title {
-  font-size: 13px; /* 11px * 0.8 */
-  padding-right: 3.2px; /* 4px * 0.8 */
+  font-size: 13px;
+  padding-right: 3.2px;
   font-weight: bold;
 }
 
