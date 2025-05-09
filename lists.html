@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRITIX</title>
+    <link rel="stylesheet" href="css/liststyle.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <main class="list-container">
+      <section id="wacth-later" class="list-section">
+        <h2>Watch Later</h2>
+        <div class="movie-grid" id="watch-later-grid"></div>
+      </section>
+
+      <section id="saved-lists" class="list-section">
+        <h2>Lists</h2>
+        <div class="movie-grid" id="list-grid"></div>
+      </section>
+    </main>
+
+    <!-- Dynamic footer, has a different html/css file connected to every page-->
+    <div id="footer"></div>
+
+    <script src="js/navfooter.js"></script>
+    <script src="js/lists.js"></script>
+  </body>
+</html>

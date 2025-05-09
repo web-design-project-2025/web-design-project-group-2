@@ -61,7 +61,7 @@ body {
 }
 
 #hamburger-icon {
-  background: rgba(68, 176, 228, 0.2);
+  background: transparent;
   color: white;
   font-size: 1.5rem;
   border: none;
@@ -86,7 +86,7 @@ body {
 }
 
 #filter-menu button {
-  background: rgba(68, 176, 228, 0.3);
+  background: #44b0e4;
   color: white;
   border: none;
   border-radius: 6px;

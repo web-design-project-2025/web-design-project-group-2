@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: url("../images/Background.png") no-repeat center center fixed;
+  background-size: cover;
+  line-height: 1.6;
+  padding: 0 1rem;
+  color: white;
+}
+
+.list-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.list-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.movie-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card h3 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+}

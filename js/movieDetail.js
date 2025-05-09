@@ -1,3 +1,5 @@
+//https://developer.themoviedb.org/reference/keyword-movies
+//https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 //Get Id for movies
 const urlParam = new URLSearchParams(window.location.search);
 const movieId = urlParam.get("id");
@@ -41,8 +43,7 @@ async function fetchMovieDetails() {
 
 //Function to show the details, trailer, poster, titler, overview and cast
 function renderMovieDetail(movie, trailer, credits) {
-  detailContainer.innerHTML = `
-    <div class="trailer-container">
+  detailContainer.innerHTML = `<div class="trailer-container">
       ${
         trailer
           ? `<iframe src="https://www.youtube.com/embed/${trailer.key}" frameborder="0" allowfullscreen></iframe>`
@@ -51,34 +52,62 @@ function renderMovieDetail(movie, trailer, credits) {
     </div>
 
     <div class="movie-main-info">
-      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
+    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
     movie.title
   }" class="movie-poster"/>
-      <div class="movie-text">
-        <h1>${movie.title} (${new Date(movie.release_date).getFullYear()})</h1>
-        <p class="rating">⭐ ${movie.vote_average.toFixed(1)}/10</p>
-        <p class="overview">${movie.overview}</p>
-      </div>
+    <div class="movie-text">
+    <div class="movi-title-row">
+    <h1>${movie.title} (${new Date(movie.release_date).getFullYear()})</h1>
+    <img src="images/icons/watch.png" alt="Watch later" class="watch-later-icon" id="watch-later-icon" />
+    </div>
+    <p class="rating">⭐ ${movie.vote_average.toFixed(1)}/10</p>
+    <p class="overview">${movie.overview}</p>
+    </div>
     </div>
 
     <div class="cast-crew">
-      <h2>Top Cast & Crew</h2>
-      <div class="cast-list">
-        ${credits.cast
-          .slice(0, 6)
-          .map(
-            (actor) => `
-          <div class="cast-card">
-            <img src="https://image.tmdb.org/t/p/w200${actor.profile_path}" alt="${actor.name}">
-            <p>${actor.name}</p>
-            <small>${actor.character}</small>
-          </div>
-        `
-          )
-          .join("")}
+    <h2>Top Cast & Crew</h2>
+    <div class="cast-list">
+    ${credits.cast
+      .slice(0, 6)
+      .map(
+        (actor) =>
+          `<div class="cast-card"><img src="https://image.tmdb.org/t/p/w200${actor.profile_path}" alt="${actor.name}">
+      <p>${actor.name}</p>
+      <small>${actor.character}</small>
+      </div>`
+      )
+      .join("")}
       </div>
-    </div>
-  `;
+      </div>`;
+
+  //Watch later check
+  const watchIcon = document.getElementById("watch-later-icon");
+  const watchLaterList = JSON.parse(localStorage.getItem("watchLater")) || [];
+
+  const savedMovie = watchLaterList.find((m) => m.id === movie.id);
+  if (savedMovie) {
+    watchIcon.src = "images/icons/watched.png";
+  }
+
+  watchIcon.addEventListener("click", () => {
+    let updatedList = JSON.parse(localStorage.getItem("watchLater")) || [];
+
+    const exists = updatedList.find((m) => m.id === movie.id);
+    if (exists) {
+      updatedList = updatedList.filter((m) => m.id !== movie.id);
+      watchIcon.src = "images/icons/watch.png";
+    } else {
+      updatedList.push({
+        id: movie.id,
+        title: movie.title,
+        poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+      });
+      watchIcon.src = "images/icons/watched.png";
+    }
+
+    localStorage.setItem("watchLater", JSON.stringify(updatedList));
+  });
 }
 
 //Reviews from a JSON file
@@ -123,19 +152,18 @@ function loadSimilarMovies(movieId) {
 
 //Function to generate review cards
 function generateReviewCard(review, movieTitle) {
-  return `
-    <div class="review-card ${review.color}">
-      <div class="user-info">
-        <div class="user-img"></div>
-        <p class="username">@${review.username}</p>
-      </div>
-      <div class="review-content">
-        <h3>${movieTitle} (2025)</h3>
-        <p class="review-rating">⭐ ${review.rating}</p>
-        <p class="review-text">${review.text}</p>
-      </div>
-    </div>
-  `;
+  return `<div class="review-card ${review.color}">
+  <div class="user-info">
+  <div class="user-img">
+  <img src="images/icons/user.png" alt="User picture"></div>
+  <p class="username">@${review.username}</p>
+  </div>
+  <div class="review-content">
+  <h3>${movieTitle} (2025)</h3>
+  <p class="review-rating">⭐ ${review.rating}</p>
+  <p class="review-text">${review.text}</p>
+  </div>
+  </div>`;
 }
 
 fetchMovieDetails();

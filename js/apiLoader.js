@@ -1,8 +1,8 @@
 //Personal TMDb API key (from: https://developer.themoviedb.org)
 const apiKey = "ae0a4eba1c7e749c1ac3ccf61effa065";
 
-// I used TMDb's API documentation to find the endpoints for movies, series, and top-rated.
-// Reference: https://developer.themoviedb.org/reference/intro
+// I used TMDb's API documentation to find the endpoints for movies, series...
+// https://developer.themoviedb.org/reference/intro
 const endpoints = {
   popularMovies: `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`,
   popularSeries: `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`,
@@ -28,7 +28,6 @@ function fetchAndDisplay(url, containerId, type = "movie", limit) {
         const card = document.createElement("div");
         card.classList.add("movie-card");
 
-        //Html content for the movies/series
         card.innerHTML = `<a href="movieDetail.html?id=${item.id}">
           <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="${
           item.title || item.name

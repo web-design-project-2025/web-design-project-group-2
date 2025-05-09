@@ -1,3 +1,4 @@
+//Id's for the specific movies and series displayed in account
 const movieId = [986056, 950387, 348, 603, 157336];
 const seriesId = [1399, 66732, 100088, 1402, 82856];
 
@@ -5,6 +6,7 @@ const editForm = document.getElementById("edit-form");
 const editName = document.getElementById("edit-name");
 const editFavorite = document.getElementById("edit-favorite");
 
+//If the user is logged in
 const user = JSON.parse(localStorage.getItem("critix-user"));
 if (!user || user.isLoggedIn !== true) {
   window.location.href = "login.html";
@@ -16,6 +18,7 @@ document.getElementById("edit-profile").onclick = (e) => {
   editForm.classList.toggle("hid");
 };
 
+//Save edits
 document.getElementById("save-profile").onclick = () => {
   const user = JSON.parse(localStorage.getItem("critix-user")) || {};
   if (editName.value) user.name = editName.value.trim();
@@ -30,6 +33,7 @@ document.getElementById("save-profile").onclick = () => {
   editForm.classList.add("hid");
 };
 
+//Logout
 document.addEventListener("DOMContentLoaded", () => {
   const user = JSON.parse(localStorage.getItem("critix-user"));
 
@@ -47,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//Load and show the user profile info from localStorage
+//Load and show the user actual info from localStorage
 function loadUserProfile() {
   const user = JSON.parse(localStorage.getItem("critix-user"));
   if (user) {
@@ -56,11 +60,11 @@ function loadUserProfile() {
     document.getElementById("profile-favorite").textContent =
       user.favoriteMovie || "-";
     document.getElementById("username-dis").textContent =
-      user.username || "Jane Doe";
+      user.username || "@JaneDoe";
   } else {
     document.getElementById("profile-name").textContent = "Jane Doe";
     document.getElementById("profile-favorite").textContent = "-";
-    document.getElementById("username-dis").textContent = "Jane Doe";
+    document.getElementById("username-dis").textContent = "@JaneDoe";
   }
 }
 
@@ -118,6 +122,7 @@ function getSpecificSerie(serieIds, containerId) {
 }
 
 //Function to show reviews from a json file once at a time
+//Able to edit and discard the reviews
 let currentReview = 0;
 let allReviews = [];
 
@@ -240,7 +245,7 @@ function loadFriends() {
         const card = document.createElement("div");
         card.classList.add("friends-card");
         card.innerHTML = `<img src="${friend.picture}" alt="Friend picture" />
-            <span>@${friend.username}</span>`;
+          <span>@${friend.username}</span>`;
         container.appendChild(card);
       });
     })
