@@ -1,3 +1,5 @@
+//https://developer.themoviedb.org/reference/keyword-movies
+//https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 //Get Id for movies
 const urlParam = new URLSearchParams(window.location.search);
 const movieId = urlParam.get("id");
@@ -123,19 +125,18 @@ function loadSimilarMovies(movieId) {
 
 //Function to generate review cards
 function generateReviewCard(review, movieTitle) {
-  return `
-    <div class="review-card ${review.color}">
-      <div class="user-info">
-        <div class="user-img"></div>
-        <p class="username">@${review.username}</p>
-      </div>
-      <div class="review-content">
-        <h3>${movieTitle} (2025)</h3>
-        <p class="review-rating">⭐ ${review.rating}</p>
-        <p class="review-text">${review.text}</p>
-      </div>
-    </div>
-  `;
+  return `<div class="review-card ${review.color}">
+  <div class="user-info">
+  <div class="user-img">
+  <img src="images/icons/user.png" alt="User picture"></div>
+  <p class="username">@${review.username}</p>
+  </div>
+  <div class="review-content">
+  <h3>${movieTitle} (2025)</h3>
+  <p class="review-rating">⭐ ${review.rating}</p>
+  <p class="review-text">${review.text}</p>
+  </div>
+  </div>`;
 }
 
 fetchMovieDetails();

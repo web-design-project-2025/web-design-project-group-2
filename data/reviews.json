@@ -1,28 +1,28 @@
 [
   {
     "username": "BlockFan",
-    "rating": "10/10",
+    "rating": "10",
     "color": "red",
     "text": "This movie hits all the right notes for me."
   },
 
   {
     "username": "CineSnob",
-    "rating": "3/10",
+    "rating": "3",
     "color": "blue",
     "text": "It felt more like an extended YouTube video than a proper film."
   },
 
   {
     "username": "CCrafter",
-    "rating": "8/10",
+    "rating": "8",
     "color": "blue",
     "text": "The humor was light, and there were some genuinely sweet moments."
   },
 
   {
     "username": "PixelMom",
-    "rating": "8/10",
+    "rating": "8",
     "color": "red",
     "text": "Took my 9-year-old and we both really enjoyed it!"
   }

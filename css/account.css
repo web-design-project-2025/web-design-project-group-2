@@ -93,7 +93,7 @@ main.account-page {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 400;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.8);
 }
 
@@ -111,7 +111,7 @@ main.account-page {
 
 .section-header h3 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 300;
 }
 
@@ -131,7 +131,7 @@ main.account-page {
 }
 
 .carousel {
-  background-color: rgba(68, 176, 228, 0.3);
+  background-color: rgba(68, 176, 228, 0.2);
   border-radius: 20px;
   padding: 20px;
   min-height: 250px;
@@ -177,7 +177,7 @@ main.account-page {
 }
 
 .reviews-section h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   font-weight: 300;
 }

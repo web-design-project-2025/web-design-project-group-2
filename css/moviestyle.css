@@ -137,12 +137,17 @@
 }
 
 .user-img {
-  background: #aaa;
+  background: rgba(60, 176, 228, 0.7);
   width: 60px;
   height: 60px;
   border-radius: 20px;
 }
 
+.user-img img {
+  width: 45px;
+  margin-top: 7px;
+  margin-left: 7px;
+}
 .username {
   font-size: 0.9rem;
   color: white;
