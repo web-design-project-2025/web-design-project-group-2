@@ -1,0 +1,122 @@
+[
+  {
+    "username": "filmBuff101",
+    "movie_title": "Inception",
+    "movie_rating": 10,
+    "review_title": "Mind-Bending and Brilliant",
+    "review": "Christopher Nolan’s 'Inception' is a masterpiece of modern cinema. The layered storytelling and incredible visuals kept me fully engaged throughout. The performances, especially by Leonardo DiCaprio, were top-notch. It’s a film that challenges your perception of reality and lingers in your mind long after the credits roll.",
+    "user_pic": "https://randomuser.me/api/portraits/women/12.jpg"
+  },
+  {
+    "username": "popcornAddict",
+    "movie_title": "Parasite",
+    "movie_rating": 9,
+    "review_title": "A Masterclass in Storytelling",
+    "review": "'Parasite' is a gripping and socially poignant thriller that seamlessly blends dark humor with intense drama. Bong Joon-ho crafts a narrative that’s both deeply personal and universally resonant. The twists are unexpected, and the film’s commentary on class disparity is powerful.",
+    "user_pic": "https://randomuser.me/api/portraits/men/45.jpg"
+  },
+  {
+    "username": "movieManiac",
+    "movie_title": "The Godfather",
+    "movie_rating": 10,
+    "review_title": "Cinema at Its Finest",
+    "review": "‘The Godfather’ is the epitome of great filmmaking. Every scene, every performance, especially by Marlon Brando and Al Pacino, is flawless. The storytelling is rich and layered, offering a deep dive into the world of organized crime while exploring themes of family and power.",
+    "user_pic": "https://randomuser.me/api/portraits/men/18.jpg"
+  },
+  {
+    "username": "silverScreenQueen",
+    "movie_title": "La La Land",
+    "movie_rating": 8,
+    "review_title": "Beautiful and Heartbreaking",
+    "review": "'La La Land' is a visual and musical delight. The chemistry between Ryan Gosling and Emma Stone is magnetic, and the music is unforgettable. It’s a film that celebrates dreams while acknowledging the sacrifices they demand. The ending left me in tears.",
+    "user_pic": "https://randomuser.me/api/portraits/women/28.jpg"
+  },
+  {
+    "username": "cinemaCriticX",
+    "movie_title": "Joker",
+    "movie_rating": 9,
+    "review_title": "Disturbing and Captivating",
+    "review": "Todd Phillips’ 'Joker' is an unsettling look at mental illness and societal neglect. Joaquin Phoenix delivers a haunting and transformative performance that rightly earned him an Oscar. The cinematography and score work together to create a chilling atmosphere.",
+    "user_pic": "https://randomuser.me/api/portraits/men/52.jpg"
+  },
+  {
+    "username": "reelFanatic",
+    "movie_title": "Interstellar",
+    "movie_rating": 10,
+    "review_title": "A Sci-Fi Epic",
+    "review": "'Interstellar' is an ambitious and emotional journey through space and time. Nolan’s direction, combined with Hans Zimmer’s powerful score, makes for an unforgettable experience. The themes of love, sacrifice, and survival are explored beautifully.",
+    "user_pic": "https://randomuser.me/api/portraits/men/39.jpg"
+  },
+  {
+    "username": "flickWatcher",
+    "movie_title": "The Shawshank Redemption",
+    "movie_rating": 10,
+    "review_title": "Uplifting and Timeless",
+    "review": "This film is pure cinematic gold. The story of hope and friendship between Andy and Red is inspiring. The performances, especially by Tim Robbins and Morgan Freeman, are heartfelt. It’s a movie that reminds you of the resilience of the human spirit.",
+    "user_pic": "https://randomuser.me/api/portraits/men/24.jpg"
+  },
+  {
+    "username": "cinemaddict",
+    "movie_title": "Avengers: Endgame",
+    "movie_rating": 8,
+    "review_title": "Epic Conclusion",
+    "review": "'Endgame' is a satisfying and emotional wrap-up to over a decade of storytelling. The action sequences are grand, and the emotional beats hit hard. It’s a love letter to the fans who have followed the MCU from the start.",
+    "user_pic": "https://randomuser.me/api/portraits/women/37.jpg"
+  },
+  {
+    "username": "classicLover",
+    "movie_title": "Casablanca",
+    "movie_rating": 9,
+    "review_title": "A True Classic",
+    "review": "'Casablanca' remains one of the greatest films ever made. The romance, the intrigue, and the unforgettable lines make it timeless. Humphrey Bogart and Ingrid Bergman’s performances are iconic, and the film’s message of sacrifice still resonates today.",
+    "user_pic": "https://randomuser.me/api/portraits/women/50.jpg"
+  },
+  {
+    "username": "thrillerSeeker",
+    "movie_title": "Gone Girl",
+    "movie_rating": 8,
+    "review_title": "Twisted and Tense",
+    "review": "David Fincher’s 'Gone Girl' is a dark and compelling psychological thriller. The narrative keeps you guessing, and Rosamund Pike’s performance as Amy is chillingly brilliant. The film explores the complexities of marriage and media manipulation with razor-sharp precision.",
+    "user_pic": "https://randomuser.me/api/portraits/women/43.jpg"
+  },
+  {
+    "username": "arthouseAficionado",
+    "movie_title": "The Lighthouse",
+    "movie_rating": 7,
+    "review_title": "Hauntingly Beautiful",
+    "review": "'The Lighthouse' is a strange and atmospheric film that dives deep into madness and isolation. Robert Pattinson and Willem Dafoe give intense performances. The black-and-white cinematography adds to its eerie charm, though it’s definitely not a film for everyone.",
+    "user_pic": "https://randomuser.me/api/portraits/men/63.jpg"
+  },
+  {
+    "username": "romcomFan",
+    "movie_title": "Crazy Rich Asians",
+    "movie_rating": 8,
+    "review_title": "Fun and Heartwarming",
+    "review": "This movie is a joyous celebration of love, family, and culture. The lavish visuals and vibrant storytelling make it a standout romcom. The cast is fantastic, with Constance Wu and Henry Golding shining in their roles.",
+    "user_pic": "https://randomuser.me/api/portraits/women/14.jpg"
+  },
+  {
+    "username": "actionHero",
+    "movie_title": "Mad Max: Fury Road",
+    "movie_rating": 9,
+    "review_title": "Adrenaline Rush",
+    "review": "'Fury Road' is non-stop action from start to finish. George Miller’s direction and the practical effects make it a visual spectacle. Charlize Theron’s Furiosa is a standout, and the film’s feminist undertones add depth to the high-octane thrills.",
+    "user_pic": "https://randomuser.me/api/portraits/men/70.jpg"
+  },
+  {
+    "username": "fantasyDreamer",
+    "movie_title": "The Lord of the Rings: The Return of the King",
+    "movie_rating": 10,
+    "review_title": "Epic in Every Way",
+    "review": "'The Return of the King' is a flawless conclusion to an epic trilogy. The battles are breathtaking, and the emotional payoffs are incredibly satisfying. Peter Jackson’s vision brings Tolkien’s world to life in a way that’s both grand and intimate.",
+    "user_pic": "https://randomuser.me/api/portraits/women/30.jpg"
+  },
+  {
+    "username": "docuEnthusiast",
+    "movie_title": "Free Solo",
+    "movie_rating": 8,
+    "review_title": "Edge-of-Your-Seat Documentary",
+    "review": "'Free Solo' is an awe-inspiring documentary that follows Alex Honnold’s incredible climb of El Capitan without ropes. The cinematography is breathtaking, and the film delves deep into what drives someone to take such risks. It’s a thrilling and humbling watch.",
+    "user_pic": "https://randomuser.me/api/portraits/men/85.jpg"
+  }
+]
