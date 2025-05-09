@@ -16,13 +16,12 @@
     <main>
       <!-- Featured movie with a review on the side -->
       <div class="featured-movie-carousel">
-      
-        <div class="featured-carousel-wrapper">
-          
-          <button class="featured-carousel-arrow left">
-            <img src="images/icons/arrow_left.png" alt="Previous" />
-          </button>
+        <!-- Left arrow outside the wrapper -->
+        <button class="featured-carousel-arrow left">
+          <img src="images/icons/arrow_left.png" alt="Previous" />
+        </button>
 
+        <div class="featured-carousel-wrapper">
           <div class="featured-carousel-inner">
             <!-- Pair 1 -->
             <div class="featured-carousel-item">
@@ -41,14 +40,29 @@
                   </div>
                 </div>
               </div>
+              <!-- here-->
               <div class="featured-review-box">
-                <img
-                  src="reviewer1.jpg"
-                  alt="Reviewer John Doe"
-                  loading="lazy"
-                />
-                <h3>Review Title 1</h3>
-                <p>Short review snippet 1...</p>
+                <!-- Header with user image, movie title, rating, and username -->
+                <div class="featured-review-header">
+                  <img src="images/icons/user.png" alt="Reviewer" loading="lazy" />
+                  <div class="review-info">
+                    <div class="featured-movie-title">${movie.title}</div>
+                    <div class="featured-movie-rating">⭐ ${movie.vote_average.toFixed(1)}</div>
+                    <div class="featured-review-username">by Username</div>
+                  </div>
+                </div>
+              
+                <!-- Movie review text -->
+                <div class="featured-review-text">
+                  ${movie.overview}...
+                </div>
+              
+                <!-- Additional movie details -->
+                <div class="featured-movie-details">
+                  <p><strong>Release Date:</strong> ${movie.release_date}</p>
+                  <p><strong>Genre:</strong> Action, Adventure</p> <!-- Replace with dynamic genres -->
+                  <p><strong>Runtime:</strong> 120 mins</p> <!-- Replace with dynamic runtime -->
+                </div>
               </div>
             </div>
 
@@ -136,14 +150,14 @@
               </div>
             </div>
           </div>
-
-          <!-- Right arrow outside movie boxes -->
-          <button class="featured-carousel-arrow right">
-            <img src="images/icons/arrow_right.png" alt="Next" />
-          </button>
         </div>
 
-        <!-- Carousel dots centered below -->
+        <!-- Right arrow outside the wrapper -->
+        <button class="featured-carousel-arrow right">
+          <img src="images/icons/arrow_right.png" alt="Next" />
+        </button>
+
+        <!-- Dots for navigation -->
         <div class="featured-carousel-dots">
           <span class="featured-carousel-dot active"></span>
           <span class="featured-carousel-dot"></span>
@@ -153,15 +167,15 @@
       </div>
 
       <!-- Our purpose, image with text "discover" etc. -->
-      <div class="purpose-image-container">
+      <div class="purpose-image-container fade-in-section">
         <img src="images/purpose-image.png" alt="Discover movies" />
         <div id="purpose-text">Review and discover movies</div>
       </div>
 
       <!-- Automated poster carousel -->
 
-      <section class="carousel-section">
-        <h2>DISCOVER MOVIES</h2>
+      <section class="carousel-section fade-in-section">
+        <h2 id="discovermovies-text">DISCOVER MOVIES</h2>
         <div class="carousel-wrapper">
           <button
             class="carousel-arrow left"
@@ -182,11 +196,11 @@
       </section>
 
       <!-- Read reviews section with review boxes -->
-      <section id="reviews-section">
+      <section id="reviews-section" class= "fade-in-section">
         <h2 id="reviews-text">READ REVIEWS</h2>
 
         <div class="reviews-container">
-          <div class="review-box review-1">
+          <div class="review-box review-1 fade-in-section" >
             <!-- Review 1 content -->
             <div class="review-header">
               <div class="user-img">
@@ -206,8 +220,9 @@
             </div>
             
           </div>
+         
         
-          <div class="review-box review-2">
+          <div class="review-box review-2 fade-in-section ">
             <!-- Review 2 content -->
             <div class="review-header">
               <div class="user-img">
@@ -229,7 +244,7 @@
            
           </div>
         
-          <div class="review-box review-3">
+          <div class="review-box review-3 fade-in-section">
             <div class="review-header">
               <div class="user-img">
                 <img src="images/icons/user.png" alt="User 3">
@@ -249,7 +264,7 @@
            
           </div>
         
-          <div class="review-box review-4">
+          <div class="review-box review-4 fade-in-section">
             <div class="review-header">
               <div class="user-img">
                 <img src="images/icons/user.png" alt="User 4">
@@ -269,7 +284,7 @@
             
           </div>
         
-          <div class="review-box review-5">
+          <div class="review-box review-5 fade-in-section">
             <div class="review-header">
               <div class="user-img">
                 <img src="images/icons/user.png" alt="User 5">
@@ -289,7 +304,7 @@
            
           </div>
         
-          <div class="review-box review-6">
+          <div class="review-box review-6 fade-in-section">
             <div class="review-header">
               <div class="user-img">
                 <img src="images/icons/user.png" alt="User 6">
@@ -309,7 +324,7 @@
   
           </div>
         
-          <div class="review-box review-7">
+          <div class="review-box review-7 fade-in-section">
             <div class="review-header">
               <div class="user-img">
                 <img src="images/icons/user.png" alt="User 7">
@@ -329,7 +344,7 @@
            
           </div>
         
-          <div class="review-box review-8">
+          <div class="review-box review-8 fade-in-section">
             <div class="review-header">
               <div class="user-img">
                 <img src="images/icons/user.png" alt="User 8">
@@ -349,7 +364,7 @@
             
           </div>
         
-          <div class="review-box review-9">
+          <div class="review-box review-9 fade-in-section">
             <div class="review-header">
               <div class="user-img">
                 <img src="images/icons/user.png" alt="User 9">
@@ -370,7 +385,7 @@
           </div>
           
 
-          <div class="review-box review-10">
+          <div class="review-box review-10 fade-in-section">
             <div class="review-header">
               <div class="user-img">
                 <img src="images/icons/user.png" alt="User 9">
@@ -415,6 +430,7 @@
     <!-- Scripts-->
     <script src="js/apiLoader.js"></script>
     <script src="js/navfooter.js"></script>
+    <script src="js/mainpage-animation.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
