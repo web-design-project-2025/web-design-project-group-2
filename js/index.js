@@ -54,7 +54,7 @@ startAutoScroll("popular-movies", 0.8);
 // --- Featured Movie Carousel (updated) ---
 (function () {
   const carousel = document.querySelector(".featured-movie-carousel");
-  if (!carousel) return; // safely exit if not present
+  if (!carousel) return;
 
   const inner = carousel.querySelector(".featured-carousel-inner");
   const dots = carousel.querySelectorAll(".featured-carousel-dot");
@@ -93,7 +93,7 @@ startAutoScroll("popular-movies", 0.8);
                   const director = credits.crew.find(
                     (member) => member.job === "Director"
                   );
-                  const cast = credits.cast.slice(0, 5); // Get top 5 cast members
+                  const cast = credits.cast.slice(0, 5);
 
                   // Fetch trailer data
                   fetch(
