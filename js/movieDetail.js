@@ -56,8 +56,10 @@ function renderMovieDetail(movie, trailer, credits) {
     movie.title
   }" class="movie-poster"/>
     <div class="movie-text">
-    <h1>${movie.title} (${new Date(movie.release_date).getFullYear()})
-    <img src="images/icons/watch.png" alt="Watch later" class="watch-later-icon" id="watch-later-icon" /></h1>
+    <div class="movi-title-row">
+    <h1>${movie.title} (${new Date(movie.release_date).getFullYear()})</h1>
+    <img src="images/icons/watch.png" alt="Watch later" class="watch-later-icon" id="watch-later-icon" />
+    </div>
     <p class="rating">⭐ ${movie.vote_average.toFixed(1)}/10</p>
     <p class="overview">${movie.overview}</p>
     </div>
@@ -85,7 +87,7 @@ function renderMovieDetail(movie, trailer, credits) {
 
   const savedMovie = watchLaterList.find((m) => m.id === movie.id);
   if (savedMovie) {
-    watchIcon.src = "images/icons/watching.png";
+    watchIcon.src = "images/icons/watched.png";
   }
 
   watchIcon.addEventListener("click", () => {
@@ -101,7 +103,7 @@ function renderMovieDetail(movie, trailer, credits) {
         title: movie.title,
         poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
       });
-      watchIcon.src = "images/icons/watching.png";
+      watchIcon.src = "images/icons/watched.png";
     }
 
     localStorage.setItem("watchLater", JSON.stringify(updatedList));
