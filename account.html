@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRITIX</title>
+    <link rel="stylesheet" href="css/account.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <main class="account-page">
+      <!--Profile info-->
+      <section class="profile-section">
+        <div class="profile-picture">
+          <img src="images/icons/user.png" alt="User Icon" />
+          <p id="username-dis" class="username-text">User Name</p>
+        </div>
+        <div class="profile-info">
+          <p><strong>Name: </strong> <span id="profile-name">Name</span></p>
+          <p><strong>Reviews: </strong> <span id="profile-reviews">3</span></p>
+          <p>
+            <strong>Favorite Movie: </strong>
+            <span id="profile-favorite">-</span>
+          </p>
+          <p><strong>Level: </strong> <span id="profile-level">1</span></p>
+          <p><strong>Friends: </strong> <span id="profile-friends">3</span></p>
+
+          <!--Edit profile info-->
+          <a href="#" id="edit-profile">Edit Profile</a>
+          <div id="edit-form" class="edit-form hid">
+            <input type="text" id="edit-name" placeholder="Enter new name" />
+            <input
+              type="text"
+              id="edit-favorite"
+              placeholder="Enter favorite movie"
+            />
+            <button id="save-profile">Save</button>
+          </div>
+
+          <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+      </section>
+
+      <!--Movie and serie section-->
+      <section class="carousel-section">
+        <div class="section-header">
+          <h3>Movies Reviewed</h3>
+          <a href="#" class="more-link">More</a>
+        </div>
+        <div class="carousel" id="movie-carousel"></div>
+      </section>
+
+      <section class="carousel-section">
+        <div class="section-header">
+          <h3>Series Reviewed</h3>
+          <a href="#" class="more-link">More</a>
+        </div>
+        <div class="carousel" id="series-carousel"></div>
+      </section>
+
+      <!--Review section-->
+      <section class="reviews-section">
+        <h2>Reviews</h2>
+        <div class="review-nav">
+          <button id="previous-rev">&#10094</button>
+          <div id="user-reviews" class="review-carousel"></div>
+          <button id="next-rev">&#10095</button>
+        </div>
+      </section>
+
+      <section class="friends-section">
+        <h2>Friends</h2>
+        <div id="friends-list" class="friends-list"></div>
+      </section>
+    </main>
+
+    <!-- Dynamic footer, has a different html/css file connected to every page-->
+    <div id="footer"></div>
+
+    <script src="js/navfooter.js"></script>
+    <script src="js/apiLoader.js"></script>
+    <script src="js/account.js"></script>
+  </body>
+</html>

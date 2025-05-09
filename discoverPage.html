@@ -3,23 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRITIX | Discover</title>
+    <title>CRITIX</title>
     <link rel="stylesheet" href="css/discoverstyle.css" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
   </head>
 
+  <!--Modal for the displaying movie trailer and info in movie tinder-->
+  <div id="movie-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-trailer">
+        <iframe id="trailer-iframe" src="" frameborder="0"></iframe>
+      </div>
+      <div class="modal-info">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <p id="modal-rating"></p>
+      </div>
+    </div>
+  </div>
+
   <body>
-    <!-- Dynamic menu, has a different html/css file connected to every page-->
     <div id="navbar"></div>
 
     <main>
+      <!--Main title and functionality-->
       <div class="mainTitle">
         <h1>DISCOVER</h1>
+
+        <!--Search bar, input and button-->
         <div class="search-bar">
-          <input type="text" placeholder="Search..." />
+          <input type="text" id="search-bar" placeholder="Search..." />
+          <button id="search-button"><img src="images/icons/search.png" alt="Search icon"></button>
+          
+          <!--Filter menu with buttons-->
+          <div class="filter-container">
+            <button id="hamburger-icon">☰</button>
+            <div id="filter-menu" class="hidden">
+              <button class="filter-genre" data-genre="comedy">Comedy</button>
+              <button class="filter-genre" data-genre="horror">Horror</button>
+              <button class="filter-genre" data-genre="action">Action</button>
+              <button class="filter-genre" data-genre="fantasy">Fantasy</button>
+              <button class="filter-genre" data-genre="drama">Drama</button>
+              <button class="filter-genre" data-genre="romance">Romance</button>
+              <button id="clear-filter">Clear Filter</button>
+            </div>
+          </div>
         </div>
+
+        <!--Grid for filtered movies-->
+        <div id="filtered-movies" class="movie-grid"></div>
+
       </div>
 
+      <!--Different carousels for different sections-->
       <section class="carousel-section">
         <h2>POPULAR MOVIES</h2>
         <div class="carousel-wrapper">
@@ -79,9 +116,14 @@
         </div>
       </section>
 
+      <!--Movie Tinder-->
       <section class="tinder-section">
         <h2>PICK A MOVIE</h2>
         <div class="tinder-container">
+          <div class="tinder-background">
+            <div class="tinder-bg-card red"></div>
+            <div class="tinder-bg-card blue"></div>
+          </div>
           <div id="tinder-card-stack"></div>
           <div class="tinder-buttons">
             <button id="tinder-dislike">❌</button>
@@ -89,10 +131,46 @@
           </div>
         </div>
       </section>
+
+      <!--Genre carousels-->
+      <section class="corousel-section">
+        <div id="genre-carousels">
+          <div class="genre-carousel">
+            <h2>COMEDY</h2>
+            <div class="carousel-wrapper">
+              <button class="carousel-arrow left" onclick="scrollCarousel('comedy-movies', -1)">&#10094</button>
+              <div class="carousel" id="comedy-movies"></div>
+              <button class="carousel-arrow right" onclick="scrollCarousel('comedy-movies', 1)">&#10095</button>
+            </div>
+          </div>
+
+          <div class="genre-carousel">
+            <h2>HORROR</h2>
+            <div class="carousel-wrapper">
+              <button class="carousel-arrow left" onclick="scrollCarousel('horror-movies', -1)">&#10094</button>
+              <div class="carousel" id="horror-movies"></div>
+              <button class="carousel-arrow right" onclick="scrollCarousel('horror-movies', 1)">&#10095</button>
+            </div>
+          </div>
+
+          <div class="genre-carousel">
+            <h2>FANTASY</h2>
+            <div class="carousel-wrapper">
+              <button class="carousel-arrow left" onclick="scrollCarousel('fantasy-movies', -1)">&#10094</button>
+              <div class="carousel" id="fantasy-movies"></div>
+              <button class="carousel-arrow right" onclick="scrollCarousel('fantasy-movies', 1)">&#10095</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- Dynamic footer, has a different html/css file connected to every page-->
+    <div id="footer"></div>
 
     <script src="js/apiLoader.js"></script>
     <script src="js/navfooter.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/movieTinder.js"></script>
+    <script src="js/discoverFilters.js"></script>
   </body>
 </html>

@@ -6,9 +6,8 @@
 .footer {
   display: flex;
   align-items: center;
-  justify-content: center; s
+  justify-content: center;
   padding: 20px;
-
   color: white;
   gap: 0px;
   flex-wrap: nowrap;
@@ -24,15 +23,13 @@
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
-  color: white; 
+  color: white;
 }
 
-
-
 .footer-link:hover {
-    text-decoration: underline;
-    color: #44B0E4; 
-  }
+  text-decoration: underline;
+  color: #44b0e4;
+}
 
 .divider {
   background-color: white;
@@ -47,5 +44,5 @@
   width: 2px;
   height: 40px;
   background-color: white;
-  margin: 0 10px; 
+  margin: 0 10px;
 }

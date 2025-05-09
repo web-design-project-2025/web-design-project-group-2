@@ -19,6 +19,7 @@ body {
   color: white;
 }
 
+/*Title odf the page*/
 .mainTitle h1 {
   text-align: center;
   font-weight: 300;
@@ -26,15 +27,18 @@ body {
   font-size: 4rem;
 }
 
+/*Search bar and filter section*/
 .search-bar {
   position: relative;
   margin-top: 1rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .search-bar input {
-  padding: 0.5rem 1rem 0.5rem 3rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 20px;
   border: none;
   width: 400px;
@@ -42,15 +46,69 @@ body {
   font-size: 1rem;
   background-color: rgba(68, 176, 228, 0.2);
   color: white;
-  outline: none;
-  box-shadow: 10px 10px 10px black;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.8);
+}
+
+#search-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#search-button img {
+  width: 30px;
+  height: auto;
+}
+
+#hamburger-icon {
+  background: rgba(68, 176, 228, 0.2);
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.8);
+}
+
+#filter-menu {
+  position: absolute;
+  top: 3rem;
+  padding: 1rem;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 100;
+}
+
+#filter-menu.visible {
+  display: flex;
+}
+
+#filter-menu button {
+  background: rgba(68, 176, 228, 0.3);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/*Movie/Series section*/
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 4rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
 }
 
 .carousel-section h2 {
   text-align: center;
   font-weight: 300;
   font-size: 2rem;
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -84,10 +142,14 @@ body {
 
 .movie-card {
   flex: 0 0 auto;
-  width: 300px;
+  width: 250px;
   border-radius: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card a {
+  color: white;
 }
 
 .movie-card img {
@@ -125,18 +187,29 @@ body {
   right: 0.5rem;
 }
 
-.tinder-section h2 {
+.genre-carousel {
+  margin-top: 10rem;
+}
+
+.genre-carousel h2 {
   font-size: 2rem;
   font-weight: 300;
+  text-align: center;
+}
+
+/*Movie Tinder*/
+.tinder-section h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
   margin-bottom: 2rem;
-  margin-top: 10rem;
+  margin-top: 5rem;
   text-align: center;
 }
 
 .tinder-container {
   position: relative;
-  width: 300px;
-  height: 500px;
+  width: 350px;
+  height: 650px;
   margin: 2rem auto;
 }
 
@@ -151,7 +224,6 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  background: #1c1c1c;
   overflow: hidden;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
@@ -160,6 +232,7 @@ body {
   width: 100%;
   height: 80%;
   object-fit: cover;
+  box-shadow: 10px 10px 10px black;
 }
 
 .movie-card.tinder h3 {
@@ -187,4 +260,122 @@ body {
 
 .tinder-buttons button:hover {
   background: rgba(68, 176, 228, 0.4);
+}
+
+/*Background for the Movie Tinder*/
+.tinder-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.tinder-bg-card {
+  position: absolute;
+  width: 250px;
+  height: 440px;
+  border-radius: 20px;
+  opacity: 0.7;
+}
+
+.tinder-bg-card.red {
+  background-color: #d2232a;
+  transform: rotate(-20deg);
+  top: 50px;
+  left: -50px;
+}
+
+.tinder-bg-card.blue {
+  background-color: #44b0e4;
+  transform: rotate(20deg);
+  top: 50px;
+  left: 150px;
+}
+
+.popup-message {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #44b0e4;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+  z-index: 1000;
+  animation: fadeInOut 1.5s ease;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/*Pop up modal, trailer*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: rgba(68, 176, 228, 0.5);
+  display: flex;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 900px;
+  gap: 2rem;
+}
+
+.modal-trailer {
+  flex: 2;
+}
+
+.modal-trailer iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+}
+
+.modal-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.modal-info h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-info p {
+  margin-bottom: 0.5rem;
 }
