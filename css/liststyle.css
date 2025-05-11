@@ -20,7 +20,6 @@ body {
 }
 
 .list-section h2 {
-  text-align: center;
   font-size: 2.5rem;
   font-weight: 300;
   margin-top: 2rem;
@@ -80,6 +79,31 @@ body {
   background-color: rgba(68, 176, 228, 0.8);
 }
 
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+#create-list-btn {
+  background-color: rgba(68, 176, 228, 0.5);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#create-list-btn:hover {
+  background-color: #44b0e4;
+}
+
+#create-list-btn img {
+  width: 20px;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -98,12 +122,30 @@ body {
   max-width: 900px;
 }
 
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .close-button {
   float: right;
   font-size: 2rem;
   cursor: pointer;
 }
 
+#edit-btn {
+  background-color: #44b0e4;
+  color: white;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#edit-btn:hover {
+  scale: 1.1;
+}
 .movie-card p {
   color: white;
 }

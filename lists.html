@@ -19,8 +19,13 @@
       </section>
 
       <section class="list-section">
-        <h2>Your Lists</h2>
-        <div class="lit-container">
+        <div class="list-header">
+          <h2>Your Lists</h2>
+          <button id="create-list-btn">
+            <img src="images/icons/add.png" alt="Create" />
+          </button>
+        </div>
+        <div class="list-container" id="users-lists">
           <div class="list-box" data-list="top-tier">
             <h3>Top Tier Movies</h3>
           </div>
@@ -31,7 +36,10 @@
       <div class="modal" id="list-modal">
         <div class="modal-content">
           <span class="close-button" id="close-modal">&times;</span>
-          <h2>Top Tier Movies</h2>
+          <div class="modal-header">
+            <h2 id="modal-title">Top Tier Movies</h2>
+            <button id="edit-btn">Edit</button>
+          </div>
           <div class="movie-grid" id="top-tier-grid"></div>
         </div>
       </div>
