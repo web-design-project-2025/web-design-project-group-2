@@ -29,21 +29,23 @@ document.addEventListener("DOMContentLoaded", () => {
     modalTitle.textContent = title;
     modalGrid.innerHTML = "";
 
-    //Edit button only on the user created lists
+    //Edit list name only on the user created lists
     if (listIndex !== null) {
-      editBtn.style.display = "inline-block";
-      editBtn.onclick = () => {
-        const newName = prompt("Edit list name:", userLists[listIndex].name);
-        if (newName && newName.trim()) {
-          userLists[listIndex].name = newName.trim();
-          localStorage.setItem("userLists", JSON.stringify(userLists));
-          modalTitle.textContent = newName.trim();
-          renderUserLists();
-        }
+      modalTitle.contentEditable = true;
+      modalTitle.spellcheck = false;
+      modalTitle.style.cursor = "text";
+      modalTitle.onblur = () => {
+        const newName = modalTitle.textContent.trim() || "Untitled List";
+        userLists[listIndex].name = newName;
+        localStorage.setItem("userLists", JSON.stringify(userLists));
+        renderUserLists();
       };
-    } else {
       editBtn.style.display = "none";
-      editBtn.onclick = null;
+    } else {
+      modalTitle.contentEditable = false;
+      modalTitle.style.cursor = "default";
+      modalTitle.onblur = null;
+      editBtn.style.display = "none";
     }
 
     if (movies.length > 0) {

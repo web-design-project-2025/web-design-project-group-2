@@ -32,36 +32,6 @@ body {
   padding: 1rem;
 }
 
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-  gap: 3rem;
-  padding: 1rem;
-}
-
-.movie-card {
-  text-align: center;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.movie-card img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-.movie-card:hover {
-  transform: scale(1.05);
-}
-
-.movie-card h3 {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  color: white;
-}
-
 /*Your lists*/
 .list-box {
   background-color: rgba(68, 176, 228, 0.4);
@@ -104,6 +74,7 @@ body {
   width: 20px;
 }
 
+/*Modal and content in modal*/
 .modal {
   display: none;
   position: fixed;
@@ -128,23 +99,47 @@ body {
   align-items: center;
 }
 
+/*https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable*/
+#modal-title[contenteditable="true"]:hover {
+  outline: 1px dashed white;
+  cursor: text;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .close-button {
   float: right;
   font-size: 2rem;
   cursor: pointer;
 }
 
-#edit-btn {
-  background-color: #44b0e4;
-  color: white;
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.movie-card {
+  text-align: center;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-#edit-btn:hover {
-  scale: 1.1;
+.movie-card img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card h3 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
 }
 .movie-card p {
   color: white;
