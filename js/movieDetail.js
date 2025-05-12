@@ -56,9 +56,12 @@ function renderMovieDetail(movie, trailer, credits) {
     movie.title
   }" class="movie-poster"/>
     <div class="movie-text">
-    <div class="movi-title-row">
+    <div class="movie-title-row">
     <h1>${movie.title} (${new Date(movie.release_date).getFullYear()})</h1>
+    <div class="action-icons">
     <img src="images/icons/watch.png" alt="Watch later" class="watch-later-icon" id="watch-later-icon" />
+    <img src="images/icons/save.png" alt="Save to list" class="save-icon" id="save-icon" />
+    </div>
     </div>
     <p class="rating">⭐ ${movie.vote_average.toFixed(1)}/10</p>
     <p class="overview">${movie.overview}</p>
@@ -107,6 +110,46 @@ function renderMovieDetail(movie, trailer, credits) {
     }
 
     localStorage.setItem("watchLater", JSON.stringify(updatedList));
+  });
+
+  //Save button
+  const saveIcon = document.getElementById("save-icon");
+  const userLists = JSON.parse(localStorage.getItem("userLists")) || [];
+
+  //Check if movie is in a list
+  const isSaved = userLists.some((list) =>
+    list.movies.some((m) => m.id === movie.id)
+  );
+
+  if (isSaved) {
+    saveIcon.src = "images/icons/saved.png";
+  }
+
+  saveIcon.addEventListener("click", () => {
+    const currentlySaved = userLists.some((list) =>
+      list.movies.some((m) => m.id === movie.id)
+    );
+
+    //Remove from all lists
+    if (currentlySaved) {
+      userLists.forEach((list) => {
+        list.movies = list.movies.filter((m) => m.id !== movie.id);
+      });
+
+      localStorage.setItem("userLists", JSON.stringify(userLists));
+      saveIcon.src = "images/icons/save.png";
+    } else {
+      //Eventually a modal to select a list to add movie in
+      saveIcon.src = "images/icons/saved.png";
+      if (userLists.length > 0) {
+        userLists[0].movies.push({
+          id: movie.id,
+          title: movie.title,
+          poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+        });
+        localStorage.setItem("userLists", JSON.stringify(userLists));
+      }
+    }
   });
 }
 
