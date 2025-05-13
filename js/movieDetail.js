@@ -4,6 +4,11 @@
 const urlParam = new URLSearchParams(window.location.search);
 const movieId = urlParam.get("id");
 
+//Modal el
+const saveModal = document.getElementById("save-modal");
+const closeModal = document.getElementById("close-modal");
+const selectList = document.getElementById("list-select");
+
 //Html containers for the details
 const detailContainer = document.getElementById("movie-section");
 const reviewsWrapper = document.getElementById("reviews-wrapper");
@@ -139,19 +144,99 @@ function renderMovieDetail(movie, trailer, credits) {
       localStorage.setItem("userLists", JSON.stringify(userLists));
       saveIcon.src = "images/icons/save.png";
     } else {
-      //Eventually a modal to select a list to add movie in
-      saveIcon.src = "images/icons/saved.png";
-      if (userLists.length > 0) {
-        userLists[0].movies.push({
-          id: movie.id,
-          title: movie.title,
-          poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-        });
-        localStorage.setItem("userLists", JSON.stringify(userLists));
-      }
+      openModal(movie);
     }
   });
 }
+
+//Function to open modal and display the lists and a create new list button
+function openModal(movie) {
+  saveModal.style.display = "block";
+  selectList.innerHTML = "";
+
+  const userLists = JSON.parse(localStorage.getItem("userLists")) || [];
+
+  if (userLists.length === 0) {
+    selectList.innerHTML = "<p>No lists have been made.</p>";
+    const createBtn = document.createElement("div");
+    createBtn.id = "create-new-list-btn";
+    createBtn.textContent = "Create New List";
+    createBtn.addEventListener("click", () => {
+      createNewList(movie);
+    });
+    selectList.appendChild(createBtn);
+  } else {
+    userLists.forEach((list, index) => {
+      const listOption = document.createElement("div");
+      listOption.classList.add("list-option");
+      listOption.textContent = list.name;
+      listOption.addEventListener("click", () => {
+        addMovieList(movie, index);
+        saveModal.style.display = "none";
+      });
+      selectList.appendChild(listOption);
+    });
+
+    const createBtn = document.createElement("div");
+    createBtn.id = "create-new-list-btn";
+    createBtn.textContent = "Create New List";
+    createBtn.addEventListener("click", () => {
+      createNewList(movie);
+    });
+    selectList.appendChild(createBtn);
+  }
+}
+
+//Fucntion to add a movie to a specific user made list
+function addMovieList(movie, listIndex) {
+  const userLists = JSON.parse(localStorage.getItem("userLists")) || [];
+  const saveIcon = document.getElementById("save-icon");
+
+  //Check if movie is in ist already
+  const isInList = userLists[listIndex].movies.some((m) => m.id === movie.id);
+
+  if (!isInList) {
+    userLists[listIndex].movies.push({
+      id: movie.id,
+      title: movie.title,
+      poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+    });
+    localStorage.setItem("userLists", JSON.stringify(userLists));
+  }
+
+  saveIcon.src = "images/icons/saved.png";
+}
+//Create a new list for the movie to be in
+function createNewList(movie) {
+  const userLists = JSON.parse(localStorage.getItem("userLists")) || [];
+  const newList = {
+    name: "Untitled",
+    movies: [
+      {
+        id: movie.id,
+        title: movie.title,
+        poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+      },
+    ],
+  };
+
+  userLists.push(newList);
+  localStorage.setItem("userLists", JSON.stringify(userLists));
+  saveModal.style.display = "none";
+
+  const saveIcon = document.getElementById("save-icon");
+  saveIcon.src = "images/icons/saved.png";
+}
+
+//Close modal
+closeModal.addEventListener("click", () => {
+  saveModal.style.display = "none";
+});
+window.addEventListener("click", (e) => {
+  if (e.target === saveModal) {
+    saveModal.style.display = "none";
+  }
+});
 
 //Reviews from a JSON file
 function loadReviews(movieId, movieTitle) {
