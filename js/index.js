@@ -107,72 +107,70 @@ startAutoScroll("popular-movies", 0.8);
                       );
 
                       // HTML structure for the movie item
-                      item.innerHTML = `
-                        <div class="featured-movie-box">
-                          <div class="featured-trailer-container">
-                            ${
-                              trailer
-                                ? `<iframe src="https://www.youtube.com/embed/${trailer.key}?autoplay=1&mute=1&loop=1&playlist=${trailer.key}&controls=0" frameborder="0" allowfullscreen></iframe>`
-                                : `<div class="no-trailer-placeholder"></div>`
-                            }
-                          </div>
-                          <div class="featured-poster-overlay">
-                            <img src="https://image.tmdb.org/t/p/w500${
-                              movie.poster_path
-                            }" alt="Poster for ${movie.title}" loading="lazy" />
-                          </div>
-                          <div class="featured-title-overlay">
-                            <h2>${movie.title}</h2>
-                            <p>⭐ ${movie.vote_average.toFixed(1)}</p>
-                          </div>
-                        </div>
+                      item.innerHTML = `<div class="featured-movie-box">
+                      <div class="featured-trailer-container">
+                      ${
+                        trailer
+                          ? `<iframe src="https://www.youtube.com/embed/${trailer.key}?autoplay=1&mute=1&loop=1&playlist=${trailer.key}&controls=0" frameborder="0" allowfullscreen></iframe>`
+                          : `<div class="no-trailer-placeholder"></div>`
+                      }
+                      </div>
+                      <div class="featured-poster-overlay">
+                      <img src="https://image.tmdb.org/t/p/w500${
+                        movie.poster_path
+                      }" alt="Poster for ${movie.title}" loading="lazy" />
+                      </div>
+                      <div class="featured-title-overlay">
+                      <h2>${movie.title}</h2>
+                      <p>⭐ ${movie.vote_average.toFixed(1)}</p>
+                      </div>
+                      </div>
+                      
+                      <div class="featured-review-box">
+                      <!-- Header with user image, movie title, and rating -->
+                      <div class="featured-review-header">
+                      <img src="images/icons/user.png" alt="Reviewer" loading="lazy" />
+                      <div>
+                      <div class="featured-movie-title">${movie.title}
+                      </div>
+                      <div class="featured-movie-rating">⭐ ${movie.vote_average.toFixed(
+                        1
+                      )}
+                      </div>
+                      <div class="featured-review-username">Username</div> <!-- Replace with dynamic username -->
+                      </div>
+                      </div>
 
-                        <div class="featured-review-box">
-                          <!-- Header with user image, movie title, and rating -->
-                          <div class="featured-review-header">
-                            <img src="images/icons/user.png" alt="Reviewer" loading="lazy" />
-                            <div>
-                              <div class="featured-movie-title">${
-                                movie.title
-                              }</div>
-                              <div class="featured-movie-rating">⭐ ${movie.vote_average.toFixed(
-                                1
-                              )}</div>
-                              <div class="featured-review-username">Username</div> <!-- Replace with dynamic username -->
-                            </div>
-                          </div>
-
-                           <!-- Main review title -->
-                          <div class="featured-review-title">
-                            <h3>Review</h3>
-                          </div>
+                      <!-- Main review title -->
+                      <div class="featured-review-title">
+                      <h3>Review</h3>
+                      </div>
 
 
-                          <!-- Movie review text -->
-                          <div class="featured-review-text">
-                            ${movie.overview.substring(0, 100)}...
-                          </div>
+                      <!-- Movie review text -->
+                      <div class="featured-review-text">
+                      ${movie.overview.substring(0, 100)}...
+                      </div>
 
-                          <!-- Additional movie details -->
-                          <div class="featured-movie-details">
-                            <p><strong>Release Date:</strong> ${
-                              movieDetails.release_date
-                            }</p>
-                            <p><strong>Genre:</strong> ${movieDetails.genres
-                              .map((genre) => genre.name)
-                              .join(", ")}</p>
-                            <p><strong>Runtime:</strong> ${
-                              movieDetails.runtime
-                            } mins</p>
-                            <p><strong>Director:</strong> ${
-                              director ? director.name : "N/A"
-                            }</p>
-                            <p><strong>Cast:</strong> ${cast
-                              .map((actor) => actor.name)
-                              .join(", ")}</p>
-                          </div>
-                        </div>
-                      `;
+                      <!-- Additional movie details -->
+                      <div class="featured-movie-details">
+                      <p><strong>Release Date:</strong> ${
+                        movieDetails.release_date
+                      }</p>
+                      <p><strong>Genre:</strong> ${movieDetails.genres
+                        .map((genre) => genre.name)
+                        .join(", ")}</p>
+                      <p><strong>Runtime:</strong> ${
+                        movieDetails.runtime
+                      } mins</p>
+                      <p><strong>Director:</strong> ${
+                        director ? director.name : "N/A"
+                      }</p>
+                      <p><strong>Cast:</strong> ${cast
+                        .map((actor) => actor.name)
+                        .join(", ")}</p>
+                      </div>
+                      </div>`;
 
                       inner.appendChild(item);
 

@@ -4,6 +4,11 @@
 const urlParam = new URLSearchParams(window.location.search);
 const movieId = urlParam.get("id");
 
+//Modal el
+const saveModal = document.getElementById("save-modal");
+const closeModal = document.getElementById("close-modal");
+const selectList = document.getElementById("list-select");
+
 //Html containers for the details
 const detailContainer = document.getElementById("movie-section");
 const reviewsWrapper = document.getElementById("reviews-wrapper");
@@ -56,9 +61,12 @@ function renderMovieDetail(movie, trailer, credits) {
     movie.title
   }" class="movie-poster"/>
     <div class="movie-text">
-    <div class="movi-title-row">
+    <div class="movie-title-row">
     <h1>${movie.title} (${new Date(movie.release_date).getFullYear()})</h1>
+    <div class="action-icons">
     <img src="images/icons/watch.png" alt="Watch later" class="watch-later-icon" id="watch-later-icon" />
+    <img src="images/icons/save.png" alt="Save to list" class="save-icon" id="save-icon" />
+    </div>
     </div>
     <p class="rating">⭐ ${movie.vote_average.toFixed(1)}/10</p>
     <p class="overview">${movie.overview}</p>
@@ -108,7 +116,127 @@ function renderMovieDetail(movie, trailer, credits) {
 
     localStorage.setItem("watchLater", JSON.stringify(updatedList));
   });
+
+  //Save button
+  const saveIcon = document.getElementById("save-icon");
+  const userLists = JSON.parse(localStorage.getItem("userLists")) || [];
+
+  //Check if movie is in a list
+  const isSaved = userLists.some((list) =>
+    list.movies.some((m) => m.id === movie.id)
+  );
+
+  if (isSaved) {
+    saveIcon.src = "images/icons/saved.png";
+  }
+
+  saveIcon.addEventListener("click", () => {
+    const currentlySaved = userLists.some((list) =>
+      list.movies.some((m) => m.id === movie.id)
+    );
+
+    //Remove from all lists
+    if (currentlySaved) {
+      userLists.forEach((list) => {
+        list.movies = list.movies.filter((m) => m.id !== movie.id);
+      });
+
+      localStorage.setItem("userLists", JSON.stringify(userLists));
+      saveIcon.src = "images/icons/save.png";
+    } else {
+      openModal(movie);
+    }
+  });
 }
+
+//Function to open modal and display the lists and a create new list button
+function openModal(movie) {
+  saveModal.style.display = "block";
+  selectList.innerHTML = "";
+
+  const userLists = JSON.parse(localStorage.getItem("userLists")) || [];
+
+  if (userLists.length === 0) {
+    selectList.innerHTML = "<p>No lists have been made.</p>";
+    const createBtn = document.createElement("div");
+    createBtn.id = "create-new-list-btn";
+    createBtn.textContent = "Create New List";
+    createBtn.addEventListener("click", () => {
+      createNewList(movie);
+    });
+    selectList.appendChild(createBtn);
+  } else {
+    userLists.forEach((list, index) => {
+      const listOption = document.createElement("div");
+      listOption.classList.add("list-option");
+      listOption.textContent = list.name;
+      listOption.addEventListener("click", () => {
+        addMovieList(movie, index);
+        saveModal.style.display = "none";
+      });
+      selectList.appendChild(listOption);
+    });
+
+    const createBtn = document.createElement("div");
+    createBtn.id = "create-new-list-btn";
+    createBtn.textContent = "Create New List";
+    createBtn.addEventListener("click", () => {
+      createNewList(movie);
+    });
+    selectList.appendChild(createBtn);
+  }
+}
+
+//Fucntion to add a movie to a specific user made list
+function addMovieList(movie, listIndex) {
+  const userLists = JSON.parse(localStorage.getItem("userLists")) || [];
+  const saveIcon = document.getElementById("save-icon");
+
+  //Check if movie is in ist already
+  const isInList = userLists[listIndex].movies.some((m) => m.id === movie.id);
+
+  if (!isInList) {
+    userLists[listIndex].movies.push({
+      id: movie.id,
+      title: movie.title,
+      poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+    });
+    localStorage.setItem("userLists", JSON.stringify(userLists));
+  }
+
+  saveIcon.src = "images/icons/saved.png";
+}
+//Create a new list for the movie to be in
+function createNewList(movie) {
+  const userLists = JSON.parse(localStorage.getItem("userLists")) || [];
+  const newList = {
+    name: "Untitled",
+    movies: [
+      {
+        id: movie.id,
+        title: movie.title,
+        poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+      },
+    ],
+  };
+
+  userLists.push(newList);
+  localStorage.setItem("userLists", JSON.stringify(userLists));
+  saveModal.style.display = "none";
+
+  const saveIcon = document.getElementById("save-icon");
+  saveIcon.src = "images/icons/saved.png";
+}
+
+//Close modal
+closeModal.addEventListener("click", () => {
+  saveModal.style.display = "none";
+});
+window.addEventListener("click", (e) => {
+  if (e.target === saveModal) {
+    saveModal.style.display = "none";
+  }
+});
 
 //Reviews from a JSON file
 function loadReviews(movieId, movieTitle) {

@@ -52,7 +52,19 @@ document.getElementById("tinder-like").addEventListener("click", () => {
   //After the animation, add movie to watchlist, show next card
   setTimeout(() => {
     const likedMovie = tinderMovies[currentTinderIndex];
-    watchLater.push(likedMovie);
+    const storedList = JSON.parse(localStorage.getItem("watchLater")) || [];
+
+    //Check if movie already in list
+    if (!storedList.some((m) => m.id === likedMovie.id)) {
+      storedList.push({
+        id: likedMovie.id,
+        title: likedMovie.title,
+        poster: `https://image.tmdb.org/t/p/w500${likedMovie.poster_path}`,
+      });
+
+      localStorage.setItem("watchLater", JSON.stringify(storedList));
+    }
+
     showPopup("Added to watchlist!");
     currentTinderIndex++;
     showNextTinderCard();

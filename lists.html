@@ -18,10 +18,33 @@
         <div class="movie-grid" id="watch-later-grid"></div>
       </section>
 
-      <section id="saved-lists" class="list-section">
-        <h2>Lists</h2>
-        <div class="movie-grid" id="list-grid"></div>
+      <section class="list-section">
+        <div class="list-header">
+          <h2>Your Lists</h2>
+          <button id="create-list-btn">
+            <img src="images/icons/add.png" alt="Create" />
+          </button>
+        </div>
+        <div class="list-container" id="users-lists">
+          <div class="list-box" data-list="top-tier">
+            <h3>Top Tier Movies</h3>
+          </div>
+        </div>
       </section>
+
+      <!--Modal-->
+      <div class="modal" id="list-modal">
+        <div class="modal-content">
+          <button id="delete-list-btn">
+            <img src="images//icons/delete.png" alt="Delete List" />
+          </button>
+          <span class="close-button" id="close-modal">&times;</span>
+          <div class="modal-header">
+            <h2 id="modal-title">Top Tier Movies</h2>
+          </div>
+          <div class="movie-grid" id="top-tier-grid"></div>
+        </div>
+      </div>
     </main>
 
     <!-- Dynamic footer, has a different html/css file connected to every page-->
