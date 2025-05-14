@@ -106,6 +106,16 @@ body {
   align-items: center;
 }
 
+#delete-list-btn {
+  float: inline-end;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#delete-list-btn img {
+  width: 23px;
+}
+
 /*https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable*/
 #modal-title[contenteditable="true"]:hover {
   outline: 1px dashed white;
@@ -116,6 +126,8 @@ body {
 .close-button {
   float: right;
   font-size: 2rem;
+  margin-top: 1.5rem;
+  padding-right: 1.5rem;
   cursor: pointer;
 }
 

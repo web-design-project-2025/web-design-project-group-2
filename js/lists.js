@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!user || user.isLoggedIn !== true) {
     window.location = "login.html";
   }
+
   //Watch later
   const watchLaterGrid = document.getElementById("watch-later-grid");
   const watchLaterList = JSON.parse(localStorage.getItem("watchLater")) || [];
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("list-modal");
   const closeModal = document.getElementById("close-modal");
   const modalTitle = document.getElementById("modal-title");
-  const editBtn = document.getElementById("edit-btn");
+  const deleteBtn = document.getElementById("delete-list-btn");
   const modalGrid = modal.querySelector(".movie-grid");
 
   function openModal(title, movies = [], listIndex = null) {
@@ -39,18 +40,28 @@ document.addEventListener("DOMContentLoaded", () => {
       modalTitle.contentEditable = true;
       modalTitle.spellcheck = false;
       modalTitle.style.cursor = "text";
+      deleteBtn.style.display = "inline-block";
+
       modalTitle.onblur = () => {
         const newName = modalTitle.textContent.trim() || "Untitled List";
         userLists[listIndex].name = newName;
         localStorage.setItem("userLists", JSON.stringify(userLists));
         renderUserLists();
       };
-      editBtn.style.display = "none";
+
+      deleteBtn.onclick = () => {
+        if (confirm(`Do you want to delete this list?`)) {
+          userLists.splice(listIndex, 1);
+          localStorage.setItem("userLists", JSON.stringify(userLists));
+          modal.style.display = "none";
+          renderUserLists();
+        }
+      };
     } else {
       modalTitle.contentEditable = false;
       modalTitle.style.cursor = "default";
       modalTitle.onblur = null;
-      editBtn.style.display = "none";
+      deleteBtn.style.display = "none";
     }
 
     if (movies.length > 0) {
