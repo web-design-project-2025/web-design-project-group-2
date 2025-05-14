@@ -73,7 +73,7 @@ function renderMovieDetail(movie, trailer, credits) {
     </div>
     </div>
 
-    <div class="cast-crew">
+    <div class="cast-crew ">
     <h2>Top Cast & Crew</h2>
     <div class="cast-list">
     ${credits.cast

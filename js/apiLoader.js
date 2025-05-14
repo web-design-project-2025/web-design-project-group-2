@@ -45,7 +45,7 @@ function fetchAndDisplay(url, containerId, type = "movie", limit) {
       console.error(`Error loading from TMDb (${type}):`, err);
       document.getElementById(
         containerId
-      ).innerHTML = `<p>Failed to load ${type}s. Try again later.</p>`;
+      ).innerHTML = `<p>Failed to load ${type}. Try again later.</p>`;
     });
 }
 
