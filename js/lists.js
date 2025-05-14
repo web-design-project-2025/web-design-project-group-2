@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //Check if the user is logged in, if not go to login.html
+  const user = JSON.parse(localStorage.getItem("critix-user"));
+  if (!user || user.isLoggedIn !== true) {
+    window.location = "login.html";
+  }
   //Watch later
   const watchLaterGrid = document.getElementById("watch-later-grid");
   const watchLaterList = JSON.parse(localStorage.getItem("watchLater")) || [];
