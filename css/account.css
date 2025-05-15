@@ -103,6 +103,7 @@ main.account-page {
 
 /*Movies and series section*/
 .section-header {
+  margin-top: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -134,7 +135,7 @@ main.account-page {
   background-color: rgba(68, 176, 228, 0.2);
   border-radius: 20px;
   padding: 20px;
-  min-height: 250px;
+  min-height: 300px;
   display: flex;
   gap: 20px;
   overflow-x: auto;
@@ -172,11 +173,11 @@ main.account-page {
 
 /*Reviews section*/
 .review-section {
-  margin-top: 40px;
   padding: 20px;
 }
 
 .reviews-section h2 {
+  margin-top: 100px;
   font-size: 2rem;
   margin-bottom: 20px;
   font-weight: 300;
@@ -205,7 +206,8 @@ main.account-page {
   border-radius: 20px;
   padding: 20px;
   color: white;
-  min-width: 300px;
+  min-width: 500px;
+  max-width: 600px;
   height: 250px;
   margin: 20px auto;
   display: flex;
@@ -268,7 +270,7 @@ main.account-page {
   color: white;
   font-size: 1.5rem;
   border: none;
-  padding: 10px;
+  padding: 20px;
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
@@ -289,6 +291,7 @@ main.account-page {
 
 .edit-btn {
   background-color: rgba(68, 176, 228, 0.5);
+  color: white;
   border-radius: 20px;
   width: 55px;
   margin-top: 30px;
@@ -341,6 +344,9 @@ main.account-page {
 /*Friends section*/
 .friends-section h2 {
   margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 100px;
 }
 
 .friends-list {
@@ -358,6 +364,8 @@ main.account-page {
 }
 
 .friends-card img {
+  background-color: rgba(68, 176, 228, 0.5);
+  border-radius: 10px;
   width: 80px;
   height: 80px;
 }
