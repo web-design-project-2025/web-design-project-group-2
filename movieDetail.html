@@ -19,6 +19,7 @@
       ></section>
 
       <section class="reviews-section fade-in-section">
+        <button id="write-review-btn">Review</button>
         <h2>REVIEWS</h2>
         <div class="reviews-wrapper" id="reviews-wrapper"></div>
       </section>
@@ -37,6 +38,32 @@
           <h2>Save to List</h2>
         </div>
         <div class="list-select" id="list-select"></div>
+      </div>
+    </div>
+
+    <!--Modal for writing review-->
+    <div class="review-modal" id="review-modal">
+      <div class="review-modal-content">
+        <span class="close-button" id="close-review-modal">&times;</span>
+        <div class="modal-header">
+          <h2>Write a Review</h2>
+        </div>
+        <form id="review-form">
+          <input
+            type="number"
+            id="review-rating"
+            placeholder="Rating (1/10)"
+            min="1"
+            max="10"
+          />
+          <textarea
+            id="review-text"
+            rows="6"
+            placeholder="Write a review..."
+          ></textarea>
+
+          <button id="submit-review" class="submit-review-btn">Submit</button>
+        </form>
       </div>
     </div>
 
