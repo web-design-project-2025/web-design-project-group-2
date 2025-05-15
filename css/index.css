@@ -25,7 +25,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 1400px;
-  margin: 30px auto;
+  margin: 20px auto;
   margin-bottom: 80px;
   overflow: hidden;
 }
@@ -59,7 +59,7 @@ body {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: #000;
   display: flex;
   justify-content: center;
@@ -104,7 +104,7 @@ body {
   width: 120px;
   height: 180px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  border-radius: 6px;
+  border-radius: 20px;
   z-index: 3;
 }
 
@@ -112,7 +112,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 /* Movie title and rating next to the poster */
@@ -139,8 +139,7 @@ body {
 .featured-title-overlay p {
   margin-left: 8px;
   font-size: 1.5rem;
-
-  font-weight: bold;
+  font-weight: 300;
 }
 
 /* Review box beside movie */
@@ -151,7 +150,7 @@ body {
   align-items: flex-start;
   background: rgba(210, 35, 42, 0.7);
   padding: 16px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   color: white;
 }
@@ -261,7 +260,7 @@ body {
 .purpose-image-container {
   width: 100%;
   position: relative;
-  max-width: 1481px; /*needs to be changed, make it more responsive to the screen size*/
+  max-width: 1700px; /*needs to be changed, make it more responsive to the screen size*/
   margin-top: 100px auto;
 }
 
@@ -276,11 +275,10 @@ body {
   top: 49%;
   left: 25%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: white;
   font-size: 3rem;
   text-align: left;
   padding: 30px;
-  border-radius: 5px;
 }
 
 .overlay-text {
@@ -289,9 +287,8 @@ body {
   left: 12px;
   padding: 8px 16px;
   background: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  color: whi4;
   font-size: 1.2rem;
-  border-radius: 8px;
 }
 
 /* Responsive adjustments */
@@ -413,7 +410,7 @@ body {
 .hero-section {
   width: 100%;
   position: relative;
-  max-width: 1481px;
+  max-width: 1700px;
   margin-bottom: 60px;
   margin-top: 100px;
 }
@@ -433,8 +430,6 @@ body {
   font-size: 1.7rem;
   text-align: right;
   width: 50%;
-
-  border-radius: 5px;
 }
 
 #account-text {
@@ -442,11 +437,9 @@ body {
   top: 57%;
   left: 80%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: white;
   font-size: 1.3rem;
   text-align: left;
-
-  border-radius: 5px;
 }
 
 .button-group {
@@ -464,7 +457,7 @@ body {
   font-weight: bold;
   color: #fff;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 20px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -488,6 +481,7 @@ body {
   background-color: #33333325;
 }
 
+/*Fade in animation*/
 .fade-in-section {
   opacity: 0;
   transform: translateY(50px);
