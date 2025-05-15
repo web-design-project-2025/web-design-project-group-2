@@ -69,10 +69,20 @@ body {
   margin-top: 0.5rem;
 }
 
-.editorial-article {
-  max-width: 800px;
+.article-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
   margin: 3rem auto;
   padding: 0 1.5rem;
+}
+
+.editorial-article {
+  flex: 2;
+  max-width: 800px;
+  min-width: 300px;
 }
 
 .editorial-article p {
@@ -91,7 +101,6 @@ body {
 h2 {
   margin-top: 2rem;
   color: #fff;
-
   padding-bottom: 0.3rem;
 }
 
@@ -107,4 +116,110 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Sidebar */
+.editorial-sidebar {
+  flex: 1;
+  max-width: 300px;
+  min-width: 250px;
+}
+
+.sidebar-widget {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+
+.sidebar-widget h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.sidebar-widget ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-widget ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-widget ul li a {
+  color: rgba(68, 176, 228, 1);
+}
+
+.sidebar-widget ul li a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-widget p,
+.sidebar-widget a {
+  color: rgba(68, 176, 228, 1);
+  text-decoration: none;
+}
+
+.sidebar-widget a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-widget input[type="email"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: #111;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.sidebar-widget button {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: rgba(68, 176, 228, 1);
+  color: #000;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-widget button:hover {
+  background-color: #4bb3f2;
+}
+
+/* Author widget */
+.author-widget .author-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-widget .author-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Social links */
+.social-links a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.editorial-card-link {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+.editorial-card-link:hover .editorial-card {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
 }
