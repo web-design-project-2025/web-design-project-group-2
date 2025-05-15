@@ -276,6 +276,77 @@ body {
   line-height: 1.4r;
 }
 
+/*write a review modal*/
+#write-review-btn {
+  float: right;
+  background-color: rgba(60, 176, 228, 0.7);
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.review-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.review-modal-content {
+  background-color: rgba(60, 176, 228, 0.7);
+  margin: 20% auto;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 600px;
+  position: relative;
+}
+
+#close-review-modal {
+  font-size: 2rem;
+}
+
+.review-modal-content h2 {
+  text-align: center;
+  font-weight: 400;
+}
+
+#review-rating {
+  width: 110px;
+  border-radius: 20px;
+  height: 20px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#review-text {
+  width: 450px;
+  border-radius: 20px;
+  padding: 0.5rem;
+}
+
+.submit-review-btn {
+  background-color: rgba(60, 176, 228, 0.8);
+  padding: 0.7rem;
+  color: white;
+  border-radius: 20px;
+  margin-left: 0.5rem;
+}
+
+.submit-review-btn:hover {
+  background-color: rgba(60, 176, 228, 1);
+  cursor: pointer;
+}
+
+.review-card.blue {
+  background-color: rgba(60, 176, 228, 0.5);
+}
+
 /*Similar movies*/
 .similar-section {
   margin: 5rem auto;

@@ -1,5 +1,8 @@
 //https://developer.themoviedb.org/reference/keyword-movies
 //https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+//https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
+//https://youtu.be/E6B-ig8NHQE?si=B_0lvR-7VkWSLY1l
+
 //Get Id for movies
 const urlParam = new URLSearchParams(window.location.search);
 const movieId = urlParam.get("id");
@@ -12,6 +15,16 @@ const selectList = document.getElementById("list-select");
 //Html containers for the details
 const detailContainer = document.getElementById("movie-section");
 const reviewsWrapper = document.getElementById("reviews-wrapper");
+
+//Review modal elements
+const reviewModal = document.getElementById("review-modal");
+const writeReviewBtn = document.getElementById("write-review-btn");
+const closeReviewModal = document.getElementById("close-review-modal");
+
+const reviewForm = document.getElementById("review-form");
+const reviewRating = document.getElementById("review-rating");
+const reviewText = document.getElementById("review-text");
+const submitReviewBtn = document.getElementById("submit-review");
 
 //Get movie data
 async function fetchMovieDetails() {
@@ -240,14 +253,15 @@ window.addEventListener("click", (e) => {
 
 //Reviews from a JSON file
 function loadReviews(movieId, movieTitle) {
-  fetch("data/reviews.json")
-    .then((res) => res.json())
-    .then((reviews) => {
-      reviews.slice(0, 4).forEach((review) => {
-        reviewsWrapper.innerHTML += generateReviewCard(review, movieTitle);
-      });
-    })
-    .catch((err) => console.error("Error loading reviews", err));
+  const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+  const movieReviews = allReviews.filter(
+    (review) => review.movieId === movieId
+  );
+
+  movieReviews.slice(0, 4).forEach((review) => {
+    reviewsWrapper.innerHTML += generateReviewCard(review, movieTitle);
+  });
 }
 
 //Function to show similar movies
@@ -280,7 +294,7 @@ function loadSimilarMovies(movieId) {
 
 //Function to generate review cards
 function generateReviewCard(review, movieTitle) {
-  return `<div class="review-card ${review.color}">
+  return `<div class="review-card blue">
   <div class="user-info">
   <div class="user-img">
   <img src="images/icons/user.png" alt="User picture"></div>
@@ -293,6 +307,68 @@ function generateReviewCard(review, movieTitle) {
   </div>
   </div>`;
 }
+
+//Review modal
+//Open
+writeReviewBtn.addEventListener("click", () => {
+  reviewModal.style.display = "block";
+});
+
+//Close on icon
+closeReviewModal.addEventListener("click", () => {
+  reviewModal.style.display = "none";
+});
+
+//Close on outside modal
+window.addEventListener("click", (e) => {
+  if (e.target === reviewModal) {
+    reviewModal.style.display = "none";
+  }
+});
+
+//Review form submission
+reviewForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const rating = reviewRating.value.trim();
+  const text = reviewText.value.trim();
+  const currentUser = JSON.parse(localStorage.getItem("critix-user"));
+
+  if (!currentUser || !currentUser.username) {
+    alert("You must be logged in to submit a review.");
+    return;
+  }
+
+  if (!rating || !text) {
+    alert("Please enter both a rating and a review.");
+    return;
+  }
+
+  const newReview = {
+    username: currentUser.username,
+    movieId: movieId,
+    rating,
+    text,
+  };
+
+  //Save review to localStorage
+  const allReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  allReviews.unshift(newReview);
+  localStorage.setItem("reviews", JSON.stringify(allReviews));
+
+  //Add new review to the page
+  reviewsWrapper.insertAdjacentHTML(
+    "afterbegin",
+    generateReviewCard(
+      newReview,
+      document.querySelector(".movie-title-row h1").textContent
+    )
+  );
+
+  //Reset the review form and close modal
+  reviewForm.reset();
+  reviewModal.style.display = "none";
+});
 
 fetchMovieDetails();
 loadSimilarMovies(movieId);
