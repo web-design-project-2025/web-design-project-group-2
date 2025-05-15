@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Critix</title>
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/articles.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+  <body>
+    <!-- The article titles were ai generated-->
+
+    <!-- Dynamic menu, has a different html/css file connected to every page-->
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>CRITIX Articles</h1>
+        <p>In-depth thoughts and unique perspectives on cinema today</p>
+        <a href="editorial.html" class="btn">Read Editor’s Pick</a>
+      </div>
+    </header>
+
+    <main class="page-container">
+      <!-- Search Bar -->
+      <section class="search-section">
+        <input
+          type="text"
+          placeholder="Search editorials..."
+          class="search-input"
+        />
+      </section>
+
+      <!-- Featured Editorials -->
+      <section class="featured">
+        <h2>Featured Editorials</h2>
+        <div class="editorial-grid">
+          <a href="" class="editorial-card-link">
+            <article class="editorial-card">
+              <img src="images/sci-fi.jpg" alt="Sci-fi editorial" />
+              <h3>The Future Is Dark: Sci-fi in 2025</h3>
+              <p>
+                Examining themes of isolation, AI, and dystopia in recent
+                blockbusters.
+              </p>
+            </article>
+          </a>
+          <a href="#" class="editorial-card-link">
+            <article class="editorial-card">
+              <img src="images/hollywood.jpg" alt="Classic film" />
+              <h3>Why We Still Love the 1940s</h3>
+              <p>
+                A nostalgic dive into Hollywood’s Golden Age and its cultural
+                relevance.
+              </p>
+            </article>
+          </a>
+          <a href="#" class="editorial-card-link">
+            <article class="editorial-card">
+              <img src="images/animation.jpg" alt="Animation" />
+              <h3>The Power of Visual Storytelling</h3>
+              <p>Animation as political commentary and emotional expression.</p>
+            </article>
+          </a>
+        </div>
+      </section>
+
+      <!-- Categories / Tags -->
+      <section class="tags-section">
+        <h3>Browse by Topic</h3>
+        <div class="tags">
+          <a href="#">Filmmaking</a>
+          <a href="#">Psychology in Film</a>
+          <a href="#">Nostalgia</a>
+          <a href="#">Auteurs</a>
+          <a href="#">Culture</a>
+          <a href="#">Industry News</a>
+        </div>
+      </section>
+
+      <div class="content-area">
+        <!-- Main Editorial Feed -->
+        <section class="editorial-feed">
+          <h3>Latest Editorials</h3>
+
+          <article class="feed-item">
+            <div class="feed-meta">
+              <img src="" alt="Author" class="author-avatar" />
+              <div>
+                <p><strong>Sam Lee</strong></p>
+                <p class="small">
+                  6 min read • <span class="tag">Streaming</span>
+                </p>
+              </div>
+            </div>
+            <h4><a href="#">Can Streaming Save Indie Films?</a></h4>
+            <p>
+              The streaming revolution changed film access, but at what cost to
+              originality?
+            </p>
+          </article>
+
+          <blockquote class="editorial-quote">
+            “Cinema is the most beautiful fraud in the world.”
+            <span>– Jean-Luc Godard</span>
+          </blockquote>
+
+          <article class="feed-item">
+            <div class="feed-meta">
+              <img src="" alt="Author" class="author-avatar" />
+              <div>
+                <p><strong>Dana Kim</strong></p>
+                <p class="small">
+                  5 min read • <span class="tag">Women in Film</span>
+                </p>
+              </div>
+            </div>
+            <h4><a href="#">Women Behind the Camera: A Rising Wave</a></h4>
+            <p>
+              Highlighting the new generation of female directors shaping the
+              future of cinema.
+            </p>
+          </article>
+
+          <article class="feed-item">
+            <div class="feed-meta">
+              <img src="" alt="Author" class="author-avatar" />
+              <div>
+                <p><strong>Marco Diaz</strong></p>
+                <p class="small">
+                  4 min read • <span class="tag">Film Criticism</span>
+                </p>
+              </div>
+            </div>
+            <h4><a href="#">Do Film Ratings Still Matter?</a></h4>
+            <p>
+              Exploring how review systems shape audience expectations and
+              studio decisions.
+            </p>
+          </article>
+
+          <article class="feed-item">
+            <div class="feed-meta">
+              <img src="" alt="Author" class="author-avatar" />
+              <div>
+                <p><strong>Alice Rowan</strong></p>
+                <p class="small">
+                  7 min read • <span class="tag">Documentary</span>
+                </p>
+              </div>
+            </div>
+            <h4><a href="#">Documentary Storytelling in the TikTok Era</a></h4>
+            <p>
+              How short-form platforms are influencing traditional documentary
+              narratives.
+            </p>
+          </article>
+
+          <button class="load-more-btn">Load More Editorials</button>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget">
+            <h4>Editor's Pick</h4>
+            <p>
+              <a href="editorial.html">The Future Is Dark: Sci-fi in 2025</a>
+            </p>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Subscribe</h4>
+            <p>Get weekly editorials by email.</p>
+            <input type="email" placeholder="Your email" />
+            <button>Subscribe</button>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Popular Topics</h4>
+            <ul>
+              <li><a href="#">Auteur Theory</a></li>
+              <li><a href="#">Cinematic Pacing</a></li>
+              <li><a href="#">Streaming Wars</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget related-widget">
+            <h4>You Might Also Like</h4>
+            <ul>
+              <li><a href="#">Auteur Theory in the Age of AI</a></li>
+              <li><a href="#">What Streaming Has Done to Pacing</a></li>
+              <li><a href="#">The Return of the 90-Minute Movie</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Dynamic footer, has a different html/css file connected to every page-->
+    <div id="footer"></div>
+
+    <!-- Scripts-->
+    <script src="js/apiLoader.js"></script>
+    <script src="js/navfooter.js"></script>
+    <script src="js/mainpage-animation.js"></script>
+  </body>
+</html>
