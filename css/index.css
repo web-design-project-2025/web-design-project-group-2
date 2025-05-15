@@ -400,7 +400,7 @@ body {
 .button-group .btn.join {
   background-color: #44b0e4;
   top: 42%;
-  left: 65%;
+  left: 70%;
   padding: 20px 70px;
   transform: translate(-50%, -50%);
 }
@@ -408,8 +408,8 @@ body {
 .button-group .btn.login {
   background-color: #d2232a;
   top: 72%;
-  left: 85%;
-  padding: 30px 80px;
+  left: 87%;
+  padding: 20px 50px;
   transform: translate(-50%, -50%);
 }
 

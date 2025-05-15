@@ -1,7 +1,7 @@
 #reviews-text h2 {
   text-align: center;
   font-weight: 300;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   margin-top: 100px;
 }
@@ -304,8 +304,8 @@
 }
 
 .review-7 {
-  top: 300px;
-  left: 1400px;
+  top: 380px;
+  left: 1200px;
   width: 250px;
   height: 150px;
   background-color: rgba(210, 35, 42, 0.6);
@@ -349,7 +349,7 @@
 
 .review-8 {
   top: 750px;
-  left: 1260px;
+  left: 960px;
   width: 340px;
   height: 191.25px;
   background-color: rgba(210, 35, 42, 1);
@@ -392,8 +392,8 @@
 }
 
 .review-9 {
-  top: 520px;
-  left: 1170px;
+  top: 1050px;
+  left: 430px;
   width: 260px;
   height: 146.25px;
   background-color: rgba(68, 176, 228, 0.6);
@@ -435,8 +435,8 @@
 }
 
 .review-10 {
-  top: 850px;
-  left: 700px;
+  top: 750px;
+  left: 450px;
   width: 250px;
   height: 130px;
   background-color: rgba(210, 35, 42, 0.9);
