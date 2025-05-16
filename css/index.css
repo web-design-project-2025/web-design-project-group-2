@@ -556,12 +556,8 @@ body {
   }
 
   .featured-poster-overlay,
-  .featured-poster-overlay img,
-  .featured-title-overlay {
+  .featured-poster-overlay img {
     display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
   }
 
   .featured-review-box {
