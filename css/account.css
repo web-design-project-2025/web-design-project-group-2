@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background: url("../images/Background.png") no-repeat center center fixed;
@@ -22,6 +30,8 @@ main.account-page {
   gap: 40px;
   padding: 30px;
   margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .profile-picture img {
@@ -56,6 +66,8 @@ main.account-page {
   text-decoration: underline;
 }
 
+/*Edit form*/
+
 .edit-form {
   margin-top: 1em;
 }
@@ -64,7 +76,7 @@ main.account-page {
   border-radius: 20px;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.8);
   width: 200px;
-  padding: 5px;
+  padding: 10px;
   margin-right: 10px;
 }
 
@@ -94,7 +106,6 @@ main.account-page {
   border-radius: 20px;
   cursor: pointer;
   font-weight: 400;
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.8);
 }
 
 .logout-btn:hover {
@@ -102,6 +113,36 @@ main.account-page {
 }
 
 /*Movies and series section*/
+.carousel-section {
+  margin-bottom: 40px;
+}
+
+.carousel {
+  background-color: rgba(68, 176, 228, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.movie-card {
+  width: 208px;
+  min-height: 350px;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.movie-card:hover {
+  scale: 1.05;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
 .section-header {
   margin-top: 100px;
   display: flex;
@@ -125,37 +166,6 @@ main.account-page {
 .more-link:hover {
   text-decoration: underline;
   color: #44b0e4;
-}
-
-.carousel-section {
-  margin-bottom: 40px;
-}
-
-.carousel {
-  background-color: rgba(68, 176, 228, 0.2);
-  border-radius: 20px;
-  padding: 20px;
-  min-height: 300px;
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-}
-
-.movie-card {
-  width: 208px;
-  min-height: 350px;
-  flex: 0 0 auto;
-  text-align: center;
-}
-
-.movie-card:hover {
-  scale: 1.05;
-}
-
-.movie-card img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .movie-card h3 {
@@ -208,7 +218,7 @@ main.account-page {
   color: white;
   min-width: 500px;
   max-width: 600px;
-  height: 250px;
+  height: auto;
   margin: 20px auto;
   display: flex;
   gap: 20px;
@@ -293,9 +303,10 @@ main.account-page {
   background-color: rgba(68, 176, 228, 0.5);
   color: white;
   border-radius: 20px;
-  width: 55px;
-  margin-top: 30px;
+  width: 80px;
+  margin-top: 10px;
   cursor: pointer;
+  align-self: flex-end;
 }
 
 .edit-btn:hover {
@@ -384,4 +395,65 @@ main.account-page {
 .fade-in-section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/*Responsiveness*/
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-picture img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-info p,
+  .profile-info a,
+  .username-text {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  .edit-form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .edit-form button {
+    width: 100px;
+    height: 30px;
+    color: white;
+  }
+
+  .logout-btn {
+    width: 100%;
+    max-width: 200px;
+    font-size: 0.8rem;
+  }
+
+  .carousel {
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .movie-card {
+    width: 150px;
+    min-height: 250px;
+  }
+
+  .review-card {
+    min-width: 300px;
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  .review-likes {
+    font-size: 0.7rem;
+  }
+
+  .review-likes img {
+    width: 15px;
+  }
 }
