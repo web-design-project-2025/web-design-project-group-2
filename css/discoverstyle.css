@@ -19,7 +19,7 @@ body {
   color: white;
 }
 
-/*Title odf the page*/
+/*Title of the page*/
 .mainTitle h1 {
   text-align: center;
   font-weight: 300;
@@ -389,4 +389,180 @@ body {
 .fade-in-section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/*Responsiveness*/
+
+@media (max-width: 900px) {
+  .mainTitle h1 {
+    font-size: 3rem;
+    margin: 1.2rem 0;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .carousel-section h2,
+  .genre-carousel h2,
+  .tinder-section h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .genre-carousel {
+    margin-top: 2rem;
+  }
+
+  .carousel {
+    gap: 1rem;
+    padding: 1rem 0;
+    max-width: 100%;
+  }
+
+  .movie-card {
+    width: 160px;
+    border-radius: 14px;
+  }
+
+  .movie-card h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .movie-card .rating {
+    font-size: 0.95rem;
+  }
+
+  .movie-card img {
+    border-radius: 14px;
+  }
+
+  .tinder-container {
+    width: 250px;
+    height: 400px;
+  }
+
+  .tinder-section {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .tinder-bg-card {
+    width: 160px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 0.2rem;
+  }
+
+  .mainTitle h1 {
+    font-size: 2rem;
+    margin: 0.7rem 0;
+  }
+
+  .search-bar {
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-bar input {
+    width: 60vw;
+    min-width: 100px;
+    max-width: 220px;
+    font-size: 0.95rem;
+    height: 38px;
+    padding: 0.3rem 0.7rem;
+  }
+
+  #search-button img {
+    width: 22px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .carousel-section h2,
+  .genre-carousel h2,
+  .tinder-section h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.1rem;
+    font-size: 1.5rem;
+  }
+  .genre-carousel {
+    margin-top: 1rem;
+  }
+
+  .carousel {
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    max-width: 100%;
+  }
+
+  .movie-card {
+    width: 100px;
+    border-radius: 10px;
+  }
+
+  .movie-card h3 {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+  }
+  .movie-card .rating {
+    font-size: 0.75rem;
+  }
+  .movie-card img {
+    border-radius: 10px;
+  }
+
+  .carousel-arrow {
+    font-size: 1.2rem;
+    padding: 0.7rem 0.5rem;
+    border-radius: 10px;
+  }
+
+  .tinder-container {
+    width: 160px;
+    height: 260px;
+    margin-bottom: 100px;
+  }
+
+  .tinder-section {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .tinder-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .tinder-bg-card {
+    width: 90px;
+    height: 140px;
+    border-radius: 10px;
+  }
+
+  .modal-content {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    width: 98vw;
+    max-width: 98vw;
+  }
+
+  .modal-trailer iframe {
+    height: 160px;
+  }
 }

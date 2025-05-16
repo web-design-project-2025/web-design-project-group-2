@@ -1,3 +1,5 @@
+/*review bubbles*/
+
 #reviews-text h2 {
   text-align: center;
   font-weight: 300;
@@ -476,4 +478,228 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+/*responsive*/
+
+@media (max-width: 962px) {
+  body {
+    overflow-x: hidden;
+  }
+  .reviews-container {
+    position: relative;
+    width: 100%;
+    max-width: auto;
+    min-height: 170vw;
+    height: auto;
+    max-height: 50w;
+    display: block;
+    padding: 2rem 0;
+  }
+
+  .review-box {
+    position: absolute !important;
+    width: 60vw !important;
+    max-width: 350px;
+    min-width: 180px;
+
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  .review-1 {
+    width: 60vw !important;
+    aspect-ratio: 16 / 9;
+    top: 2vw;
+    left: 5vw;
+  }
+  .review-2 {
+    width: 25vw !important;
+    aspect-ratio: 25 / 14;
+    top: 30vw;
+    left: 30vw;
+  }
+  .review-3 {
+    width: 40vw !important;
+    aspect-ratio: 25 / 14;
+    top: 10vw;
+    left: 60vw;
+  }
+  .review-4 {
+    width: 25vw !important;
+    aspect-ratio: 16 / 9;
+    top: 55vw;
+    left: 70vw;
+  }
+  .review-5 {
+    width: 65vw !important;
+    aspect-ratio: 37 / 20.5;
+    top: 50vw;
+    left: 10vw;
+  }
+  .review-6 {
+    width: 40vw !important;
+    aspect-ratio: 300 / 165;
+    top: 100vw;
+    left: 50vw;
+  }
+  .review-7 {
+    width: 25vw !important;
+    aspect-ratio: 5 / 3;
+    top: 80vw;
+    left: 40vw;
+  }
+  .review-8 {
+    width: 55vw !important;
+    aspect-ratio: 340 / 191.25;
+    top: 110vw;
+    left: 10vw;
+  }
+  .review-9 {
+    width: 42vw !important;
+    aspect-ratio: 260 / 146.25;
+    top: 150vw;
+    left: 20vw;
+  }
+  .review-10 {
+    width: 25vw !important;
+    aspect-ratio: 25 / 13;
+    top: 130vw;
+    left: 60vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-container {
+    min-height: 350vw;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .review-box {
+    width: 90vw !important;
+    min-width: 0;
+    max-width: 95vw;
+    aspect-ratio: 16 / 9;
+    position: absolute !important;
+    height: auto !important;
+    margin: 0 !important;
+    font-size: 1.2vw;
+    border-radius: 12px;
+    padding: 0.7em 1em;
+    box-sizing: border-box;
+  }
+
+  .review-box .user-img img {
+    width: 2.5em;
+    height: 2.5em;
+    min-width: 16px;
+    min-height: 16px;
+    max-width: 32px;
+    max-height: 32px;
+    margin: 0.5em;
+  }
+
+  .review-box .username {
+    font-size: 0.8em;
+  }
+  .review-box .movie-title,
+  .review-box .rating {
+    font-size: 1em;
+    margin-top: 0.5em;
+    font-weight: bold;
+  }
+  .review-box .review-title {
+    font-size: 0.9em;
+    padding-right: 0.5em;
+    font-weight: bold;
+  }
+  .review-box .review-content {
+    font-size: 0.8em;
+    margin-top: 0.3em;
+    line-height: 1.1;
+    margin-right: 0.3em;
+    word-break: break-word;
+  }
+  .review-box .top-line {
+    gap: 0.5em;
+  }
+  .review-1 {
+    width: 30vw !important;
+    aspect-ratio: 16 / 9;
+    top: 2vw;
+    left: 5vw;
+  }
+  .review-2 {
+    width: 24vw !important;
+    aspect-ratio: 25 / 14;
+    top: 30vw;
+    left: 30vw;
+  }
+  .review-3 {
+    width: 20vw !important;
+    aspect-ratio: 25 / 14;
+    top: 10vw;
+    left: 60vw;
+  }
+  .review-4 {
+    width: 25vw !important;
+    aspect-ratio: 16 / 9;
+    top: 55vw;
+    left: 70vw;
+  }
+  .review-5 {
+    width: 40vw !important;
+    aspect-ratio: 37 / 20.5;
+    top: 50vw;
+    left: 10vw;
+  }
+  .review-6 {
+    width: 40vw !important;
+    aspect-ratio: 300 / 165;
+    top: 100vw;
+    left: 50vw;
+  }
+  .review-7 {
+    width: 25vw !important;
+    aspect-ratio: 5 / 3;
+    top: 80vw;
+    left: 40vw;
+  }
+  .review-8 {
+    width: 35vw !important;
+    aspect-ratio: 340 / 191.25;
+    top: 110vw;
+    left: 10vw;
+  }
+  .review-9 {
+    width: 40vw !important;
+    aspect-ratio: 260 / 146.25;
+    top: 150vw;
+    left: 20vw;
+  }
+  .review-10 {
+    width: 20vw !important;
+    aspect-ratio: 25 / 13;
+    top: 130vw;
+    left: 60vw;
+  }
+
+  .review-box .user-img img {
+    width: 10vw;
+    height: 10vw;
+    min-width: 28px;
+    min-height: 28px;
+    max-width: 48px;
+    max-height: 48px;
+  }
+
+  .review-box .username,
+  .review-box .movie-title,
+  .review-box .rating,
+  .review-box .review-title,
+  .review-box .review-content {
+    font-size: 2.8vw;
+    line-height: 1.2;
+  }
 }
