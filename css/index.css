@@ -16,6 +16,7 @@ body {
   background-size: cover;
   line-height: 1.6;
   color: white;
+  overflow-x: hidden;
 }
 
 /*/////////////////////////////////////////////////////////*/
@@ -428,29 +429,371 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .featured-carousel-item {
-    flex-direction: column;
+@media (max-width: 900px) {
+  /* Featured Movie Carousel */
+  .featured-movie-carousel {
+    padding: 0 10px;
+    margin: 30px auto;
   }
 
-  .featured-movie-box,
-  .featured-review-box {
+  .featured-carousel-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .featured-movie-box {
     flex: 1 1 100%;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .featured-trailer-container {
     width: 100%;
   }
 
+  .featured-poster-overlay,
+  .featured-title-overlay {
+    display: none;
+  }
+
   .featured-review-box {
-    margin-top: 12px;
+    flex: 1 1 100%;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .featured-review-header img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .featured-review-header .featured-movie-title {
+    font-size: 16px;
+  }
+
+  .featured-review-header .featured-movie-rating {
+    font-size: 14px;
+  }
+
+  .featured-review-header .featured-review-username {
+    font-size: 12px;
+  }
+
+  .featured-review-text {
+    font-size: 14px;
+  }
+
+  .featured-movie-details {
+    font-size: 12px;
+    margin-top: 10px;
   }
 
   .featured-carousel-arrow img {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
   }
 
-  .overlay-text {
-    font-size: 1rem;
+  .featured-carousel-arrow.left {
+    left: 5px;
+  }
+
+  .featured-carousel-arrow.right {
+    right: 5px;
+  }
+
+  .featured-carousel-dots {
+    margin-top: 12px;
+  }
+
+  .featured-carousel-dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 3px;
+  }
+
+  /* Purpose Image Section */
+  .purpose-image-container {
+    margin: 80px auto;
+  }
+
+  #purpose-text {
+    font-size: 20px;
+    left: 25%;
+    top: 50%;
+  }
+
+  /* Discover Movies Carousel */
+  .carousel-section {
+    margin: 80px 0;
+  }
+
+  .carousel-section h2 {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  .carousel {
+    gap: 16px;
+    padding: 24px 0;
+    max-width: 95%;
+  }
+
+  .movie-card {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .carousel-arrow {
+    font-size: 24px;
+    padding: 24px 16px;
+  }
+
+  .carousel-arrow.left {
+    left: 6px;
+  }
+
+  .carousel-arrow.right {
+    right: 6px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    margin: 80px 0;
+  }
+
+  #hero-text {
+    font-size: 14px;
+    top: 33%;
+    left: 73%;
+    width: 50%;
+    text-align: right;
+  }
+
+  #account-text {
+    font-size: 15px;
+    top: 80%;
+    left: 50%;
+    width: 80%;
+    text-align: center;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+  }
+
+  .button-group .btn {
+    position: static;
+    width: 100%;
+    min-width: 80px;
+    max-width: 200px;
+    font-size: 14px;
+    padding: 8px 20px;
+    margin: 0 auto;
+    transform: none;
+    white-space: nowrap;
+  }
+
+  .button-group .btn.join {
+    top: auto;
+    left: auto;
+  }
+
+  .button-group .btn.login {
+    top: auto;
+    left: auto;
+  }
+}
+
+@media (max-width: 413px) {
+  .featured-movie-carousel {
+    padding: 0 15px;
+    margin: 30px auto;
+  }
+
+  .featured-carousel-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .featured-movie-box {
+    flex: 1 1 100%;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .featured-trailer-container {
+    width: 100%;
+  }
+
+  .featured-poster-overlay,
+  .featured-title-overlay {
+    display: none;
+  }
+
+  .featured-review-box {
+    flex: 1 1 100%;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .featured-review-header img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .featured-review-header .featured-movie-title {
+    font-size: 16px;
+  }
+
+  .featured-review-header .featured-movie-rating {
+    font-size: 14px;
+  }
+
+  .featured-review-header .featured-review-username {
+    font-size: 12px;
+  }
+
+  .featured-review-text {
+    font-size: 14px;
+  }
+
+  .featured-movie-details {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .featured-carousel-arrow img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .featured-carousel-arrow.left {
+    left: 8px;
+  }
+
+  .featured-carousel-arrow.right {
+    right: 8px;
+  }
+
+  .featured-carousel-dots {
+    margin-top: 12px;
+  }
+
+  .featured-carousel-dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+  }
+
+  /* Purpose Image Section */
+  .purpose-image-container {
+    margin: 60px auto;
+  }
+
+  #purpose-text {
+    font-size: 28px;
+    left: 50%;
+    top: 50%;
+  }
+
+  /* Discover Movies Carousel */
+  .carousel-section {
+    margin: 60px 0;
+  }
+
+  .carousel-section h2 {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .carousel {
+    gap: 12px;
+    padding: 16px 0;
+    max-width: 95%;
+  }
+
+  .movie-card {
+    width: 160px;
+  }
+
+  .carousel-arrow {
+    font-size: 20px;
+    padding: 16px 12px;
+  }
+
+  .carousel-arrow.left {
+    left: 4px;
+  }
+
+  .carousel-arrow.right {
+    right: 4px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    margin: 60px 0;
+  }
+
+  .hero-section img {
+    width: 100%;
+  }
+
+  #hero-text {
+    font-size: 20px;
+    margin-bottom: 16px;
+    top: 20%;
+    left: 50%;
+    width: 90%;
+    text-align: center;
+  }
+
+  #account-text {
+    font-size: 16px;
+    margin-bottom: 16px;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    text-align: center;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%;
+    margin-top: 16px;
+  }
+
+  .button-group .btn {
+    font-size: 18px;
+    padding: 10px 32px;
+    width: 85%;
+    text-align: center;
+    position: static;
+    transform: none;
+  }
+
+  .button-group .btn.join {
+    top: auto;
+    left: auto;
+  }
+
+  .button-group .btn.login {
+    top: auto;
+    left: auto;
   }
 }
