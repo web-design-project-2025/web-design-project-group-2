@@ -24,7 +24,7 @@ body {
   background-position: center;
   overflow: hidden;
 }
-
+/*overlay for the picture*/
 .gradient-overlay {
   position: absolute;
   width: 100%;
@@ -224,6 +224,7 @@ a:hover {
   transition: transform 0.2s ease;
 }
 
+/*responsiveness*/
 @media (max-width: 962px) {
   .article-layout {
     flex-direction: column;

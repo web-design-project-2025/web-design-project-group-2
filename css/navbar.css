@@ -66,6 +66,7 @@ nav a:active {
   cursor: pointer;
 }
 
+/*responsive design*/
 @media (max-width: 413px) {
   header {
     flex-direction: column;

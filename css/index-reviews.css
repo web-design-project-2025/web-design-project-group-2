@@ -1,3 +1,5 @@
+/*review bubbles*/
+
 #reviews-text h2 {
   text-align: center;
   font-weight: 300;
@@ -477,6 +479,8 @@
   align-items: center;
   gap: 4px;
 }
+
+/*responsive*/
 
 @media (max-width: 962px) {
   body {

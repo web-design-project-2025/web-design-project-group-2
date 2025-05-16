@@ -429,6 +429,8 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/*responsiveness*/
 @media (max-width: 900px) {
   /* Featured Movie Carousel */
   .featured-movie-carousel {

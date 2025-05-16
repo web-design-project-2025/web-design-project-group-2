@@ -19,7 +19,7 @@ body {
   color: white;
 }
 
-/*Title odf the page*/
+/*Title of the page*/
 .mainTitle h1 {
   text-align: center;
   font-weight: 300;
@@ -390,6 +390,8 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/*Responsiveness*/
 
 @media (max-width: 900px) {
   .mainTitle h1 {
