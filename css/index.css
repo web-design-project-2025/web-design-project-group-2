@@ -541,7 +541,7 @@ body {
   .featured-movie-box {
     flex: none;
     width: 100vw;
-    aspect-ratio: 16 / 16; /* Make trailer box bigger vertically */
+    aspect-ratio: 16 / 16;
     min-height: 320px;
     max-height: 55vw;
     padding: 0;
@@ -564,7 +564,7 @@ body {
     flex: none;
     width: 95vw;
     min-height: 80px;
-    max-height: 120px; /* Smaller height for review */
+    max-height: 120px;
     padding: 8px;
     border-radius: 12px;
     font-size: 0.95rem;
