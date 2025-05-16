@@ -178,9 +178,6 @@ body {
   justify-content: center;
 }
 
-.cast-card,
-.similar-card {
-}
 .cast-card {
   background: rgba(68, 176, 228, 0.2);
   padding: 1rem;
