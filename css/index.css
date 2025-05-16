@@ -530,3 +530,67 @@ body {
     gap: 10px;
   }
 }
+
+@media (max-width: 413px) {
+  .featured-carousel-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .featured-movie-box {
+    flex: none;
+    width: 100vw;
+    aspect-ratio: 16 / 16; /* Make trailer box bigger vertically */
+    min-height: 320px;
+    max-height: 55vw;
+    padding: 0;
+    margin: 0 auto;
+    border-radius: 14px;
+  }
+
+  .featured-trailer-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+  }
+
+  .featured-poster-overlay,
+  .featured-poster-overlay img,
+  .featured-title-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .featured-review-box {
+    flex: none;
+    width: 95vw;
+    min-height: 80px;
+    max-height: 120px; /* Smaller height for review */
+    padding: 8px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    overflow: hidden;
+  }
+
+  .featured-review-text {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    max-height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .featured-review-header img {
+    width: 40px;
+    height: 44px;
+    margin-right: 8px;
+    border-radius: 8px;
+  }
+
+  .featured-review-header .featured-movie-title {
+    font-size: 1rem;
+  }
+}
